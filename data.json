@@ -265,44 +265,34 @@
     }
 ],
 "while_standing_punishments": [
-        {
-            "name": "Tsunami Kick",
-            "input": "WS,4,4",
-            "startup": 11,
-            "damage": 29,
-            "onHit": "-4",
-            "onBlock": "-15",
-            "hitLevel": "mid,mid",
-            "Feature": ""
-        },
-        {
-            "name": "Twin Pistons",
-            "input": "WS,1,2",
-            "startup": 13,
-            "damage": 22,
-            "onHit": "+73",
-            "onBlock": "-12",
-            "hitLevel": "mid,mid",
-            "Feature": "Launcher"
-        },
     {
-            "name": "Demon God Fist",
-            "input": "WS,2",
-            "startup": 16,
-            "damage": 25,
-            "onHit": "+57",
-            "onBlock": "-18",
-            "hitLevel": "mid",
-            "Feature": "Homing"
-        }
+        "name": "Tsunami Kick",
+        "input": "WS,4,4",
+        "startup": 11,
+        "damage": 29,
+        "onHit": "-4",
+        "onBlock": "-15",
+        "hitLevel": "mid,mid",
+        "Feature": ""
+    },
+    {
+        "name": "Twin Pistons",
+        "input": "WS,1,2",
+        "startup": 13,
+        "damage": 22,
+        "onHit": "+73",
+        "onBlock": "-12",
+        "hitLevel": "mid,mid",
+        "Feature": "Launcher"
+    },
+    {
+        "name": "Demon God Fist",
+        "input": "WS,2",
+        "startup": 16,
+        "damage": 25,
+        "onHit": "+57",
+        "onBlock": "-18",
+        "hitLevel": "mid",
+        "Feature": "Homing"
+    }
 ]
-            
-
-
-
-
-
-
-
-
-
