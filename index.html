@@ -10,15 +10,6 @@
 
     <h1>Tekken 8 Movelist</h1>
 
-    <!-- Character Selection -->
-    <label for="character">Select Character:</label>
-    <select id="character" onchange="filterMoves()">
-        <option value="all">All</option>
-        <option value="Kazuya">Kazuya</option>
-        <option value="Jin">Jin</option>
-        <option value="King">King</option>
-    </select>
-
     <!-- Search Bar -->
     <input type="text" id="search" placeholder="Search moves..." onkeyup="searchMoves()">
 
@@ -31,7 +22,6 @@
                 <th onclick="sortTable(3)">Startup</th>
                 <th onclick="sortTable(4)">Hit Level</th>
                 <th onclick="sortTable(5)">On Block</th>
-                <th onclick="sortTable(6)">Character</th>
             </tr>
         </thead>
         <tbody id="movelist-body">
