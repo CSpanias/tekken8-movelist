@@ -19,11 +19,17 @@ function displayMoves(moves, tableBodyId) {
     });
 }
 
-// Sorting Function
+// Sorting Function (generic for both tables)
 function sortTable(n) {
-    let moves = [...window.movelist]; // Use the globally stored movelist
-    let ascending = document.getElementById("movelist").getAttribute("data-sort") !== "asc";
+    // Determine which table is being sorted
+    let table = document.getElementById("movelist") || document.getElementById("punishments-table");
+    let tableBodyId = table === document.getElementById("movelist") ? "movelist-body" : "punishments-body";
 
+    // Get the current sorting order
+    let ascending = table.getAttribute("data-sort") !== "asc";
+
+    // Sort the moves
+    let moves = [...window.movelist]; // Use the globally stored movelist
     moves.sort((a, b) => {
         let valA = Object.values(a)[n];
         let valB = Object.values(b)[n];
@@ -35,10 +41,9 @@ function sortTable(n) {
         return isNaN(valA) ? valA.localeCompare(valB) * (ascending ? 1 : -1) : (valA - valB) * (ascending ? 1 : -1);
     });
 
-    // Determine which table body to update based on the current page
-    let tableBodyId = document.getElementById("movelist-body") ? "movelist-body" : "punishments-body";
+    // Display the sorted moves
     displayMoves(moves, tableBodyId);
 
     // Toggle sorting order
-    document.getElementById("movelist").setAttribute("data-sort", ascending ? "asc" : "desc");
+    table.setAttribute("data-sort", ascending ? "asc" : "desc");
 }
