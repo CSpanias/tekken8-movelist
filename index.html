@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tekken 8 Movelist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Tekken 8 Movelist</h1>
+
+    <!-- Character Selection -->
+    <label for="character">Select Character:</label>
+    <select id="character" onchange="filterMoves()">
+        <option value="all">All</option>
+        <option value="Kazuya">Kazuya</option>
+        <option value="Jin">Jin</option>
+        <option value="King">King</option>
+    </select>
+
+    <!-- Search Bar -->
+    <input type="text" id="search" placeholder="Search moves..." onkeyup="searchMoves()">
+
+    <table id="movelist">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Move Name</th>
+                <th onclick="sortTable(1)">Input</th>
+                <th onclick="sortTable(2)">Damage</th>
+                <th onclick="sortTable(3)">Startup</th>
+                <th onclick="sortTable(4)">Hit Level</th>
+                <th onclick="sortTable(5)">On Block</th>
+                <th onclick="sortTable(6)">Character</th>
+            </tr>
+        </thead>
+        <tbody id="movelist-body">
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
