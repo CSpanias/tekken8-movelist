@@ -81,6 +81,11 @@ tr:hover {
 }
 
 /* Rank Colors */
+.rank-green {
+    color: #00FF00; /* Yellow */
+    font-weight: bold;
+}
+
 .rank-yellow {
     color: #FFEB3B; /* Yellow */
     font-weight: bold;
