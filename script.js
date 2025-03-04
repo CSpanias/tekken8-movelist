@@ -19,30 +19,34 @@ function displayMoves(moves, tableBodyId) {
     });
 }
 
-// Sorting Function (generic for both tables)
+// Sorting Function
 function sortTable(n) {
-    // Determine which table is being sorted
-    let table = document.getElementById("movelist") || document.getElementById("punishments-table");
-    let tableBodyId = table === document.getElementById("movelist") ? "movelist-body" : "punishments-body";
+    let table = document.getElementById("movelist") || document.getElementById("punishments-table") || document.getElementById("rank-points");
+    let tbody = table.getElementsByTagName("tbody")[0];
+    let rows = Array.from(tbody.getElementsByTagName("tr"));
 
-    // Get the current sorting order
+    // Determine if sorting is ascending or descending
     let ascending = table.getAttribute("data-sort") !== "asc";
 
-    // Sort the moves
-    let moves = [...window.movelist]; // Use the globally stored movelist
-    moves.sort((a, b) => {
-        let valA = Object.values(a)[n];
-        let valB = Object.values(b)[n];
+    // Sort rows based on the clicked column
+    rows.sort((a, b) => {
+        let valA = a.getElementsByTagName("td")[n].textContent.trim();
+        let valB = b.getElementsByTagName("td")[n].textContent.trim();
 
-        // Handle case where valA or valB is undefined or not a number
-        if (isNaN(valA)) valA = valA || ''; // Fallback to empty string
-        if (isNaN(valB)) valB = valB || ''; // Fallback to empty string
-
-        return isNaN(valA) ? valA.localeCompare(valB) * (ascending ? 1 : -1) : (valA - valB) * (ascending ? 1 : -1);
+        // Handle numeric sorting
+        if (!isNaN(valA) && !isNaN(valB)) {
+            return (ascending ? 1 : -1) * (parseFloat(valA) - parseFloat(valB));
+        } else {
+            // Handle string sorting
+            return (ascending ? 1 : -1) * valA.localeCompare(valB);
+        }
     });
 
-    // Display the sorted moves
-    displayMoves(moves, tableBodyId);
+    // Clear the table body
+    tbody.innerHTML = "";
+
+    // Append sorted rows back to the table
+    rows.forEach(row => tbody.appendChild(row));
 
     // Toggle sorting order
     table.setAttribute("data-sort", ascending ? "asc" : "desc");
