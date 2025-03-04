@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tekken 8 Movelist</title>
+    <title>Tekken 8 - Kazuya</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Tekken 8 Movelist</h1>
+    <h1>Tekken 8 - Kazuya</h1>
 
     <nav>
         <a href="index.html">Home</a> |
@@ -43,6 +43,7 @@
             fetch("data.json")
                 .then(response => response.json())
                 .then(data => {
+                    window.movelist = data.regularMoves; // Store regular moves globally
                     displayMoves(data.regularMoves, "movelist-body");
                 });
         });
