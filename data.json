@@ -1,296 +1,300 @@
-[
-    {
-        "name": "Flash Punch",
-        "input": "1,1,2",
-        "startup": 10,
-        "damage": 23,
-        "onHit": "+20",
-        "onBlock": "-17",
-        "hitLevel": "high",
-        "GoodFor": "Punish",
-        "Feature": "Knockdown"
-    },
-    {
-        "name": "Back Fist",
-        "input": "1,2,2",
-        "startup": 10,
-        "damage": 25,
-        "onHit": "+4",
-        "onBlock": "-12",
-        "hitLevel": "high",
-        "GoodFor": "Punish",
-        "Feature": "Combo extender"
-    },
-    {
-        "name": "Low Kick",
-        "input": "d, 4",
-        "startup": 12,
-        "damage": 6,
-        "onHit": "N/A",
-        "onBlock": "-15",
-        "hitLevel": "low",
-        "GoodFor": "",
-        "Feature": ""
-    },
-    {
-        "name": "Acute Pain",
-        "input": "1+2",
-        "startup": 12,
-        "damage": 25,
-        "onHit": "+13",
-        "onBlock": "-13",
-        "hitLevel": "mid,mid",
-        "GoodFor": "",
-        "Feature": "Wall Splat"
-    },
-    {
-        "name": "Slaughter Uppercut",
-        "input": "df,1,2",
-        "startup": 15,
-        "damage": 31,
-        "onHit": "+18",
-        "onBlock": "-8",
-        "hitLevel": "mid,mid",
-        "GoodFor": "",
-        "Feature": "Launcher"
-    },
-    {
-        "name": "Devil Fist",
-        "input": "f,F,2",
-        "startup": 16,
-        "damage": 20,
-        "onHit": "+39",
-        "onBlock": "-9",
-        "hitLevel": "mid",
-        "GoodFor": "",
-        "Feature": "Heat engager"
-    },
-    {
-        "name": "Devil's Steel Petal",
-        "input": "f,F,4",
-        "startup": 17,
-        "damage": 22,
-        "onHit": "N/A",
-        "onBlock": "-9",
-        "hitLevel": "high",
-        "GoodFor": "",
-        "Feature": ""
-    },
-    {
-        "name": "Flash Tornado",
-        "input": "b,4",
-        "startup": 17,
-        "damage": 20,
-        "onHit": "+16",
-        "onBlock": "-5",
-        "hitLevel": "high",
-        "GoodFor": "",
-        "Feature": "Heat engager, homing"
-    },
-    {
-        "name": "Sliding Low Kick",
-        "input": "db,3",
-        "startup": 19,
-        "damage": 14,
-        "onHit": "+16",
-        "onBlock": "-12",
-        "hitLevel": "low",
-        "GoodFor": "",
-        "Feature": ""
-    },
-    {
-        "name": "Stature Smash",
-        "input": "db,4",
-        "startup": 20,
-        "damage": 18,
-        "onHit": "N/A",
-        "onBlock": "-12",
-        "hitLevel": "low",
-        "GoodFor": "",
-        "Feature": ""
-    },
-    {
-        "name": "Demonic Catastrophe",
-        "input": "df,1+2",
-        "startup": 20,
-        "damage": 55,
-        "onHit": "0",
-        "onBlock": "-15",
-        "hitLevel": "mid",
-        "GoodFor": "",
-        "Feature": "Rage art"
-    },
-    {
-        "name": "Left Splits Kick",
-        "input": "f,F,3",
-        "startup": 20,
-        "damage": 21,
-        "onHit": "+46",
-        "onBlock": "+3",
-        "hitLevel": "mid",
-        "GoodFor": "",
-        "Feature": "Launcher"
-    },
-    {
-        "name": "Oni Stomp",
-        "input": "d,3+4",
-        "startup": 23,
-        "damage": 20,
-        "onHit": "-1",
-        "onBlock": "-12",
-        "hitLevel": "low",
-        "GoodFor": "Grounded opponent",
-        "Feature": ""
-    },
-    {
-        "name": "Nejiri Uraken",
-        "input": "d,1+2",
-        "startup": 23,
-        "damage": 20,
-        "onHit": "N/A",
-        "onBlock": "-14",
-        "hitLevel": "low",
-        "GoodFor": "",
-        "Feature": ""
-    },
-    {
-        "name": "Glorious Demon God Fist",
-        "input": "f,1+2",
-        "startup": 25,
-        "damage": 20,
-        "onHit": "+11",
-        "onBlock": "-9",
-        "hitLevel": "high",
-        "GoodFor": "+11oH",
-        "Feature": ""
-    },
-    {
-        "name": "Inferno",
-        "input": "bu,1+2",
-        "startup": 41,
-        "damage": 9,
-        "onHit": "N/A",
-        "onBlock": "-15",
-        "hitLevel": "high, mid",
-        "GoodFor": "",
-        "Feature": "Delayed impact"
-    },
-    {
-        "name": "Sokushitsu Goda",
-        "input": "bu,1+2",
-        "startup": 11,
-        "damage": 30,
-        "onHit": "+9",
-        "onBlock": "-14",
-        "hitLevel": "high",
-        "GoodFor": "Punish",
-        "Feature": "Knockdown, wall splat"
-    },
-    {
-        "name": "Acute Pain",
-        "input": "1+2",
-        "startup": 12,
-        "damage": 25,
-        "onHit": "+13",
-        "onBlock": "-13",
-        "hitLevel": "high",
-        "GoodFor": "Punish",
-        "Feature": "Wall splat"
-    },
-    {
-        "name": "Tsunami Kick",
-        "input": "df,4,4",
-        "startup": 13,
-        "damage": 26,
-        "onHit": "-4",
-        "onBlock": "-15",
-        "hitLevel": "mid,mid",
-        "GoodFor": "Punish",
-        "Feature": "Multi-hit with knockback"
-    },
-    {
-        "name": "Goutsuiken",
-        "input": "db,1,2",
-        "startup": 13,
-        "damage": 30,
-        "onHit": "+17",
-        "onBlock": "-19",
-        "hitLevel": "mid,mid",
-        "GoodFor": "Punish",
-        "Feature": "Heat engager"
-    },
-    {
-        "name": "Wind God Fist",
-        "input": "f,n,df,2",
-        "startup": 13,
-        "damage": 23,
-        "onHit": "+39",
-        "onBlock": "-10",
-        "hitLevel": "high",
-        "GoodFor": "Punish",
-        "Feature": "Launcher"
-    },
-    {
-        "name": "Abolishing Fist",
-        "input": "df,2",
-        "startup": 14,
-        "damage": 22,
-        "onHit": "+5",
-        "onBlock": "-12",
-        "hitLevel": "mid",
-        "GoodFor": "Punish",
-        "Feature": "Homing"
-    },
-    {
-        "name": "Slaughter Hook",
-        "input": "df,1,2",
-        "startup": 15,
-        "damage": 31,
-        "onHit": "+17",
-        "onBlock": "-8",
-        "hitLevel": "mid,high",
-        "GoodFor": "Punish",
-        "Feature": "Heat engager"
-    },
-    {
-        "name": "Slaughter High Kick",
-        "input": "df,1,4",
-        "startup": 15,
-        "damage": 31,
-        "onHit": "+42",
-        "onBlock": "-11",
-        "hitLevel": "mid,high",
-        "GoodFor": "Punish",
-        "Feature": "Launcher"
-    },
-    {
-        "name": "Tsunami Kick",
-        "input": "WS,4,4",
-        "startup": 11,
-        "damage": 29,
-        "onHit": "-4",
-        "onBlock": "-15",
-        "hitLevel": "mid,mid",
-        "Feature": ""
-    },
-    {
-        "name": "Twin Pistons",
-        "input": "WS,1,2",
-        "startup": 13,
-        "damage": 22,
-        "onHit": "+73",
-        "onBlock": "-12",
-        "hitLevel": "mid,mid",
-        "Feature": "Launcher"
-    },
-    {
-        "name": "Demon God Fist",
-        "input": "WS,2",
-        "startup": 16,
-        "damage": 25,
-        "onHit": "+57",
-        "onBlock": "-18",
-        "hitLevel": "mid",
-        "Feature": "Homing"
-    }
-]
+{
+    "regularMoves": [
+        {
+            "name": "Flash Punch",
+            "input": "1,1,2",
+            "startup": 10,
+            "damage": 23,
+            "onHit": "+20",
+            "onBlock": "-17",
+            "hitLevel": "high",
+            "GoodFor": "Punish",
+            "Feature": "Knockdown"
+        },
+        {
+            "name": "Back Fist",
+            "input": "1,2,2",
+            "startup": 10,
+            "damage": 25,
+            "onHit": "+4",
+            "onBlock": "-12",
+            "hitLevel": "high",
+            "GoodFor": "Punish",
+            "Feature": "Combo extender"
+        },
+        {
+            "name": "Low Kick",
+            "input": "d, 4",
+            "startup": 12,
+            "damage": 6,
+            "onHit": "N/A",
+            "onBlock": "-15",
+            "hitLevel": "low",
+            "GoodFor": "",
+            "Feature": ""
+        },
+        {
+            "name": "Acute Pain",
+            "input": "1+2",
+            "startup": 12,
+            "damage": 25,
+            "onHit": "+13",
+            "onBlock": "-13",
+            "hitLevel": "mid,mid",
+            "GoodFor": "",
+            "Feature": "Wall Splat"
+        },
+        {
+            "name": "Slaughter Uppercut",
+            "input": "df,1,2",
+            "startup": 15,
+            "damage": 31,
+            "onHit": "+18",
+            "onBlock": "-8",
+            "hitLevel": "mid,mid",
+            "GoodFor": "",
+            "Feature": "Launcher"
+        },
+        {
+            "name": "Devil Fist",
+            "input": "f,F,2",
+            "startup": 16,
+            "damage": 20,
+            "onHit": "+39",
+            "onBlock": "-9",
+            "hitLevel": "mid",
+            "GoodFor": "",
+            "Feature": "Heat engager"
+        },
+        {
+            "name": "Devil's Steel Petal",
+            "input": "f,F,4",
+            "startup": 17,
+            "damage": 22,
+            "onHit": "N/A",
+            "onBlock": "-9",
+            "hitLevel": "high",
+            "GoodFor": "",
+            "Feature": ""
+        },
+        {
+            "name": "Flash Tornado",
+            "input": "b,4",
+            "startup": 17,
+            "damage": 20,
+            "onHit": "+16",
+            "onBlock": "-5",
+            "hitLevel": "high",
+            "GoodFor": "",
+            "Feature": "Heat engager, homing"
+        },
+        {
+            "name": "Sliding Low Kick",
+            "input": "db,3",
+            "startup": 19,
+            "damage": 14,
+            "onHit": "+16",
+            "onBlock": "-12",
+            "hitLevel": "low",
+            "GoodFor": "",
+            "Feature": ""
+        },
+        {
+            "name": "Stature Smash",
+            "input": "db,4",
+            "startup": 20,
+            "damage": 18,
+            "onHit": "N/A",
+            "onBlock": "-12",
+            "hitLevel": "low",
+            "GoodFor": "",
+            "Feature": ""
+        },
+        {
+            "name": "Demonic Catastrophe",
+            "input": "df,1+2",
+            "startup": 20,
+            "damage": 55,
+            "onHit": "0",
+            "onBlock": "-15",
+            "hitLevel": "mid",
+            "GoodFor": "",
+            "Feature": "Rage art"
+        },
+        {
+            "name": "Left Splits Kick",
+            "input": "f,F,3",
+            "startup": 20,
+            "damage": 21,
+            "onHit": "+46",
+            "onBlock": "+3",
+            "hitLevel": "mid",
+            "GoodFor": "",
+            "Feature": "Launcher"
+        },
+        {
+            "name": "Oni Stomp",
+            "input": "d,3+4",
+            "startup": 23,
+            "damage": 20,
+            "onHit": "-1",
+            "onBlock": "-12",
+            "hitLevel": "low",
+            "GoodFor": "Grounded opponent",
+            "Feature": ""
+        },
+        {
+            "name": "Nejiri Uraken",
+            "input": "d,1+2",
+            "startup": 23,
+            "damage": 20,
+            "onHit": "N/A",
+            "onBlock": "-14",
+            "hitLevel": "low",
+            "GoodFor": "",
+            "Feature": ""
+        },
+        {
+            "name": "Glorious Demon God Fist",
+            "input": "f,1+2",
+            "startup": 25,
+            "damage": 20,
+            "onHit": "+11",
+            "onBlock": "-9",
+            "hitLevel": "high",
+            "GoodFor": "+11oH",
+            "Feature": ""
+        },
+        {
+            "name": "Inferno",
+            "input": "bu,1+2",
+            "startup": 41,
+            "damage": 9,
+            "onHit": "N/A",
+            "onBlock": "-15",
+            "hitLevel": "high, mid",
+            "GoodFor": "",
+            "Feature": "Delayed impact"
+        },
+        {
+            "name": "Sokushitsu Goda",
+            "input": "bu,1+2",
+            "startup": 11,
+            "damage": 30,
+            "onHit": "+9",
+            "onBlock": "-14",
+            "hitLevel": "high",
+            "GoodFor": "Punish",
+            "Feature": "Knockdown, wall splat"
+        },
+        {
+            "name": "Acute Pain",
+            "input": "1+2",
+            "startup": 12,
+            "damage": 25,
+            "onHit": "+13",
+            "onBlock": "-13",
+            "hitLevel": "high",
+            "GoodFor": "Punish",
+            "Feature": "Wall splat"
+        },
+        {
+            "name": "Tsunami Kick",
+            "input": "df,4,4",
+            "startup": 13,
+            "damage": 26,
+            "onHit": "-4",
+            "onBlock": "-15",
+            "hitLevel": "mid,mid",
+            "GoodFor": "Punish",
+            "Feature": "Multi-hit with knockback"
+        },
+        {
+            "name": "Goutsuiken",
+            "input": "db,1,2",
+            "startup": 13,
+            "damage": 30,
+            "onHit": "+17",
+            "onBlock": "-19",
+            "hitLevel": "mid,mid",
+            "GoodFor": "Punish",
+            "Feature": "Heat engager"
+        },
+        {
+            "name": "Wind God Fist",
+            "input": "f,n,df,2",
+            "startup": 13,
+            "damage": 23,
+            "onHit": "+39",
+            "onBlock": "-10",
+            "hitLevel": "high",
+            "GoodFor": "Punish",
+            "Feature": "Launcher"
+        },
+        {
+            "name": "Abolishing Fist",
+            "input": "df,2",
+            "startup": 14,
+            "damage": 22,
+            "onHit": "+5",
+            "onBlock": "-12",
+            "hitLevel": "mid",
+            "GoodFor": "Punish",
+            "Feature": "Homing"
+        },
+        {
+            "name": "Slaughter Hook",
+            "input": "df,1,2",
+            "startup": 15,
+            "damage": 31,
+            "onHit": "+17",
+            "onBlock": "-8",
+            "hitLevel": "mid,high",
+            "GoodFor": "Punish",
+            "Feature": "Heat engager"
+        },
+        {
+            "name": "Slaughter High Kick",
+            "input": "df,1,4",
+            "startup": 15,
+            "damage": 31,
+            "onHit": "+42",
+            "onBlock": "-11",
+            "hitLevel": "mid,high",
+            "GoodFor": "Punish",
+            "Feature": "Launcher"
+        }
+    ],
+    "whileStandingPunishments": [
+        {
+            "name": "Tsunami Kick",
+            "input": "WS,4,4",
+            "startup": 11,
+            "damage": 29,
+            "onHit": "-4",
+            "onBlock": "-15",
+            "hitLevel": "mid,mid",
+            "Feature": ""
+        },
+        {
+            "name": "Twin Pistons",
+            "input": "WS,1,2",
+            "startup": 13,
+            "damage": 22,
+            "onHit": "+73",
+            "onBlock": "-12",
+            "hitLevel": "mid,mid",
+            "Feature": "Launcher"
+        },
+        {
+            "name": "Demon God Fist",
+            "input": "WS,2",
+            "startup": 16,
+            "damage": 25,
+            "onHit": "+57",
+            "onBlock": "-18",
+            "hitLevel": "mid",
+            "Feature": "Homing"
+        }
+    ]
+}
