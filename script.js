@@ -21,7 +21,6 @@ function displayMoves(moves) {
             <td>${move.startup}</td>
             <td>${move.hitLevel}</td>
             <td>${move.onBlock}</td>
-            <td>${move.character}</td>
         </tr>`;
         tbody.innerHTML += row;
     });
@@ -48,13 +47,5 @@ function searchMoves() {
     let filteredMoves = window.movelist.filter(move => 
         move.name.toLowerCase().includes(searchInput) || move.input.toLowerCase().includes(searchInput)
     );
-    displayMoves(filteredMoves);
-}
-
-// Filter by Character
-function filterMoves() {
-    let selectedCharacter = document.getElementById("character").value;
-    let filteredMoves = (selectedCharacter === "all") ? window.movelist : 
-        window.movelist.filter(move => move.character === selectedCharacter);
     displayMoves(filteredMoves);
 }
