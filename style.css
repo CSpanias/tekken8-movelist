@@ -1,35 +1,32 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    text-align: center;
-    background-color: #111;
-    color: white;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    background: #222;
+nav {
+    margin-bottom: 20px;
 }
 
-th, td {
-    border: 1px solid #444;
-    padding: 10px;
-    text-align: left;
+nav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-th {
-    background-color: #333;
-    cursor: pointer;
+nav ul li {
+    display: inline;
+    margin-right: 15px;
 }
 
-th:hover {
-    background-color: #555;
+nav a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
 }
 
-input, select {
-    padding: 10px;
-    margin: 10px;
-    font-size: 16px;
+nav a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    color: #333;
 }
