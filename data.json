@@ -1,0 +1,7 @@
+[
+    { "name": "Electric Wind God Fist", "input": "f, n, d, d/f+2", "damage": 21, "startup": 11, "hitLevel": "high", "onBlock": "+5", "character": "Kazuya" },
+    { "name": "Hell Sweep", "input": "f, n, d, d/f+4", "damage": 25, "startup": 17, "hitLevel": "low", "onBlock": "-15", "character": "Kazuya" },
+    { "name": "1,1,2", "input": "1,1,2", "damage": 25, "startup": 10, "hitLevel": "high", "onBlock": "-5", "character": "Jin" },
+    { "name": "df+1", "input": "d/f+1", "damage": 14, "startup": 13, "hitLevel": "mid", "onBlock": "-1", "character": "Jin" },
+    { "name": "Giant Swing", "input": "hcf+1", "damage": 50, "startup": 12, "hitLevel": "throw", "onBlock": "N/A", "character": "King" }
+]
