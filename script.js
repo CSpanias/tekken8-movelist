@@ -1,19 +1,3 @@
-// Load Movelist Data
-document.addEventListener("DOMContentLoaded", function () {
-    fetch("data.json")
-        .then(response => response.json())
-        .then(data => {
-            // Store regular moves globally
-            window.movelist = data.regularMoves;
-
-            // Display regular moves in the first table
-            displayMoves(data.regularMoves, "movelist-body");
-
-            // Display while standing punishments in the second table
-            displayMoves(data.whileStandingPunishments, "while-standing-body");
-        });
-});
-
 // Display Moves in Table
 function displayMoves(moves, tableBodyId) {
     let tbody = document.getElementById(tableBodyId);
@@ -35,7 +19,7 @@ function displayMoves(moves, tableBodyId) {
     });
 }
 
-// Sorting Function (only for regular moves)
+// Sorting Function (only for movelist page)
 function sortTable(n) {
     let moves = [...window.movelist];
     let ascending = document.getElementById("movelist").getAttribute("data-sort") !== "asc";
@@ -53,13 +37,4 @@ function sortTable(n) {
 
     displayMoves(moves, "movelist-body");
     document.getElementById("movelist").setAttribute("data-sort", ascending ? "asc" : "desc");
-}
-
-// Search Moves (only for regular moves)
-function searchMoves() {
-    let searchInput = document.getElementById("search").value.toLowerCase();
-    let filteredMoves = window.movelist.filter(move => 
-        move.name.toLowerCase().includes(searchInput) || move.input.toLowerCase().includes(searchInput)
-    );
-    displayMoves(filteredMoves, "movelist-body");
 }
