@@ -15,4 +15,4 @@ This tool is built using **HTML**, **CSS**, and **JavaScript**, and hosted on **
 
 1. **Sort the Movelist**: Click on any of the column headers (e.g., Move Name, Input, Damage, etc.) to sort the list by that column.
 2. **Search for Moves**: Type in the search bar to filter moves by name or input.
-4. **Movelist Data**: All of Kazuya's moves are stored in a `data.json` file. You can easily update the data or add more moves by editing this fi
+4. **Movelist Data**: All of Kazuya's moves are stored in a `data.json` file. You can easily update the data or add more moves by editing this file.
