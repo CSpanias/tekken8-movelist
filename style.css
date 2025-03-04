@@ -1,59 +1,35 @@
-/* Rank Goals Table */
-#rank-goals {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #262626;
-    color: #ffffff;
-}
-
-#rank-goals th, #rank-goals td {
-    padding: 12px;
-    border: 1px solid #444;
-    text-align: left;
-}
-
-#rank-goals th {
-    background-color: #ff4d4d;
-    color: #ffffff;
+/* Rank Colors */
+.rank-green {
+    color: #4CAF50; /* Green */
     font-weight: bold;
 }
 
-#rank-goals tr:nth-child(even) {
-    background-color: #333;
-}
-
-#rank-goals tr:hover {
-    background-color: #444;
-    transition: background-color 0.3s ease;
-}
-
-/* Rank Details Table */
-#rank-details {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #262626;
-    color: #ffffff;
-}
-
-#rank-details th, #rank-details td {
-    padding: 12px;
-    border: 1px solid #444;
-    text-align: left;
-}
-
-#rank-details th {
-    background-color: #ff4d4d;
-    color: #ffffff;
+.rank-yellow {
+    color: #FFEB3B; /* Yellow */
     font-weight: bold;
 }
 
-#rank-details tr:nth-child(even) {
-    background-color: #333;
+.rank-orange {
+    color: #FF9800; /* Orange */
+    font-weight: bold;
 }
 
-#rank-details tr:hover {
-    background-color: #444;
-    transition: background-color 0.3s ease;
+.rank-red {
+    color: #F44336; /* Red */
+    font-weight: bold;
+}
+
+.rank-purple {
+    color: #9C27B0; /* Purple */
+    font-weight: bold;
+}
+
+.rank-blue {
+    color: #2196F3; /* Blue */
+    font-weight: bold;
+}
+
+.rank-tekken-king {
+    color: #FFD700; /* Gold for Tekken King */
+    font-weight: bold;
 }
