@@ -91,7 +91,7 @@
 
 /* General Table Styling */
 table {
-    width: 100%;
+    width: auto; /* Auto-size based on content */
     border-collapse: collapse;
     margin-top: 20px;
     background-color: #262626;
@@ -102,6 +102,7 @@ th, td {
     padding: 12px;
     border: 1px solid #444;
     text-align: left;
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 th {
@@ -126,7 +127,7 @@ tr:hover {
 
 /* Specific Table IDs */
 #movelist, #punishments-table {
-    width: 100%;
+    width: auto; /* Auto-size based on content */
     border-collapse: collapse;
     margin-top: 20px;
     background-color: #262626;
@@ -138,6 +139,7 @@ tr:hover {
     padding: 12px;
     border: 1px solid #444;
     text-align: left;
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 #movelist th, #punishments-table th {
