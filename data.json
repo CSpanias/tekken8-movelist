@@ -1,7 +1,162 @@
 [
-    { "name": "Electric Wind God Fist", "input": "f, n, d, d/f+2", "damage": 21, "startup": 11, "hitLevel": "high", "onBlock": "+5", "character": "Kazuya" },
-    { "name": "Hell Sweep", "input": "f, n, d, d/f+4", "damage": 25, "startup": 17, "hitLevel": "low", "onBlock": "-15", "character": "Kazuya" },
-    { "name": "1,1,2", "input": "1,1,2", "damage": 25, "startup": 10, "hitLevel": "high", "onBlock": "-5", "character": "Jin" },
-    { "name": "df+1", "input": "d/f+1", "damage": 14, "startup": 13, "hitLevel": "mid", "onBlock": "-1", "character": "Jin" },
-    { "name": "Giant Swing", "input": "hcf+1", "damage": 50, "startup": 12, "hitLevel": "throw", "onBlock": "N/A", "character": "King" }
+    {
+        "name": "Flash Punch (1,1,2)",
+        "input": "1,1,2",
+        "startup": 10,
+        "damage": 23,
+        "onBlock": "-17",
+        "execution": "Applied",
+        "hitLevel": "high",
+        "comment": ""
+    },
+    {
+        "name": "Back Fist (1,2,2)",
+        "input": "1,2,2",
+        "startup": 10,
+        "damage": 25,
+        "onBlock": "-12",
+        "execution": "Applied",
+        "hitLevel": "high",
+        "comment": ""
+    },
+    {
+        "name": "Low Kick (d, 4)",
+        "input": "d, 4",
+        "startup": 12,
+        "damage": 6,
+        "onBlock": "-15",
+        "execution": "Applied",
+        "hitLevel": "low",
+        "comment": ""
+    },
+    {
+        "name": "Acute Pain (1+2)",
+        "input": "1+2",
+        "startup": 12,
+        "damage": 25,
+        "onBlock": "-13",
+        "execution": "Applied",
+        "hitLevel": "WS",
+        "comment": ""
+    },
+    {
+        "name": "Slaughter Uppercut (df,1,2)",
+        "input": "df,1,2",
+        "startup": 15,
+        "damage": 31,
+        "onBlock": "+8",
+        "execution": "Applied",
+        "hitLevel": "LA",
+        "comment": ""
+    },
+    {
+        "name": "Devil Fist (f,F,2)",
+        "input": "f,F,2",
+        "startup": 16,
+        "damage": 20,
+        "onBlock": "-9",
+        "execution": "Applied",
+        "hitLevel": "HE",
+        "comment": ""
+    },
+    {
+        "name": "Devil's Steel Petal (f,F,4)",
+        "input": "f,F,4",
+        "startup": 17,
+        "damage": 22,
+        "onBlock": "-9",
+        "execution": "Applied",
+        "hitLevel": "high",
+        "comment": ""
+    },
+    {
+        "name": "Flash Tornado (b,4)",
+        "input": "b,4",
+        "startup": 17,
+        "damage": 20,
+        "onBlock": "-5",
+        "execution": "Applied",
+        "hitLevel": "HE",
+        "comment": ""
+    },
+    {
+        "name": "Sliding Low Kick (db,3)",
+        "input": "db,3",
+        "startup": 19,
+        "damage": 14,
+        "onBlock": "-12",
+        "execution": "Applied",
+        "hitLevel": "low",
+        "comment": ""
+    },
+    {
+        "name": "Stature Smash (db,4)",
+        "input": "db,4",
+        "startup": 20,
+        "damage": 18,
+        "onBlock": "-12",
+        "execution": "Applied",
+        "hitLevel": "low",
+        "comment": ""
+    },
+    {
+        "name": "Demonic Catastrophe (df,1+2)",
+        "input": "df,1+2",
+        "startup": 20,
+        "damage": 55,
+        "onBlock": "-15",
+        "execution": "Applied",
+        "hitLevel": "RA",
+        "comment": ""
+    },
+    {
+        "name": "Left Splits Kick (f,F,3)",
+        "input": "f,F,3",
+        "startup": 20,
+        "damage": 21,
+        "onBlock": "+3",
+        "execution": "Applied",
+        "hitLevel": "LA",
+        "comment": "+46oH"
+    },
+    {
+        "name": "Oni Stomp (d,3+4)",
+        "input": "d,3+4",
+        "startup": 23,
+        "damage": 20,
+        "onBlock": "N/A",
+        "execution": "when opp is down",
+        "hitLevel": "FB",
+        "comment": ""
+    },
+    {
+        "name": "Nejiri Uraken (d,1+2)",
+        "input": "d,1+2",
+        "startup": 23,
+        "damage": 20,
+        "onBlock": "-14",
+        "execution": "Applied",
+        "hitLevel": "low",
+        "comment": ""
+    },
+    {
+        "name": "Glorious Demon God Fist (f,1+2)",
+        "input": "f,1+2",
+        "startup": 25,
+        "damage": 20,
+        "onBlock": "-9",
+        "execution": "Applied",
+        "hitLevel": "high",
+        "comment": "+11oH"
+    },
+    {
+        "name": "Inferno (bu,1+2)",
+        "input": "bu,1+2",
+        "startup": 41,
+        "damage": 9,
+        "onBlock": "-15",
+        "execution": "Applied",
+        "hitLevel": "high",
+        "comment": ""
+    }
 ]
