@@ -22,6 +22,7 @@ function displayMoves(moves) {
             <td>${move.startup || ''}</td>
             <td>${move.hitLevel || ''}</td>
             <td>${move.onBlock || ''}</td>
+            <td>${move.onHit || ''}</td>
             <td>${move.Feature || ''}</td>
         </tr>`;
         tbody.innerHTML += row;
