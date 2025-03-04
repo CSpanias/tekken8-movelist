@@ -3,13 +3,14 @@ document.addEventListener("DOMContentLoaded", function () {
     fetch("data.json")
         .then(response => response.json())
         .then(data => {
-            // Separate regular moves and while standing punishments
-            const regularMoves = data.slice(0, -3); // All moves except the last 3
-            const whileStandingMoves = data.slice(-3); // Last 3 moves
+            // Store regular moves globally
+            window.movelist = data.regularMoves;
 
-            window.movelist = regularMoves; // Store regular moves globally
-            displayMoves(regularMoves, "movelist-body"); // Display regular moves
-            displayMoves(whileStandingMoves, "while-standing-body"); // Display while standing moves
+            // Display regular moves in the first table
+            displayMoves(data.regularMoves, "movelist-body");
+
+            // Display while standing punishments in the second table
+            displayMoves(data.whileStandingPunishments, "while-standing-body");
         });
 });
 
