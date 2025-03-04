@@ -19,9 +19,9 @@ function displayMoves(moves, tableBodyId) {
     });
 }
 
-// Sorting Function (only for movelist page)
+// Sorting Function
 function sortTable(n) {
-    let moves = [...window.movelist];
+    let moves = [...window.movelist]; // Use the globally stored movelist
     let ascending = document.getElementById("movelist").getAttribute("data-sort") !== "asc";
 
     moves.sort((a, b) => {
@@ -35,6 +35,10 @@ function sortTable(n) {
         return isNaN(valA) ? valA.localeCompare(valB) * (ascending ? 1 : -1) : (valA - valB) * (ascending ? 1 : -1);
     });
 
-    displayMoves(moves, "movelist-body");
+    // Determine which table body to update based on the current page
+    let tableBodyId = document.getElementById("movelist-body") ? "movelist-body" : "punishments-body";
+    displayMoves(moves, tableBodyId);
+
+    // Toggle sorting order
     document.getElementById("movelist").setAttribute("data-sort", ascending ? "asc" : "desc");
 }
