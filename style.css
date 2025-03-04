@@ -88,3 +88,76 @@
     color: #FFD700; /* Gold for Tekken King */
     font-weight: bold;
 }
+
+/* General Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #262626;
+    color: #ffffff;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+th {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+th:hover {
+    background-color: #ff1a1a;
+}
+
+tr:nth-child(even) {
+    background-color: #333;
+}
+
+tr:hover {
+    background-color: #444;
+    transition: background-color 0.3s ease;
+}
+
+/* Specific Table IDs */
+#movelist, #punishments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #262626;
+    color: #ffffff;
+}
+
+#movelist th, #movelist td,
+#punishments-table th, #punishments-table td {
+    padding: 12px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+#movelist th, #punishments-table th {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#movelist th:hover, #punishments-table th:hover {
+    background-color: #ff1a1a;
+}
+
+#movelist tr:nth-child(even),
+#punishments-table tr:nth-child(even) {
+    background-color: #333;
+}
+
+#movelist tr:hover,
+#punishments-table tr:hover {
+    background-color: #444;
+    transition: background-color 0.3s ease;
+}
