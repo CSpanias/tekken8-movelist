@@ -1,9 +1,64 @@
-/* Rank Colors */
-.rank-green {
-    color: #4CAF50; /* Green */
+/* Rank Points Table */
+#rank-points {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #262626;
+    color: #ffffff;
+}
+
+#rank-points th, #rank-points td {
+    padding: 12px;
+    border: 1px solid #444;
+    text-align: center;
+}
+
+#rank-points th {
+    background-color: #ff4d4d;
+    color: #ffffff;
     font-weight: bold;
 }
 
+#rank-points tr:nth-child(even) {
+    background-color: #333;
+}
+
+#rank-points tr:hover {
+    background-color: #444;
+    transition: background-color 0.3s ease;
+}
+
+/* Streak Bonuses Table */
+#streak-bonuses {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #262626;
+    color: #ffffff;
+}
+
+#streak-bonuses th, #streak-bonuses td {
+    padding: 12px;
+    border: 1px solid #444;
+    text-align: center;
+}
+
+#streak-bonuses th {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#streak-bonuses tr:nth-child(even) {
+    background-color: #333;
+}
+
+#streak-bonuses tr:hover {
+    background-color: #444;
+    transition: background-color 0.3s ease;
+}
+
+/* Rank Colors */
 .rank-yellow {
     color: #FFEB3B; /* Yellow */
     font-weight: bold;
