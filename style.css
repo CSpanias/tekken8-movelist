@@ -1,109 +1,59 @@
-/* General Styles */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #1a1a1a; /* Dark background */
-    color: #ffffff; /* White text */
-    margin: 0;
-    padding: 20px;
-    line-height: 1.6;
-}
-
-/* Navigation Menu */
-nav {
-    margin-bottom: 20px;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-nav a {
-    text-decoration: none;
-    color: #ff4d4d; /* Red accent color */
-    font-weight: bold;
-    font-size: 1.1em;
-}
-
-nav a:hover {
-    color: #ff1a1a; /* Brighter red on hover */
-    text-decoration: underline;
-}
-
-/* Headings */
-h1, h2 {
-    color: #ff4d4d; /* Red accent color */
-    text-transform: uppercase; /* Uppercase headings for a bold look */
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-}
-
-h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
-}
-
-/* Tables */
-table {
+/* Rank Goals Table */
+#rank-goals {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-    background-color: #262626; /* Dark table background */
-    color: #ffffff; /* White text */
+    background-color: #262626;
+    color: #ffffff;
 }
 
-th, td {
+#rank-goals th, #rank-goals td {
     padding: 12px;
-    border: 1px solid #444; /* Darker borders */
+    border: 1px solid #444;
     text-align: left;
 }
 
-th {
-    background-color: #ff4d4d; /* Red header background */
-    color: #ffffff; /* White text */
-    font-weight: bold;
-    cursor: pointer;
-}
-
-th:hover {
-    background-color: #ff1a1a; /* Brighter red on hover */
-}
-
-tr:nth-child(even) {
-    background-color: #333; /* Alternate row color */
-}
-
-tr:hover {
-    background-color: #444; /* Hover effect for rows */
-}
-
-/* Footer */
-footer {
-    margin-top: 40px;
-    text-align: left;
-    color: #888;
-    font-size: 0.9em;
-    width: 100%;
-}
-
-/* Buttons (if needed) */
-button {
+#rank-goals th {
     background-color: #ff4d4d;
     color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1em;
+    font-weight: bold;
 }
 
-button:hover {
-    background-color: #ff1a1a;
+#rank-goals tr:nth-child(even) {
+    background-color: #333;
+}
+
+#rank-goals tr:hover {
+    background-color: #444;
+    transition: background-color 0.3s ease;
+}
+
+/* Rank Details Table */
+#rank-details {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #262626;
+    color: #ffffff;
+}
+
+#rank-details th, #rank-details td {
+    padding: 12px;
+    border: 1px solid #444;
+    text-align: left;
+}
+
+#rank-details th {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#rank-details tr:nth-child(even) {
+    background-color: #333;
+}
+
+#rank-details tr:hover {
+    background-color: #444;
+    transition: background-color 0.3s ease;
 }
