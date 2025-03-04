@@ -11,7 +11,7 @@ table {
 th, td {
     padding: 12px;
     border: 1px solid #444;
-    text-align: center; /* Center-align text for rank-system table */
+    text-align: center; /* Center-align text for all tables */
     white-space: nowrap; /* Prevent text wrapping */
 }
 
@@ -50,8 +50,8 @@ tr:hover {
 #rank-points th, #rank-points td {
     padding: 12px;
     border: 1px solid #444;
-    text-align: left; /* Left-align text for movelist and punishments tables */
     white-space: nowrap; /* Prevent text wrapping */
+    /* Removed text-align: left */
 }
 
 #movelist th, #punishments-table th,
