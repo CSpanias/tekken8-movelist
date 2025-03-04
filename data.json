@@ -1,162 +1,242 @@
 [
     {
-        "name": "Flash Punch (1,1,2)",
+        "name": "Flash Punch",
         "input": "1,1,2",
         "startup": 10,
         "damage": 23,
+        "onHit": "+20",
         "onBlock": "-17",
-        "execution": "Applied",
         "hitLevel": "high",
-        "comment": ""
+        "GoodFor": "Punish"
     },
     {
-        "name": "Back Fist (1,2,2)",
+        "name": "Back Fist",
         "input": "1,2,2",
         "startup": 10,
         "damage": 25,
+        "onHit": "+4",
         "onBlock": "-12",
-        "execution": "Applied",
         "hitLevel": "high",
-        "comment": ""
+        "GoodFor": "Punish"
     },
     {
-        "name": "Low Kick (d, 4)",
+        "name": "Low Kick",
         "input": "d, 4",
         "startup": 12,
         "damage": 6,
+        "onHit": "N/A",
         "onBlock": "-15",
-        "execution": "Applied",
         "hitLevel": "low",
-        "comment": ""
+        "GoodFor": ""
     },
     {
-        "name": "Acute Pain (1+2)",
+        "name": "Acute Pain",
         "input": "1+2",
         "startup": 12,
         "damage": 25,
+        "onHit": "N/A",
         "onBlock": "-13",
-        "execution": "Applied",
         "hitLevel": "WS",
-        "comment": ""
+        "GoodFor": ""
     },
     {
-        "name": "Slaughter Uppercut (df,1,2)",
+        "name": "Slaughter Uppercut",
         "input": "df,1,2",
         "startup": 15,
         "damage": 31,
+        "onHit": "N/A",
         "onBlock": "+8",
-        "execution": "Applied",
         "hitLevel": "LA",
-        "comment": ""
+        "GoodFor": ""
     },
     {
-        "name": "Devil Fist (f,F,2)",
+        "name": "Devil Fist",
         "input": "f,F,2",
         "startup": 16,
         "damage": 20,
+        "onHit": "N/A",
         "onBlock": "-9",
-        "execution": "Applied",
         "hitLevel": "HE",
-        "comment": ""
+        "GoodFor": ""
     },
     {
-        "name": "Devil's Steel Petal (f,F,4)",
+        "name": "Devil's Steel Petal",
         "input": "f,F,4",
         "startup": 17,
         "damage": 22,
+        "onHit": "N/A",
         "onBlock": "-9",
-        "execution": "Applied",
         "hitLevel": "high",
-        "comment": ""
+        "GoodFor": ""
     },
     {
-        "name": "Flash Tornado (b,4)",
+        "name": "Flash Tornado",
         "input": "b,4",
         "startup": 17,
         "damage": 20,
+        "onHit": "N/A",
         "onBlock": "-5",
-        "execution": "Applied",
         "hitLevel": "HE",
-        "comment": ""
+        "GoodFor": ""
     },
     {
-        "name": "Sliding Low Kick (db,3)",
+        "name": "Sliding Low Kick",
         "input": "db,3",
         "startup": 19,
         "damage": 14,
+        "onHit": "N/A",
         "onBlock": "-12",
-        "execution": "Applied",
         "hitLevel": "low",
-        "comment": ""
+        "GoodFor": ""
     },
     {
-        "name": "Stature Smash (db,4)",
+        "name": "Stature Smash",
         "input": "db,4",
         "startup": 20,
         "damage": 18,
+        "onHit": "N/A",
         "onBlock": "-12",
-        "execution": "Applied",
         "hitLevel": "low",
-        "comment": ""
+        "GoodFor": ""
     },
     {
-        "name": "Demonic Catastrophe (df,1+2)",
+        "name": "Demonic Catastrophe",
         "input": "df,1+2",
         "startup": 20,
         "damage": 55,
+        "onHit": "N/A",
         "onBlock": "-15",
-        "execution": "Applied",
         "hitLevel": "RA",
-        "comment": ""
+        "GoodFor": ""
     },
     {
-        "name": "Left Splits Kick (f,F,3)",
+        "name": "Left Splits Kick",
         "input": "f,F,3",
         "startup": 20,
         "damage": 21,
+        "onHit": "N/A",
         "onBlock": "+3",
-        "execution": "Applied",
         "hitLevel": "LA",
-        "comment": "+46oH"
+        "GoodFor": "+46oH"
     },
     {
-        "name": "Oni Stomp (d,3+4)",
+        "name": "Oni Stomp",
         "input": "d,3+4",
         "startup": 23,
         "damage": 20,
+        "onHit": "N/A",
         "onBlock": "N/A",
-        "execution": "when opp is down",
         "hitLevel": "FB",
-        "comment": ""
+        "GoodFor": ""
     },
     {
-        "name": "Nejiri Uraken (d,1+2)",
+        "name": "Nejiri Uraken",
         "input": "d,1+2",
         "startup": 23,
         "damage": 20,
+        "onHit": "N/A",
         "onBlock": "-14",
-        "execution": "Applied",
         "hitLevel": "low",
-        "comment": ""
+        "GoodFor": ""
     },
     {
-        "name": "Glorious Demon God Fist (f,1+2)",
+        "name": "Glorious Demon God Fist",
         "input": "f,1+2",
         "startup": 25,
         "damage": 20,
+        "onHit": "+11",
         "onBlock": "-9",
-        "execution": "Applied",
         "hitLevel": "high",
-        "comment": "+11oH"
+        "GoodFor": "+11oH"
     },
     {
-        "name": "Inferno (bu,1+2)",
+        "name": "Inferno",
         "input": "bu,1+2",
         "startup": 41,
         "damage": 9,
+        "onHit": "N/A",
         "onBlock": "-15",
-        "execution": "Applied",
+        "hitLevel": "high, mid",
+        "GoodFor": ""
+    },
+    {
+        "name": "Sokushitsu Goda",
+        "input": "bu,1+2",
+        "startup": 11,
+        "damage": 30,
+        "onHit": "+9",
+        "onBlock": "-14",
         "hitLevel": "high",
-        "comment": ""
-    }
+        "GoodFor": "Punish"
+    },
+    {
+        "name": "Acute Pain",
+        "input": "1+2",
+        "startup": 12,
+        "damage": 25,
+        "onHit": "+13",
+        "onBlock": "-13",
+        "hitLevel": "high",
+        "GoodFor": "Punish"
+    },
+    {
+        "name": "Tsunami Kick",
+        "input": "df,4,4",
+        "startup": 13,
+        "damage": 26,
+        "onHit": "-4",
+        "onBlock": "-15",
+        "hitLevel": "mid,mid",
+        "GoodFor": "Punish"
+    },
+    {
+        "name": "Goutsuiken",
+        "input": "db,1,2",
+        "startup": 13,
+        "damage": 30,
+        "onHit": "+17",
+        "onBlock": "-19",
+        "hitLevel": "mid,mid",
+        "GoodFor": "Punish"
+    },
+    {
+        "name": "Wind God Fist",
+        "input": "f,n,df,2",
+        "startup": 13,
+        "damage": 23,
+        "onHit": "+39",
+        "onBlock": "-10",
+        "hitLevel": "high",
+        "GoodFor": "Punish"
+    },
+    {
+        "name": "Abolishing Fist",
+        "input": "df,2",
+        "startup": 14,
+        "damage": 22,
+        "onHit": "+5",
+        "onBlock": "-12",
+        "hitLevel": "mid",
+        "GoodFor": "Punish"
+    },
+    {
+        "name": "Slaughter Hook",
+        "input": "df,1,2",
+        "startup": 15,
+        "damage": 31,
+        "onHit": "+17",
+        "onBlock": "-8",
+        "hitLevel": "mid,high",
+        "GoodFor": "Punish"
+    },
+    {
+        "name": "Slaughter High Kick",
+        "input": "df,1,4",
+        "startup": 15,
+        "damage": 31,
+        "onHit": "+42",
+        "onBlock": "-11",
+        "hitLevel": "mid,high",
+        "GoodFor": "Punish"
+    },
 ]
