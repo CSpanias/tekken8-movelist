@@ -1,59 +1,81 @@
-/* Rank Points Table */
-#rank-points {
-    width: 100%;
+/* General Table Styling */
+table {
+    width: auto; /* Auto-size based on content */
+    table-layout: auto; /* Allow columns to adjust based on content */
     border-collapse: collapse;
     margin-top: 20px;
     background-color: #262626;
     color: #ffffff;
 }
 
-#rank-points th, #rank-points td {
+th, td {
     padding: 12px;
     border: 1px solid #444;
-    text-align: center;
+    text-align: center; /* Center-align text for rank-system table */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
-#rank-points th {
+th {
     background-color: #ff4d4d;
     color: #ffffff;
     font-weight: bold;
+    cursor: pointer;
 }
 
-#rank-points tr:nth-child(even) {
+th:hover {
+    background-color: #ff1a1a;
+}
+
+tr:nth-child(even) {
     background-color: #333;
 }
 
-#rank-points tr:hover {
+tr:hover {
     background-color: #444;
     transition: background-color 0.3s ease;
 }
 
-/* Streak Bonuses Table */
-#streak-bonuses {
-    width: 100%;
+/* Specific Table IDs */
+#movelist, #punishments-table, #rank-points {
+    width: auto; /* Auto-size based on content */
+    table-layout: auto; /* Allow columns to adjust based on content */
     border-collapse: collapse;
     margin-top: 20px;
     background-color: #262626;
     color: #ffffff;
 }
 
-#streak-bonuses th, #streak-bonuses td {
+#movelist th, #movelist td,
+#punishments-table th, #punishments-table td,
+#rank-points th, #rank-points td {
     padding: 12px;
     border: 1px solid #444;
-    text-align: center;
+    text-align: left; /* Left-align text for movelist and punishments tables */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
-#streak-bonuses th {
+#movelist th, #punishments-table th,
+#rank-points th {
     background-color: #ff4d4d;
     color: #ffffff;
     font-weight: bold;
+    cursor: pointer;
 }
 
-#streak-bonuses tr:nth-child(even) {
+#movelist th:hover, #punishments-table th:hover,
+#rank-points th:hover {
+    background-color: #ff1a1a;
+}
+
+#movelist tr:nth-child(even),
+#punishments-table tr:nth-child(even),
+#rank-points tr:nth-child(even) {
     background-color: #333;
 }
 
-#streak-bonuses tr:hover {
+#movelist tr:hover,
+#punishments-table tr:hover,
+#rank-points tr:hover {
     background-color: #444;
     transition: background-color 0.3s ease;
 }
@@ -89,77 +111,11 @@
     font-weight: bold;
 }
 
-/* General Table Styling */
-table {
-    width: auto; /* Auto-size based on content */
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #262626;
-    color: #ffffff;
-}
-
-th, td {
-    padding: 12px;
-    border: 1px solid #444;
+/* Footer */
+footer {
+    margin-top: 40px;
     text-align: left;
-    white-space: nowrap; /* Prevent text wrapping */
-}
-
-th {
-    background-color: #ff4d4d;
-    color: #ffffff;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-th:hover {
-    background-color: #ff1a1a;
-}
-
-tr:nth-child(even) {
-    background-color: #333;
-}
-
-tr:hover {
-    background-color: #444;
-    transition: background-color 0.3s ease;
-}
-
-/* Specific Table IDs */
-#movelist, #punishments-table {
-    width: auto; /* Auto-size based on content */
-    border-collapse: collapse;
-    margin-top: 20px;
-    background-color: #262626;
-    color: #ffffff;
-}
-
-#movelist th, #movelist td,
-#punishments-table th, #punishments-table td {
-    padding: 12px;
-    border: 1px solid #444;
-    text-align: left;
-    white-space: nowrap; /* Prevent text wrapping */
-}
-
-#movelist th, #punishments-table th {
-    background-color: #ff4d4d;
-    color: #ffffff;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-#movelist th:hover, #punishments-table th:hover {
-    background-color: #ff1a1a;
-}
-
-#movelist tr:nth-child(even),
-#punishments-table tr:nth-child(even) {
-    background-color: #333;
-}
-
-#movelist tr:hover,
-#punishments-table tr:hover {
-    background-color: #444;
-    transition: background-color 0.3s ease;
+    color: #888;
+    font-size: 0.9em;
+    width: 100%;
 }
