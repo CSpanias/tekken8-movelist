@@ -265,7 +265,7 @@
             "Feature": "Launcher"
         }
     ],
-    "whileStandingPunishments": [
+    "punishmentMoves": [
         {
             "name": "Tsunami Kick",
             "input": "WS,4,4",
