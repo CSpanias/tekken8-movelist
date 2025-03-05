@@ -66,16 +66,11 @@ document.addEventListener("DOMContentLoaded", function () {
     learningPlan.addEventListener("click", function (event) {
         event.preventDefault(); // Prevent default link behavior (navigation)
 
-        // Toggle submenu visibility
-        if (submenu.style.display === "flex") {
-            submenu.style.display = "none"; // Hide if already visible
-        } else {
-            // Show the submenu below the Learning Plan tab
-            const rect = learningPlan.getBoundingClientRect();
-            submenu.style.top = (rect.bottom + 5) + "px"; // Position below the link with a slight gap
-            submenu.style.left = rect.left + "px"; // Align with the left of the link
-            submenu.style.display = "flex"; // Show the submenu (flex for horizontal layout)
-        }
+        // Show the submenu below the Learning Plan tab
+        const rect = learningPlan.getBoundingClientRect();
+        submenu.style.top = (rect.bottom + 5) + "px"; // Position below the link with a slight gap
+        submenu.style.left = rect.left + "px"; // Align with the left of the link
+        submenu.style.display = "flex"; // Show the submenu (flex for horizontal layout)
     });
 
     // Navigate to learning-plan.html when the "Learning Plan" link is clicked again
