@@ -192,17 +192,19 @@ nav a.active {
 }
 
 /* Submenu Styling */
+/* Hide submenu by default */
 .submenu {
+    display: none;
     list-style: none;
     padding: 0;
     margin: 0;
     position: absolute;
     background-color: #333;
-    display: none; /* Hide by default */
     border-radius: 5px;
     width: 150px;
 }
 
+/* Style for submenu items */
 .submenu li {
     padding: 10px;
     border-bottom: 1px solid #444;
@@ -226,14 +228,10 @@ nav a.active {
     color: #ffffff;
 }
 
-/* Positioning the submenu below the Learning Plan tab */
-#learning-plan {
-    position: relative;
-    cursor: pointer;
-}
-
+/* Ensure submenu is positioned properly */
 #submenu {
     position: absolute;
     top: 100%;
     left: 0;
+    z-index: 1000;
 }
