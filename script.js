@@ -79,8 +79,10 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Navigate to learning-plan.html when the "Learning Plan" link is clicked again
-    learningPlan.addEventListener("dblclick", function (event) {
-        window.location.href = "learning-plan.html"; // Navigate to learning-plan.html
+    learningPlan.addEventListener("click", function (event) {
+        setTimeout(() => {
+            window.location.href = "learning-plan.html"; // Navigate to learning-plan.html
+        }, 200); // Short delay to allow submenu to appear
     });
 
     // Navigate to submenu items when clicked
