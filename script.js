@@ -59,39 +59,32 @@ document.addEventListener("DOMContentLoaded", function () {
     const learningPlan = document.getElementById("learning-plan");
     const submenu = document.getElementById("submenu");
 
-    // Check if elements are found
     if (!learningPlan || !submenu) {
         console.error("Learning Plan or submenu not found!");
         return;
     }
 
     console.log("Learning Plan found:", learningPlan); // Debugging step 2
-    console.log("Submenu found:", submenu); // Debugging step 3
+    console.log("Submenu found:", submenu);
 
-    let isSubmenuVisible = false;
-
+    // Toggle submenu visibility when clicking the Learning Plan tab
     learningPlan.addEventListener("click", function (event) {
-        // Debugging the click event
-        console.log("Learning Plan clicked!"); // Debugging step 4
+        console.log("Learning Plan clicked!"); // Debugging step 3
 
-        if (isSubmenuVisible) {
-            event.preventDefault(); // Prevent link navigation if submenu is visible
-            console.log("Submenu is visible, hiding it"); // Debugging step 5
-            submenu.style.display = "none";  // Hide submenu
-            isSubmenuVisible = false;
+        // Toggle submenu display
+        if (submenu.style.display === "block") {
+            submenu.style.display = "none"; // Hide submenu if it's visible
         } else {
-            console.log("Submenu is hidden, showing it"); // Debugging step 6
-            submenu.style.display = "block";  // Show submenu
-            isSubmenuVisible = true;
+            submenu.style.display = "block"; // Show submenu if it's hidden
         }
     });
 
     // Hide submenu when clicking outside
     document.addEventListener("click", function (event) {
         if (!learningPlan.contains(event.target) && !submenu.contains(event.target)) {
-            console.log("Clicked outside, hiding submenu."); // Debugging step 7
-            submenu.style.display = "none";  // Hide submenu
-            isSubmenuVisible = false;
+            console.log("Clicked outside, hiding submenu."); // Debugging step 4
+            submenu.style.display = "none"; // Hide submenu when clicking outside
         }
     });
 });
+
