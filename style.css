@@ -211,14 +211,9 @@ nav a.active {
     left: 50%; /* Center the submenu relative to the parent link */
     transform: translateX(-50%); /* Adjust for centering */
     flex-direction: row; /* Display submenu items horizontally */
-    gap: 10px; /* Add spacing between submenu items */
-    padding: 10px; /* Add padding for better appearance */
+    gap: 5px; /* Reduce spacing between submenu items */
+    padding: 5px; /* Reduce padding for a more compact look */
     border: 2px solid red; /* Debugging: Add a border to confirm the element is targeted */
-}
-
-/* Show submenu on hover */
-.submenu-wrapper:hover .submenu {
-    display: flex; /* Show the submenu */
 }
 
 /* Submenu items */
@@ -233,8 +228,9 @@ nav a.active {
     display: block;
     font-weight: bold;
     font-family: 'Orbitron', sans-serif;
-    padding: 10px; /* Add padding to links */
+    padding: 5px 10px; /* Reduce padding for a more compact look */
     white-space: nowrap; /* Prevent text wrapping */
+    font-size: 0.9em; /* Reduce font size */
 }
 
 .submenu a:hover {
