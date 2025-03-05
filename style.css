@@ -192,9 +192,9 @@ nav a.active {
 }
 
 /* Submenu Styling */
-/* Hide submenu by default */
+/* Ensure submenu is hidden by default */
 .submenu {
-    display: none !important;
+    display: none; /* Hide submenu initially */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -202,10 +202,8 @@ nav a.active {
     background-color: #333;
     border-radius: 5px;
     width: 150px;
-    z-index: 1000; /* Ensure it's above other elements */
 }
 
-/* Style for submenu items */
 .submenu li {
     padding: 10px;
     border-bottom: 1px solid #444;
@@ -235,11 +233,6 @@ nav a.active {
     top: 100%;
     left: 0;
     z-index: 1000;
-}
-
-/* Ensure the wrapper has relative positioning */
-#learning-plan-wrapper {
-    position: relative; /* Context for absolute positioning of submenu */
 }
 
 /* Add a class for showing the submenu */

@@ -54,7 +54,7 @@ function sortTable(n) {
 
 // Toggling the submenu when clicking the Learning Plan tab
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Script loaded!"); // Debugging step 1
+    console.log("Script loaded!"); // Debugging step
 
     const learningPlan = document.getElementById("learning-plan");
     const submenu = document.getElementById("submenu");
@@ -64,22 +64,22 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    console.log("Learning Plan found:", learningPlan); // Debugging step 2
+    console.log("Learning Plan found:", learningPlan);
     console.log("Submenu found:", submenu);
 
-    // Ensure the submenu is hidden initially by adding the 'hidden' class
-    submenu.classList.add("hidden");
+    // Ensure the submenu is initially hidden using CSS class
+    submenu.style.display = "none"; // Ensure submenu is hidden on load
 
     // Toggle submenu visibility when clicking the Learning Plan tab
     learningPlan.addEventListener("click", function (event) {
-        // Prevent only submenu toggling, not the link navigation
-        if (submenu.classList.contains("hidden")) {
-            submenu.classList.remove("hidden");
-            submenu.classList.add("visible");
+        event.preventDefault(); // Prevent the link navigation
+
+        // Toggle display of submenu
+        if (submenu.style.display === "none") {
+            submenu.style.display = "block"; // Show submenu
             console.log("Submenu shown");
         } else {
-            submenu.classList.remove("visible");
-            submenu.classList.add("hidden");
+            submenu.style.display = "none"; // Hide submenu
             console.log("Submenu hidden");
         }
     });
@@ -87,9 +87,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Hide submenu when clicking outside
     document.addEventListener("click", function (event) {
         if (!learningPlan.contains(event.target) && !submenu.contains(event.target)) {
-            console.log("Clicked outside, hiding submenu."); // Debugging step 4
-            submenu.classList.remove("visible");
-            submenu.classList.add("hidden");
+            console.log("Clicked outside, hiding submenu.");
+            submenu.style.display = "none"; // Hide submenu
         }
     });
 });
+
