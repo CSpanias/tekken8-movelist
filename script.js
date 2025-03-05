@@ -62,16 +62,28 @@ document.addEventListener("DOMContentLoaded", function () {
     learningPlan.addEventListener("click", function (event) {
         event.preventDefault(); // Prevent default link behavior (navigation)
 
-        // Show the submenu below the Learning Plan tab
-        const rect = learningPlan.getBoundingClientRect();
-        submenu.style.top = (rect.bottom + 5) + "px"; // Position below the link with a slight gap
-        submenu.style.left = rect.left + "px"; // Align with the left of the link
-        submenu.style.display = "block"; // Show the submenu
+        // Toggle submenu visibility
+        if (submenu.style.display === "block") {
+            submenu.style.display = "none"; // Hide if already visible
+        } else {
+            // Show the submenu below the Learning Plan tab
+            const rect = learningPlan.getBoundingClientRect();
+            submenu.style.top = (rect.bottom + 5) + "px"; // Position below the link with a slight gap
+            submenu.style.left = rect.left + "px"; // Align with the left of the link
+            submenu.style.display = "flex"; // Show the submenu (flex for horizontal layout)
+        }
 
-        // Navigate to learning-plan.html after a short delay (to allow the submenu to render)
+        // Navigate to learning-plan.html after a short delay
         setTimeout(() => {
             window.location.href = "learning-plan.html";
         }, 100); // 100ms delay to ensure the submenu is visible before navigation
+    });
+
+    // Hide submenu when clicking outside of it
+    document.addEventListener("click", function (event) {
+        if (!learningPlan.contains(event.target) {
+            submenu.style.display = "none"; // Hide the submenu
+        }
     });
 
     // Hide submenu when clicking any other menu option

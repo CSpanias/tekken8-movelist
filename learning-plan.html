@@ -115,20 +115,41 @@
         <p>Developed by x7331 | 2025</p>
     </footer>
 
+    <script src="script.js"></script>
+
     <script>
-        // Show the submenu when the page loads
+        // Hide the submenu by default when the page loads
         document.addEventListener("DOMContentLoaded", function () {
             const learningPlan = document.getElementById("learning-plan");
             const submenu = document.getElementById("submenu");
-
-            // Show the submenu below the Learning Plan tab
-            const rect = learningPlan.getBoundingClientRect();
-            submenu.style.top = (rect.bottom + 5) + "px"; // Position below the link with a slight gap
-            submenu.style.left = rect.left + "px"; // Align with the left of the link
-            submenu.style.display = "block"; // Show the submenu
+    
+            // Hide the submenu initially
+            submenu.style.display = "none";
+    
+            // Show the submenu when Learning Plan is clicked
+            learningPlan.addEventListener("click", function (event) {
+                event.preventDefault(); // Prevent default link behavior (navigation)
+    
+                // Toggle submenu visibility
+                if (submenu.style.display === "flex") {
+                    submenu.style.display = "none"; // Hide if already visible
+                } else {
+                    // Show the submenu below the Learning Plan tab
+                    const rect = learningPlan.getBoundingClientRect();
+                    submenu.style.top = (rect.bottom + 5) + "px"; // Position below the link with a slight gap
+                    submenu.style.left = rect.left + "px"; // Align with the left of the link
+                    submenu.style.display = "flex"; // Show the submenu (flex for horizontal layout)
+                }
+            });
+    
+            // Hide submenu when clicking outside of it
+            document.addEventListener("click", function (event) {
+                if (!learningPlan.contains(event.target)) {
+                    submenu.style.display = "none"; // Hide the submenu
+                }
+            });
         });
     </script>
 
-    <script src="script.js"></script>
 </body>
 </html>

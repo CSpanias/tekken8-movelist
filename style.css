@@ -198,20 +198,19 @@ nav a.active {
     position: absolute;
     background-color: #333;
     border-radius: 5px;
-    width: 150px;
+    width: auto; /* Adjust width to fit content */
     z-index: 1000;
-    top: 100%; /* Ensures it's placed below the menu item */
-    left: 0; /* Align it to the left of the menu item */
+    top: 100%; /* Position below the parent link */
+    left: 0; /* Align with the left edge of the parent link */
+    flex-direction: row; /* Display submenu items horizontally */
+    gap: 10px; /* Add spacing between submenu items */
+    padding: 10px; /* Add padding for better appearance */
 }
 
-/* Additional adjustments to submenu items */
+/* Submenu items */
 .submenu li {
-    padding: 10px;
-    border-bottom: 1px solid #444;
-}
-
-.submenu li:last-child {
-    border-bottom: none;
+    padding: 0; /* Remove padding from individual items */
+    border-bottom: none; /* Remove borders */
 }
 
 .submenu a {
@@ -220,21 +219,11 @@ nav a.active {
     display: block;
     font-weight: bold;
     font-family: 'Orbitron', sans-serif;
-    padding: 10px;
+    padding: 10px; /* Add padding to links */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .submenu a:hover {
     background-color: #ff1a1a;
     color: #ffffff;
 }
-
-/* Position the submenu directly below the Learning Plan tab */
-#learning-plan-wrapper {
-    position: relative;  /* Important */
-}
-
-/* Ensures that the submenu doesn't overlap the navigation */
-#submenu {
-    margin-top: 5px; /* Adds a little space between the menu and the submenu */
-}
-
