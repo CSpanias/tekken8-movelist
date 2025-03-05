@@ -190,3 +190,10 @@ td .left-aligned-list {
     color: #ffffff;
 }
 
+/* Highlight Active Page in Navigation */
+nav a.active {
+    color: #ffffff; /* Change text color */
+    background-color: #ff4d4d; /* Highlight background */
+    padding: 5px 10px;
+    border-radius: 3px;
+}
