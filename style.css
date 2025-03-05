@@ -207,6 +207,12 @@ nav a.active {
     padding: 10px; /* Add padding for better appearance */
 }
 
+/* Show submenu on hover */
+#learning-plan:hover + .submenu,
+.submenu:hover {
+    display: flex; /* Show the submenu */
+}
+
 /* Submenu items */
 .submenu li {
     padding: 0; /* Remove padding from individual items */
