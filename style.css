@@ -241,3 +241,12 @@ nav a.active {
 #learning-plan-wrapper {
     position: relative; /* Context for absolute positioning of submenu */
 }
+
+/* Add a class for showing the submenu */
+.submenu.hidden {
+    display: none;
+}
+
+.submenu.visible {
+    display: block;
+}

@@ -67,33 +67,33 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Learning Plan found:", learningPlan); // Debugging step 2
     console.log("Submenu found:", submenu);
 
+    // Ensure the submenu is hidden initially by adding the 'hidden' class
+    submenu.classList.add("hidden");
+
     // Toggle submenu visibility when clicking the Learning Plan tab
     learningPlan.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default link behavior
+
         console.log("Learning Plan clicked!"); // Debugging step 3
 
-        // Log the submenu display property before toggling
-        console.log("Before toggle, submenu display: ", submenu.style.display);
-
-        // Toggle submenu display
-        if (submenu.style.display === "block") {
-            submenu.style.display = "none"; // Hide submenu if it's visible
-            console.log("Submenu hidden");
-        } else {
-            submenu.style.display = "block"; // Show submenu if it's hidden
+        // Toggle the 'visible' and 'hidden' classes
+        if (submenu.classList.contains("hidden")) {
+            submenu.classList.remove("hidden");
+            submenu.classList.add("visible");
             console.log("Submenu shown");
+        } else {
+            submenu.classList.remove("visible");
+            submenu.classList.add("hidden");
+            console.log("Submenu hidden");
         }
-
-        // Log the submenu display property after toggling
-        console.log("After toggle, submenu display: ", submenu.style.display);
     });
 
     // Hide submenu when clicking outside
     document.addEventListener("click", function (event) {
         if (!learningPlan.contains(event.target) && !submenu.contains(event.target)) {
             console.log("Clicked outside, hiding submenu."); // Debugging step 4
-            submenu.style.display = "none"; // Hide submenu when clicking outside
+            submenu.classList.remove("visible");
+            submenu.classList.add("hidden");
         }
     });
 });
-
-
