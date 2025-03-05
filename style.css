@@ -202,6 +202,7 @@ nav a.active {
     background-color: #333;
     border-radius: 5px;
     width: 150px;
+    z-index: 1000; /* Ensure it's above other elements */
 }
 
 /* Style for submenu items */
@@ -234,4 +235,9 @@ nav a.active {
     top: 100%;
     left: 0;
     z-index: 1000;
+}
+
+/* Ensure the wrapper has relative positioning */
+#learning-plan-wrapper {
+    position: relative; /* Context for absolute positioning of submenu */
 }

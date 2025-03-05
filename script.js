@@ -59,26 +59,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const learningPlan = document.getElementById("learning-plan");
     const submenu = document.getElementById("submenu");
 
+    // Check if elements are found
     if (!learningPlan || !submenu) {
         console.error("Learning Plan or submenu not found!");
         return;
     }
 
     console.log("Learning Plan found:", learningPlan); // Debugging step 2
-    console.log("Submenu found:", submenu);
+    console.log("Submenu found:", submenu); // Debugging step 3
 
-    // Track submenu state
     let isSubmenuVisible = false;
 
     learningPlan.addEventListener("click", function (event) {
-        // If the submenu is visible, prevent navigation and toggle the submenu
+        // Debugging the click event
+        console.log("Learning Plan clicked!"); // Debugging step 4
+
         if (isSubmenuVisible) {
             event.preventDefault(); // Prevent link navigation if submenu is visible
-            console.log("Submenu is visible, preventing navigation."); // Debugging step
+            console.log("Submenu is visible, hiding it"); // Debugging step 5
             submenu.style.display = "none";  // Hide submenu
             isSubmenuVisible = false;
         } else {
-            console.log("Learning Plan clicked, proceeding to navigate."); // Debugging step
+            console.log("Submenu is hidden, showing it"); // Debugging step 6
             submenu.style.display = "block";  // Show submenu
             isSubmenuVisible = true;
         }
@@ -87,10 +89,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Hide submenu when clicking outside
     document.addEventListener("click", function (event) {
         if (!learningPlan.contains(event.target) && !submenu.contains(event.target)) {
-            console.log("Clicked outside, hiding submenu."); // Debugging step 4
+            console.log("Clicked outside, hiding submenu."); // Debugging step 7
             submenu.style.display = "none";  // Hide submenu
             isSubmenuVisible = false;
         }
     });
 });
-
