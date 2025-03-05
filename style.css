@@ -88,9 +88,10 @@ body {
 nav {
     background-color: #333;
     padding: 10px;
-    text-align: center;
+    text-align: left; /* Align the content to the left */
     margin-bottom: 20px;
     border-radius: 5px;
+    width: 100%; /* Make sure it spans the full width */
 }
 
 nav a {
@@ -105,6 +106,7 @@ nav a:hover {
     color: #ff1a1a;
     text-decoration: underline;
 }
+
 
 /* Headings */
 h1, h2, h3 {
