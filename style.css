@@ -173,8 +173,8 @@ footer {
     font-size: 0.9em;
 }
 
-td .right-aligned-list {
-    text-align: right;  /* Align text to the right */
+td .left-aligned-list {
+    text-align: left;  /* Align text to the left */
     list-style-position: inside; /* Keep numbers close to text */
     padding-right: 10px; /* Adjust spacing */
     margin: 0; /* Remove any extra spacing */
