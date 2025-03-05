@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const submenu = document.getElementById("submenu");
     const otherMenuItems = document.querySelectorAll("nav a:not(#learning-plan)");
 
-    // Show the submenu and load the page
+    // Show the submenu when Learning Plan is clicked
     learningPlan.addEventListener("click", function (event) {
         event.preventDefault();  // Prevent default link behavior (navigation)
 
@@ -67,9 +67,6 @@ document.addEventListener("DOMContentLoaded", function () {
         submenu.style.top = (rect.bottom + 5) + "px"; // Position below the link with a slight gap
         submenu.style.left = rect.left + "px"; // Align with the left of the link
         submenu.style.display = "block"; // Show the submenu
-
-        // Load the page (learning-plan.html)
-        window.location.href = "learning-plan.html";
     });
 
     // Hide submenu when clicking any other menu option
@@ -79,4 +76,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
-
