@@ -192,9 +192,9 @@ nav a.active {
 }
 
 /* Submenu Styling */
-/* Ensure submenu is hidden by default */
+/* Hide submenu by default */
 .submenu {
-    display: none; /* Hide submenu initially */
+    display: none;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -202,8 +202,12 @@ nav a.active {
     background-color: #333;
     border-radius: 5px;
     width: 150px;
+    z-index: 1000;
+    top: 100%;  /* Make sure it appears just below the Learning Plan link */
+    left: 0;
 }
 
+/* Style for submenu items */
 .submenu li {
     padding: 10px;
     border-bottom: 1px solid #444;
@@ -227,12 +231,9 @@ nav a.active {
     color: #ffffff;
 }
 
-/* Ensure submenu is positioned properly */
-#submenu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 1000;
+/* Ensure submenu appears under the Learning Plan menu */
+#learning-plan-wrapper {
+    position: relative;  /* Important: make sure the submenu aligns with this wrapper */
 }
 
 /* Add a class for showing the submenu */
