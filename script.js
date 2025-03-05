@@ -69,6 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Toggle the submenu when clicking the Learning Plan tab
     learningPlan.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent the default behavior of the link (page navigation)
+
         console.log("Learning Plan clicked!"); // Debugging step
 
         // Check if the submenu is already visible
@@ -91,3 +93,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
