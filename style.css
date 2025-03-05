@@ -84,30 +84,6 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation Bar */
-nav {
-    background-color: #333;
-    padding: 10px;
-    text-align: left; /* Align the content to the left */
-    margin-bottom: 20px;
-    border-radius: 5px;
-    width: 100%; /* Make sure it spans the full width */
-}
-
-nav a {
-    color: #ff4d4d;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-    font-family: 'Orbitron', sans-serif;
-}
-
-nav a:hover {
-    color: #ff1a1a;
-    text-decoration: underline;
-}
-
-
 /* Headings */
 h1, h2, h3 {
     font-family: 'Orbitron', sans-serif;
@@ -183,10 +159,32 @@ td .left-aligned-list {
     display: block; /* Ensure proper alignment */
 }
 
-/* Highlight Active Page in Navigation */
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: left; /* Align the content to the left */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+nav a {
+    color: #ff4d4d;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+}
+
+nav a:hover {
+    color: #ff1a1a;
+    text-decoration: underline;
+}
+
 nav a.active {
-    color: #ffffff; /* Change text color */
-    background-color: #ff4d4d; /* Highlight background */
+    color: #ffffff;
+    background-color: #ff4d4d;
     padding: 5px 10px;
     border-radius: 3px;
 }
@@ -200,18 +198,21 @@ nav a.active {
     position: absolute;
     background-color: #333;
     border-radius: 5px;
-    width: 150px;
+    top: 45px; /* Position it directly below the menu */
+    left: 0; /* Align it with the left edge of the nav */
     z-index: 1000;
+    width: 100%; /* Make submenu span the full width */
+    display: flex; /* Horizontal layout */
+    justify-content: center; /* Center items horizontally */
 }
 
-/* Style for submenu items */
 .submenu li {
-    padding: 10px;
-    border-bottom: 1px solid #444;
+    padding: 10px 20px;
+    border-right: 1px solid #444;
 }
 
 .submenu li:last-child {
-    border-bottom: none;
+    border-right: none;
 }
 
 .submenu a {
@@ -228,16 +229,4 @@ nav a.active {
     color: #ffffff;
 }
 
-/* Position the submenu directly below the Learning Plan tab */
-#learning-plan-wrapper {
-    position: relative;  /* Important */
-}
-
-/* Active page link styling in the navigation */
-nav a.active {
-    color: #ffffff; /* Active page text color */
-    background-color: #ff4d4d;
-    padding: 5px 10px;
-    border-radius: 3px;
-}
 

@@ -58,24 +58,22 @@ document.addEventListener("DOMContentLoaded", function () {
     const submenu = document.getElementById("submenu");
     const otherMenuItems = document.querySelectorAll("nav a:not(#learning-plan)");
 
-    // Show the submenu and load the page
+    // Show the submenu and navigate to the page when clicking "Learning Plan"
     learningPlan.addEventListener("click", function (event) {
         event.preventDefault();  // Prevent default link behavior (navigation)
 
         // Show the submenu below the Learning Plan tab
-        const rect = learningPlan.getBoundingClientRect();
-        submenu.style.top = rect.bottom + "px"; // Position below the link
-        submenu.style.left = rect.left + "px"; // Align with the left of the link
-        submenu.style.display = "block"; // Show the submenu
+        submenu.style.display = "flex"; // Make submenu horizontal
 
-        // Load the page (learning-plan.html)
+        // Load the learning-plan.html page (same as default behavior)
         window.location.href = "learning-plan.html";
     });
 
-    // Hide submenu when clicking any other menu option
+    // Hide the submenu when clicking any other menu option
     otherMenuItems.forEach(function (item) {
         item.addEventListener("click", function () {
             submenu.style.display = "none"; // Hide the submenu when other menu items are clicked
         });
     });
 });
+
