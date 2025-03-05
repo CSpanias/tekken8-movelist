@@ -83,6 +83,11 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             submenu.style.display = "none"; // Hide the submenu if it's already visible
         }
+
+        // Navigate to learning-plan.html after the submenu appears
+        setTimeout(function() {
+            window.location.href = "learning-plan.html"; // Navigate to the page
+        }, 300); // Delay to ensure submenu is shown before navigation
     });
 
     // Hide submenu when clicking outside
@@ -93,4 +98,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
