@@ -67,12 +67,15 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Learning Plan found:", learningPlan);
     console.log("Submenu found:", submenu);
 
-    // Ensure the submenu is initially hidden using CSS class
+    // Ensure the submenu is initially hidden
     submenu.style.display = "none"; // Ensure submenu is hidden on load
 
     // Toggle submenu visibility when clicking the Learning Plan tab
     learningPlan.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent the link navigation
+        // Only prevent default if submenu is toggling
+        if (submenu.style.display === "none") {
+            event.preventDefault(); // Prevent navigation if we're showing the submenu
+        }
 
         // Toggle display of submenu
         if (submenu.style.display === "none") {
@@ -92,4 +95,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
