@@ -64,34 +64,25 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    console.log("Learning Plan found:", learningPlan);
+    console.log("Learning Plan found:", learningPlan); // Debugging step
     console.log("Submenu found:", submenu);
 
-    // Ensure the submenu is initially hidden
-    submenu.style.display = "none"; // Ensure submenu is hidden on load
-
-    // Toggle submenu visibility when clicking the Learning Plan tab
+    // Make sure the submenu toggles when clicking the Learning Plan tab
     learningPlan.addEventListener("click", function (event) {
-        // Only prevent default if submenu is toggling
-        if (submenu.style.display === "none") {
-            event.preventDefault(); // Prevent navigation if we're showing the submenu
-        }
+        console.log("Learning Plan clicked!"); // Debugging step
 
-        // Toggle display of submenu
-        if (submenu.style.display === "none") {
-            submenu.style.display = "block"; // Show submenu
-            console.log("Submenu shown");
-        } else {
-            submenu.style.display = "none"; // Hide submenu
-            console.log("Submenu hidden");
+        // Prevent the submenu from opening if we're navigating to the page
+        if (window.location.pathname !== "/learning-plan.html") {
+            // Toggle submenu visibility only if we're not on the learning-plan.html page
+            submenu.style.display = submenu.style.display === "block" ? "none" : "block";
         }
     });
 
     // Hide submenu when clicking outside
     document.addEventListener("click", function (event) {
         if (!learningPlan.contains(event.target) && !submenu.contains(event.target)) {
-            console.log("Clicked outside, hiding submenu.");
-            submenu.style.display = "none"; // Hide submenu
+            console.log("Clicked outside, hiding submenu."); // Debugging step
+            submenu.style.display = "none";
         }
     });
 });
