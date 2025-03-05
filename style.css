@@ -116,11 +116,120 @@ tr:hover {
     font-weight: bold;
 }
 
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a1a1a; /* Dark background */
+    color: #ffffff; /* White text */
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333; /* Dark gray */
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+nav a {
+    color: #ff4d4d; /* Red accent */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif; /* Tekken-style font */
+}
+
+nav a:hover {
+    color: #ff1a1a; /* Brighter red on hover */
+    text-decoration: underline;
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif; /* Tekken-style font */
+    color: #ff4d4d; /* Red accent */
+    text-transform: uppercase; /* Uppercase headings */
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+/* Lists */
+ul {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+ul li::before {
+    content: "→"; /* Right arrow as bullet */
+    color: #ff4d4d; /* Red accent */
+    position: absolute;
+    left: 0;
+}
+
+/* Code Styling */
+code {
+    background-color: #333; /* Dark gray */
+    color: #ff4d4d; /* Red accent */
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
 /* Footer */
 footer {
     margin-top: 40px;
-    text-align: left;
-    color: #888;
+    text-align: center;
+    color: #888; /* Light gray */
     font-size: 0.9em;
-    width: 100%;
+}
+
+/* Accent Colors */
+.red-text {
+    color: #ff4d4d; /* Red accent */
+}
+
+.green-text {
+    color: #00ff00; /* Green accent */
+}
+
+/* Minimalist Container */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #262626; /* Slightly lighter dark background */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Subtle shadow */
 }
