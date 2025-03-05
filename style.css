@@ -205,6 +205,7 @@ nav a.active {
     flex-direction: row; /* Display submenu items horizontally */
     gap: 10px; /* Add spacing between submenu items */
     padding: 10px; /* Add padding for better appearance */
+    border: 2px solid red; /* Debugging: Add a border to confirm the element is targeted */
 }
 
 /* Show submenu on hover */
