@@ -202,8 +202,6 @@ nav a.active {
     border-radius: 5px;
     width: 150px;
     z-index: 1000;
-    top: 100%;  /* Position it below the "Learning Plan" link */
-    left: 0;
 }
 
 /* Style for submenu items */
@@ -232,14 +230,14 @@ nav a.active {
 
 /* Ensure submenu is positioned properly */
 #learning-plan-wrapper {
-    position: relative;  /* Important */
+    position: relative;  /* Important for positioning the submenu */
 }
 
-/* Add a class for showing the submenu */
-.submenu.hidden {
-    display: none;
+/* Active page link styling in the navigation */
+nav a.active {
+    color: #ffffff; /* Active page text color */
+    background-color: #ff4d4d;
+    padding: 5px 10px;
+    border-radius: 3px;
 }
 
-.submenu.visible {
-    display: block;
-}
