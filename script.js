@@ -54,19 +54,30 @@ function sortTable(n) {
 
 // Toggling the submenu when clicking the Learning Plan tab
 document.addEventListener("DOMContentLoaded", function () {
+    console.log("Script loaded!"); // Debugging step 1
+
     const learningPlan = document.getElementById("learning-plan");
     const submenu = document.getElementById("submenu");
 
+    if (!learningPlan || !submenu) {
+        console.error("Learning Plan or submenu not found!");
+        return;
+    }
+
+    console.log("Learning Plan found:", learningPlan); // Debugging step 2
+
     learningPlan.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevents navigation
+        event.preventDefault(); // Stops link navigation
+        console.log("Learning Plan clicked!"); // Debugging step 3
+
         submenu.style.display = submenu.style.display === "block" ? "none" : "block";
     });
 
     // Hide submenu when clicking outside
     document.addEventListener("click", function (event) {
         if (!learningPlan.contains(event.target) && !submenu.contains(event.target)) {
+            console.log("Clicked outside, hiding submenu."); // Debugging step 4
             submenu.style.display = "none";
         }
     });
 });
-
