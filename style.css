@@ -228,9 +228,9 @@ nav a.active {
     color: #ffffff;
 }
 
-/* Ensure submenu is positioned properly */
+/* Position the submenu directly below the Learning Plan tab */
 #learning-plan-wrapper {
-    position: relative;  /* Important for positioning the submenu */
+    position: relative;  /* Important */
 }
 
 /* Active page link styling in the navigation */

@@ -54,48 +54,28 @@ function sortTable(n) {
 
 // Submenu
 document.addEventListener("DOMContentLoaded", function () {
-    console.log("Script loaded!"); // Debugging step
-
     const learningPlan = document.getElementById("learning-plan");
     const submenu = document.getElementById("submenu");
+    const otherMenuItems = document.querySelectorAll("nav a:not(#learning-plan)");
 
-    if (!learningPlan || !submenu) {
-        console.error("Learning Plan or submenu not found!");
-        return;
-    }
-
-    console.log("Learning Plan found:", learningPlan); // Debugging step
-    console.log("Submenu found:", submenu);
-
-    // Toggle the submenu when clicking the Learning Plan tab
+    // Show the submenu and load the page
     learningPlan.addEventListener("click", function (event) {
-        // Prevent the default behavior of the link (page navigation)
-        event.preventDefault(); 
+        event.preventDefault();  // Prevent default link behavior (navigation)
 
-        console.log("Learning Plan clicked!"); // Debugging step
+        // Show the submenu below the Learning Plan tab
+        const rect = learningPlan.getBoundingClientRect();
+        submenu.style.top = rect.bottom + "px"; // Position below the link
+        submenu.style.left = rect.left + "px"; // Align with the left of the link
+        submenu.style.display = "block"; // Show the submenu
 
-        // Check if the submenu is already visible
-        if (submenu.style.display !== "block") {
-            // Position the submenu directly below the Learning Plan tab
-            const rect = learningPlan.getBoundingClientRect();
-            submenu.style.top = rect.bottom + "px"; // Position below the link
-            submenu.style.left = rect.left + "px"; // Align with the left of the link
-            submenu.style.display = "block"; // Show the submenu
-        } else {
-            submenu.style.display = "none"; // Hide the submenu if it's already visible
-        }
-
-        // Delay the navigation to ensure the submenu is shown
-        setTimeout(function() {
-            window.location.href = "learning-plan.html"; // Navigate to the page
-        }, 100); // Delay of 100ms, ensuring the submenu stays visible for a brief moment
+        // Load the page (learning-plan.html)
+        window.location.href = "learning-plan.html";
     });
 
-    // Hide submenu when clicking outside
-    document.addEventListener("click", function (event) {
-        if (!learningPlan.contains(event.target) && !submenu.contains(event.target)) {
-            console.log("Clicked outside, hiding submenu."); // Debugging step
-            submenu.style.display = "none";
-        }
+    // Hide submenu when clicking any other menu option
+    otherMenuItems.forEach(function (item) {
+        item.addEventListener("click", function () {
+            submenu.style.display = "none"; // Hide the submenu when other menu items are clicked
+        });
     });
 });
