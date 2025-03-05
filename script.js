@@ -65,6 +65,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     console.log("Learning Plan found:", learningPlan); // Debugging step 2
+    console.log("Submenu found:", submenu);
+
 
     learningPlan.addEventListener("click", function (event) {
         event.preventDefault(); // Stops link navigation
