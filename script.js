@@ -52,7 +52,7 @@ function sortTable(n) {
     table.setAttribute("data-sort", ascending ? "asc" : "desc");
 }
 
-// Toggling the submenu when clicking the Learning Plan tab
+/* // Toggling the submenu when clicking the Learning Plan tab
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Script loaded!"); // Debugging step 1
 
@@ -82,4 +82,4 @@ document.addEventListener("DOMContentLoaded", function () {
             submenu.style.display = "none";
         }
     });
-});
+}); */
