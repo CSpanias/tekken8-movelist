@@ -78,7 +78,12 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Navigate to learning-plan.html when a submenu item is clicked
+    // Navigate to learning-plan.html when the "Learning Plan" link is clicked again
+    learningPlan.addEventListener("dblclick", function (event) {
+        window.location.href = "learning-plan.html"; // Navigate to learning-plan.html
+    });
+
+    // Navigate to submenu items when clicked
     submenu.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", function (event) {
             event.preventDefault(); // Prevent default link behavior
