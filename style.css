@@ -198,21 +198,20 @@ nav a.active {
     position: absolute;
     background-color: #333;
     border-radius: 5px;
-    top: 45px; /* Position it directly below the menu */
-    left: 0; /* Align it with the left edge of the nav */
+    width: 150px;
     z-index: 1000;
-    width: 100%; /* Make submenu span the full width */
-    display: flex; /* Horizontal layout */
-    justify-content: center; /* Center items horizontally */
+    top: 100%; /* Ensures it's placed below the menu item */
+    left: 0; /* Align it to the left of the menu item */
 }
 
+/* Additional adjustments to submenu items */
 .submenu li {
-    padding: 10px 20px;
-    border-right: 1px solid #444;
+    padding: 10px;
+    border-bottom: 1px solid #444;
 }
 
 .submenu li:last-child {
-    border-right: none;
+    border-bottom: none;
 }
 
 .submenu a {
@@ -229,4 +228,13 @@ nav a.active {
     color: #ffffff;
 }
 
+/* Position the submenu directly below the Learning Plan tab */
+#learning-plan-wrapper {
+    position: relative;  /* Important */
+}
+
+/* Ensures that the submenu doesn't overlap the navigation */
+#submenu {
+    margin-top: 5px; /* Adds a little space between the menu and the submenu */
+}
 

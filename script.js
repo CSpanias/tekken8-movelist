@@ -58,18 +58,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const submenu = document.getElementById("submenu");
     const otherMenuItems = document.querySelectorAll("nav a:not(#learning-plan)");
 
-    // Show the submenu and navigate to the page when clicking "Learning Plan"
+    // Show the submenu and load the page
     learningPlan.addEventListener("click", function (event) {
         event.preventDefault();  // Prevent default link behavior (navigation)
 
         // Show the submenu below the Learning Plan tab
-        submenu.style.display = "flex"; // Make submenu horizontal
+        const rect = learningPlan.getBoundingClientRect();
+        submenu.style.top = (rect.bottom + 5) + "px"; // Position below the link with a slight gap
+        submenu.style.left = rect.left + "px"; // Align with the left of the link
+        submenu.style.display = "block"; // Show the submenu
 
-        // Load the learning-plan.html page (same as default behavior)
+        // Load the page (learning-plan.html)
         window.location.href = "learning-plan.html";
     });
 
-    // Hide the submenu when clicking any other menu option
+    // Hide submenu when clicking any other menu option
     otherMenuItems.forEach(function (item) {
         item.addEventListener("click", function () {
             submenu.style.display = "none"; // Hide the submenu when other menu items are clicked
