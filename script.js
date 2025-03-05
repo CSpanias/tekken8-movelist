@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Hide submenu when clicking outside of it
     document.addEventListener("click", function (event) {
-        if (!learningPlan.contains(event.target) {
+        if (!learningPlan.contains(event.target)) {
             submenu.style.display = "none"; // Hide the submenu
         }
     });
