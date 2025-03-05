@@ -71,12 +71,20 @@ document.addEventListener("DOMContentLoaded", function () {
     learningPlan.addEventListener("click", function (event) {
         console.log("Learning Plan clicked!"); // Debugging step 3
 
+        // Log the submenu display property before toggling
+        console.log("Before toggle, submenu display: ", submenu.style.display);
+
         // Toggle submenu display
         if (submenu.style.display === "block") {
             submenu.style.display = "none"; // Hide submenu if it's visible
+            console.log("Submenu hidden");
         } else {
             submenu.style.display = "block"; // Show submenu if it's hidden
+            console.log("Submenu shown");
         }
+
+        // Log the submenu display property after toggling
+        console.log("After toggle, submenu display: ", submenu.style.display);
     });
 
     // Hide submenu when clicking outside
@@ -87,4 +95,5 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 
