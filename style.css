@@ -172,3 +172,9 @@ footer {
     color: #888;
     font-size: 0.9em;
 }
+
+.right-aligned-list {
+    text-align: right;  /* Aligns text to the right */
+    list-style-position: inside; /* Ensures numbers align with text */
+    padding-right: 10px; /* Optional: Adjust spacing for better alignment */
+}
