@@ -1,6 +1,10 @@
 // Display Moves in Table
 function displayMoves(moves, tableBodyId) {
     let tbody = document.getElementById(tableBodyId);
+    if (!tbody) {
+        console.error("Table body not found:", tableBodyId);
+        return;
+    }
     tbody.innerHTML = ""; // Clear table before inserting
 
     moves.forEach(move => {
@@ -58,12 +62,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const submenu = document.getElementById("submenu");
     const otherMenuItems = document.querySelectorAll("nav a:not(#learning-plan)");
 
-    // Show the submenu and navigate to learning-plan.html
+    // Show the submenu when Learning Plan is clicked
     learningPlan.addEventListener("click", function (event) {
         event.preventDefault(); // Prevent default link behavior (navigation)
 
         // Toggle submenu visibility
-        if (submenu.style.display === "block") {
+        if (submenu.style.display === "flex") {
             submenu.style.display = "none"; // Hide if already visible
         } else {
             // Show the submenu below the Learning Plan tab
@@ -72,16 +76,11 @@ document.addEventListener("DOMContentLoaded", function () {
             submenu.style.left = rect.left + "px"; // Align with the left of the link
             submenu.style.display = "flex"; // Show the submenu (flex for horizontal layout)
         }
-
-        // Navigate to learning-plan.html after a short delay
-        setTimeout(() => {
-            window.location.href = "learning-plan.html";
-        }, 100); // 100ms delay to ensure the submenu is visible before navigation
     });
 
     // Hide submenu when clicking outside of it
     document.addEventListener("click", function (event) {
-        if (!learningPlan.contains(event.target)) {
+        if (!learningPlan.contains(event.target) && !submenu.contains(event.target)) {
             submenu.style.display = "none"; // Hide the submenu
         }
     });
