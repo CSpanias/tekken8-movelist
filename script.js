@@ -72,11 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Toggle submenu visibility when clicking the Learning Plan tab
     learningPlan.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent the default link behavior
-
-        console.log("Learning Plan clicked!"); // Debugging step 3
-
-        // Toggle the 'visible' and 'hidden' classes
+        // Prevent only submenu toggling, not the link navigation
         if (submenu.classList.contains("hidden")) {
             submenu.classList.remove("hidden");
             submenu.classList.add("visible");
