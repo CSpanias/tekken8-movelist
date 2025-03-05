@@ -39,11 +39,12 @@ tr:hover {
 .note {
     text-align: center;  /* Center the text */
     margin: 20px auto;   /* Centering with spacing */
-    max-width: 800px;    /* Limit width for readability */
+    width: fit-content;  /* Match table width dynamically */
     background-color: #333; /* Darker background to distinguish */
     padding: 10px 15px;
     border-radius: 5px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    font-size: 0.9em; /* Slightly smaller font */
 }
 
 .note a {
