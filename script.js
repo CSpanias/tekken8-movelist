@@ -75,11 +75,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (isSubmenuVisible) {
             event.preventDefault(); // Prevent link navigation if submenu is visible
             console.log("Submenu is visible, preventing navigation."); // Debugging step
-            submenu.style.display = "none";
+            submenu.style.display = "none";  // Hide submenu
             isSubmenuVisible = false;
         } else {
             console.log("Learning Plan clicked, proceeding to navigate."); // Debugging step
-            submenu.style.display = "block";
+            submenu.style.display = "block";  // Show submenu
             isSubmenuVisible = true;
         }
     });
@@ -88,8 +88,9 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("click", function (event) {
         if (!learningPlan.contains(event.target) && !submenu.contains(event.target)) {
             console.log("Clicked outside, hiding submenu."); // Debugging step 4
-            submenu.style.display = "none";
+            submenu.style.display = "none";  // Hide submenu
             isSubmenuVisible = false;
         }
     });
 });
+
