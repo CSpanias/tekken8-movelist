@@ -51,3 +51,21 @@ function sortTable(n) {
     // Toggle sorting order
     table.setAttribute("data-sort", ascending ? "asc" : "desc");
 }
+
+// Toggling the submenu when clicking the Learning Plan tab
+document.addEventListener("DOMContentLoaded", function () {
+    const learningPlan = document.getElementById("learning-plan");
+    const submenu = document.getElementById("submenu");
+
+    learningPlan.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default link behavior
+        submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+    });
+
+    // Hide submenu when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!learningPlan.contains(event.target) && !submenu.contains(event.target)) {
+            submenu.style.display = "none";
+        }
+    });
+});

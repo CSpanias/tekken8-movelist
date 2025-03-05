@@ -190,3 +190,50 @@ nav a.active {
     padding: 5px 10px;
     border-radius: 3px;
 }
+
+/* Submenu Styling */
+.submenu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    background-color: #333;
+    display: none; /* Hide by default */
+    border-radius: 5px;
+    width: 150px;
+}
+
+.submenu li {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.submenu li:last-child {
+    border-bottom: none;
+}
+
+.submenu a {
+    color: #ff4d4d;
+    text-decoration: none;
+    display: block;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    padding: 10px;
+}
+
+.submenu a:hover {
+    background-color: #ff1a1a;
+    color: #ffffff;
+}
+
+/* Positioning the submenu below the Learning Plan tab */
+#learning-plan {
+    position: relative;
+    cursor: pointer;
+}
+
+#submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
