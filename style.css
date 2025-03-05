@@ -180,3 +180,13 @@ td .left-aligned-list {
     margin: 0; /* Remove any extra spacing */
     display: block; /* Ensure proper alignment */
 }
+
+#techniques-table {
+    width: auto;
+    table-layout: auto;
+    border-collapse: collapse;
+    margin: 20px 0; /* Align to the left by removing auto centering */
+    background-color: #262626;
+    color: #ffffff;
+}
+
