@@ -58,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const submenu = document.getElementById("submenu");
 
     learningPlan.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent default link behavior
+        event.preventDefault(); // Prevents navigation
         submenu.style.display = submenu.style.display === "block" ? "none" : "block";
     });
 
@@ -69,3 +69,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
