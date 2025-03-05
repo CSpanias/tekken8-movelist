@@ -78,6 +78,14 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    // Navigate to learning-plan.html when a submenu item is clicked
+    submenu.querySelectorAll("a").forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault(); // Prevent default link behavior
+            window.location.href = link.getAttribute("href"); // Navigate to the link's href
+        });
+    });
+
     // Hide submenu when clicking outside of it
     document.addEventListener("click", function (event) {
         if (!learningPlan.contains(event.target) && !submenu.contains(event.target)) {
