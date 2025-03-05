@@ -1,9 +1,9 @@
 /* General Table Styling */
-table, #movelist, #punishments-table, #rank-points {
+table, #movelist, #punishments-table, #rank-points, #techniques-table {
     width: auto;
     table-layout: auto;
     border-collapse: collapse;
-    margin: 20px auto; /* Center tables */
+    margin: 20px 0; /* left-aligned tables */
     background-color: #262626;
     color: #ffffff;
 }
@@ -181,15 +181,6 @@ td .left-aligned-list {
     padding-right: 10px; /* Adjust spacing */
     margin: 0; /* Remove any extra spacing */
     display: block; /* Ensure proper alignment */
-}
-
-#techniques-table {
-    width: auto;
-    table-layout: auto;
-    border-collapse: collapse;
-    margin: 20px 0; /* Align to the left by removing auto centering */
-    background-color: #262626;
-    color: #ffffff;
 }
 
 /* Highlight Active Page in Navigation */
