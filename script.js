@@ -52,7 +52,7 @@ function sortTable(n) {
     table.setAttribute("data-sort", ascending ? "asc" : "desc");
 }
 
-/* // Toggling the submenu when clicking the Learning Plan tab
+// Toggling the submenu when clicking the Learning Plan tab
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Script loaded!"); // Debugging step 1
 
@@ -67,12 +67,21 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Learning Plan found:", learningPlan); // Debugging step 2
     console.log("Submenu found:", submenu);
 
+    // Track submenu state
+    let isSubmenuVisible = false;
 
     learningPlan.addEventListener("click", function (event) {
-        event.preventDefault(); // Stops link navigation
-        console.log("Learning Plan clicked!"); // Debugging step 3
-
-        submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+        // If the submenu is visible, prevent navigation and toggle the submenu
+        if (isSubmenuVisible) {
+            event.preventDefault(); // Prevent link navigation if submenu is visible
+            console.log("Submenu is visible, preventing navigation."); // Debugging step
+            submenu.style.display = "none";
+            isSubmenuVisible = false;
+        } else {
+            console.log("Learning Plan clicked, proceeding to navigate."); // Debugging step
+            submenu.style.display = "block";
+            isSubmenuVisible = true;
+        }
     });
 
     // Hide submenu when clicking outside
@@ -80,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!learningPlan.contains(event.target) && !submenu.contains(event.target)) {
             console.log("Clicked outside, hiding submenu."); // Debugging step 4
             submenu.style.display = "none";
+            isSubmenuVisible = false;
         }
     });
-}); */
+});
