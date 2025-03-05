@@ -202,7 +202,8 @@ nav a.active {
     width: auto; /* Adjust width to fit content */
     z-index: 1000;
     top: 100%; /* Position below the parent link */
-    left: 0; /* Align with the left edge of the parent link */
+    left: 50%; /* Center the submenu relative to the parent link */
+    transform: translateX(-50%); /* Adjust for centering */
     flex-direction: row; /* Display submenu items horizontally */
     gap: 10px; /* Add spacing between submenu items */
     padding: 10px; /* Add padding for better appearance */
