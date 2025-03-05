@@ -190,6 +190,12 @@ nav a.active {
     border-radius: 3px;
 }
 
+/* Submenu Wrapper */
+.submenu-wrapper {
+    position: relative; /* Required for absolute positioning of submenu */
+    display: inline-block; /* Ensure the wrapper only takes up as much space as its content */
+}
+
 /* Submenu Styling */
 .submenu {
     display: none; /* Hidden by default */
@@ -211,8 +217,7 @@ nav a.active {
 }
 
 /* Show submenu on hover */
-#learning-plan:hover + .submenu,
-.submenu:hover {
+.submenu-wrapper:hover .submenu {
     display: flex; /* Show the submenu */
 }
 
