@@ -67,14 +67,19 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Learning Plan found:", learningPlan); // Debugging step
     console.log("Submenu found:", submenu);
 
-    // Make sure the submenu toggles when clicking the Learning Plan tab
+    // Toggle the submenu when clicking the Learning Plan tab
     learningPlan.addEventListener("click", function (event) {
         console.log("Learning Plan clicked!"); // Debugging step
 
-        // Prevent the submenu from opening if we're navigating to the page
-        if (window.location.pathname !== "/learning-plan.html") {
-            // Toggle submenu visibility only if we're not on the learning-plan.html page
-            submenu.style.display = submenu.style.display === "block" ? "none" : "block";
+        // Check if the submenu is already visible
+        if (submenu.style.display !== "block") {
+            // Position the submenu directly below the Learning Plan tab
+            const rect = learningPlan.getBoundingClientRect();
+            submenu.style.top = rect.bottom + "px"; // Position below the link
+            submenu.style.left = rect.left + "px"; // Align with the left of the link
+            submenu.style.display = "block"; // Show the submenu
+        } else {
+            submenu.style.display = "none"; // Hide the submenu if it's already visible
         }
     });
 
