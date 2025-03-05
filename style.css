@@ -216,6 +216,11 @@ nav a.active {
     border: 2px solid red; /* Debugging: Add a border to confirm the element is targeted */
 }
 
+/* Show submenu on hover */
+.submenu-wrapper:hover .submenu {
+    display: flex; /* Show the submenu */
+}
+
 /* Submenu items */
 .submenu li {
     padding: 0; /* Remove padding from individual items */
