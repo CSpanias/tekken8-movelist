@@ -52,7 +52,7 @@ function sortTable(n) {
     table.setAttribute("data-sort", ascending ? "asc" : "desc");
 }
 
-// Toggling the submenu when clicking the Learning Plan tab
+// Submenu
 document.addEventListener("DOMContentLoaded", function () {
     console.log("Script loaded!"); // Debugging step
 
@@ -69,7 +69,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Toggle the submenu when clicking the Learning Plan tab
     learningPlan.addEventListener("click", function (event) {
-        event.preventDefault(); // Prevent the default behavior of the link (page navigation)
+        // Prevent the default behavior of the link (page navigation)
+        event.preventDefault(); 
 
         console.log("Learning Plan clicked!"); // Debugging step
 
@@ -84,10 +85,10 @@ document.addEventListener("DOMContentLoaded", function () {
             submenu.style.display = "none"; // Hide the submenu if it's already visible
         }
 
-        // Navigate to learning-plan.html after the submenu appears
+        // Delay the navigation to ensure the submenu is shown
         setTimeout(function() {
             window.location.href = "learning-plan.html"; // Navigate to the page
-        }, 300); // Delay to ensure submenu is shown before navigation
+        }, 100); // Delay of 100ms, ensuring the submenu stays visible for a brief moment
     });
 
     // Hide submenu when clicking outside
