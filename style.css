@@ -1,5 +1,5 @@
 /* General Table Styling */
-table, #movelist, #punishments-table, #rank-points, #techniques-table {
+table, #movelist, #punishments-table, #mentalFrameTraps-table, #rank-points, #techniques-table {
     width: auto;
     table-layout: auto;
     border-collapse: collapse;
