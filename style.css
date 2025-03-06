@@ -296,7 +296,7 @@ ol {
 /* Footer */
 footer {
     margin-top: 40px;
-    text-align: center;
+    text-align: left;
     color: #888; /* Light gray */
     font-size: 0.9em;
 }

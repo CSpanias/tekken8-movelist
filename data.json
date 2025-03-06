@@ -295,6 +295,39 @@
             "onBlock": "-18",
             "hitLevel": "mid",
             "Feature": "Homing"
+        },
+        {
+            "name": "Flash Punch",
+            "input": "1,1,2",
+            "startup": 10,
+            "damage": 23,
+            "onHit": "+20",
+            "onBlock": "-17",
+            "hitLevel": "high",
+            "GoodFor": "Punish",
+            "Feature": "Knockdown"
+        },
+        {
+            "name": "Back Fist",
+            "input": "1,2,2",
+            "startup": 10,
+            "damage": 25,
+            "onHit": "+4",
+            "onBlock": "-12",
+            "hitLevel": "high",
+            "GoodFor": "Punish",
+            "Feature": "Combo extender"
+        },
+        {
+            "name": "Wind God Fist",
+            "input": "f,n,df,2",
+            "startup": 13,
+            "damage": 23,
+            "onHit": "+39",
+            "onBlock": "-10",
+            "hitLevel": "high",
+            "GoodFor": "Punish",
+            "Feature": "Launcher"
         }
     ]
 }
