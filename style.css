@@ -339,7 +339,7 @@ footer {
 .rank-yellow { color: #FFD700; } /* Gold */
 .rank-orange { color: orange; }
 .rank-red { color: red; }
-.rank-purple { color: purple; }
+.rank-purple { color: #9370DB; } /* Medium Purple */
 .rank-blue { color: #4169E1; } /* Royal Blue */
 .rank-tekken-king { color: #DAA520; } /* Dark gold */
 
