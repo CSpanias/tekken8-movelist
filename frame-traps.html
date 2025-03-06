@@ -20,12 +20,40 @@
         <a href="theory.html">Theory</a>
     </nav>
 
-    <p>Work In Progress</p>
+    <table id="mentalFrameTraps-table">
+        <thead>
+            <tr>
+                <th onclick="sortTable(0)">Move Name</th>
+                <th onclick="sortTable(1)">Input</th>
+                <th onclick="sortTable(2)">Damage</th>
+                <th onclick="sortTable(3)">Startup</th>
+                <th onclick="sortTable(4)">Hit Level</th>
+                <th onclick="sortTable(5)">On Block</th>
+                <th onclick="sortTable(6)">On Hit</th>
+                <th onclick="sortTable(7)">Feature</th>
+            </tr>
+        </thead>
+        <tbody id="mentalFrameTraps-body">
+            <!-- Data will be inserted here -->
+        </tbody>
+    </table>
 
     <footer>
         <p>Developed by x7331 | 2025</p>
     </footer>
 
 <script src="script.js"></script>
+
+<script>
+    // Load and display mental frame trap moves
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("data.json")
+            .then(response => response.json())
+            .then(data => {
+                window.movelist = data.mentalFrameTraps; // Store moves globally
+                displayMoves(data.mentalFrameTraps, "mentalFrameTraps-body");
+            });
+    });
+</script>
 </body>
 </html>
