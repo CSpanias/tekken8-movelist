@@ -324,7 +324,7 @@ footer {
 
 /* General Rank-goals table */
 #rank-goals, #greenYellowOrangeGoals {
-    width: 100%;
+    width: auto;
     border-collapse: collapse;
     text-align: center;
 }
