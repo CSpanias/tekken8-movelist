@@ -329,7 +329,7 @@ footer {
     text-align: center;
 }
 
-#rank-goals th, #rank-goals td {
+#rank-goals th, #rank-goals td, #greenYellowOrangeGoals th, #greenYellowOrangeGoals td {
     padding: 10px;
     border: 1px solid #ddd;
     vertical-align: top;
