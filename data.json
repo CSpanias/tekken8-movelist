@@ -341,5 +341,27 @@
             "hitLevel": "h,h,h | h,h,l | h,h,m | h,h,l,m",
             "Feature": ""
         }
+    ],
+    "azucena": [
+        {
+            "name": "Luna Llena",
+            "input": "f,F,3",
+            "startup": 15,
+            "damage": 9,
+            "onHit": "+35",
+            "onBlock": "-14",
+            "hitLevel": "high",
+            "Feature": "Launcher"
+        },
+        {
+            "name": "Groovy Punalda",
+            "input": "3,3",
+            "startup": 24,
+            "damage": 34,
+            "onHit": "+21",
+            "onBlock": "8",
+            "hitLevel": "mid,high",
+            "Feature": ""
+        }
     ]
 }
