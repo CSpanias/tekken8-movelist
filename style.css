@@ -340,7 +340,7 @@ footer {
 .rank-orange { color: orange; }
 .rank-red { color: red; }
 .rank-purple { color: purple; }
-.rank-blue { color: blue; }
+.rank-blue { color: #4169E1; } /* Royal Blue */
 .rank-tekken-king { color: #DAA520; } /* Dark gold */
 
 ol {
