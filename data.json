@@ -391,8 +391,19 @@
             "startup": 24,
             "damage": 34,
             "onHit": "+21",
-            "onBlock": "8",
+            "onBlock": "-8",
             "hitLevel": "mid,high",
+            "Feature": "",
+            "Character": "Azucena"
+        },
+        {
+            "name": "Daylight Disk",
+            "input": "uf,3,4",
+            "startup": 21,
+            "damage": 31,
+            "onHit": "+35",
+            "onBlock": "-14",
+            "hitLevel": "high,mid",
             "Feature": "",
             "Character": "Azucena"
         }
