@@ -347,3 +347,58 @@ ol {
     padding-left: 15px;
     text-align: left;
 }
+
+/* Updated Left-aligned list class for proper nesting */
+.left-aligned-list {
+    text-align: left;
+    padding-left: 15px; /* Adjust for indentation */
+    list-style-position: inside; /* Keep numbers close to the text */
+    margin: 0;
+}
+
+.left-aligned-list ul {
+    padding-left: 20px; /* Add padding to nested lists */
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #444;
+    text-align: center;
+}
+
+td .left-aligned-list {
+    text-align: left;
+    padding-right: 10px;
+    margin: 0;
+    display: block;
+}
+
+td {
+    vertical-align: top;
+}
+
+table#greenYellowOrangeGoals td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+table#greenYellowOrangeGoals th {
+    background-color: #ff4d4d;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+table#greenYellowOrangeGoals tr:nth-child(even) {
+    background-color: #333;
+}
+
+table#greenYellowOrangeGoals tr:hover {
+    background-color: #444;
+    transition: background-color 0.3s ease;
+}
