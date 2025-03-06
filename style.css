@@ -321,3 +321,26 @@ footer {
     color: #ff1a1a;
     text-decoration: underline;
 }
+
+#rank-goals {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+#rank-goals th, #rank-goals td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.rank-green { background: linear-gradient(to bottom, #90EE90, #FFD700, #FFA500); } /* Green/Yellow/Orange */
+.rank-red { background-color: #ff4d4d; } /* Red */
+.rank-purple { background-color: #9370DB; } /* Purple */
+.rank-blue { background-color: #1E90FF; } /* Blue */
+.rank-tekken-king { background-color: #FFD700; } /* Gold */
+
+ol {
+    padding-left: 15px;
+    text-align: left;
+}
