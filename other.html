@@ -21,6 +21,8 @@
         <a href="other.html" class="active">Other</a>
     </nav>
 
+    <input type="text" id="searchBox" placeholder="Search by character..." onkeyup="filterMoves()">
+
     <table id="otherChars-table">
         <thead>
             <tr>
@@ -32,6 +34,7 @@
                 <th onclick="sortTable(5)">On Block</th>
                 <th onclick="sortTable(6)">On Hit</th>
                 <th onclick="sortTable(7)">Feature</th>
+                <th onclick="sortTable(8)">Character</th>
             </tr>
         </thead>
         <tbody id="azucena-body">

@@ -18,6 +18,7 @@ function displayMoves(moves, tableBodyId) {
             <td>${move.onBlock || ''}</td>
             <td>${move.onHit || ''}</td>
             <td>${move.Feature || ''}</td>
+            <td>${move.Character || ''}</td> <!-- Display Character -->
         </tr>`;
         tbody.innerHTML += row;
     });
@@ -54,4 +55,13 @@ function sortTable(n) {
 
     // Toggle sorting order
     table.setAttribute("data-sort", ascending ? "asc" : "desc");
+}
+
+// Filter moves by character name
+function filterMoves() {
+    let searchInput = document.getElementById("searchBox").value.toLowerCase();
+    let filteredMoves = window.movelist.filter(move =>
+        move.Character.toLowerCase().includes(searchInput)
+    );
+    displayMoves(filteredMoves, "azucena-body");
 }

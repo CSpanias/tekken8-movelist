@@ -351,7 +351,8 @@
             "onHit": "+35",
             "onBlock": "-14",
             "hitLevel": "high",
-            "Feature": "Launcher"
+            "Feature": "Launcher",
+            "Character": "Azucena"
         },
         {
             "name": "Groovy Punalda",
@@ -361,7 +362,8 @@
             "onHit": "+21",
             "onBlock": "8",
             "hitLevel": "mid,high",
-            "Feature": ""
+            "Feature": "",
+            "Character": "Azucena"
         }
     ]
 }
