@@ -9,7 +9,8 @@
             "onBlock": "-17",
             "hitLevel": "high",
             "GoodFor": "Punish",
-            "Feature": "Knockdown"
+            "Feature": "Knockdown",
+            "Character": "Kazuya"
         },
         {
             "name": "Back Fist",
@@ -20,7 +21,8 @@
             "onBlock": "-12",
             "hitLevel": "high",
             "GoodFor": "Punish",
-            "Feature": "Combo extender"
+            "Feature": "Combo extender",
+            "Character": "Kazuya"
         },
         {
             "name": "Low Kick",
@@ -31,7 +33,8 @@
             "onBlock": "-15",
             "hitLevel": "low",
             "GoodFor": "",
-            "Feature": ""
+            "Feature": "",
+            "Character": "Kazuya"
         },
         {
             "name": "Acute Pain",
@@ -42,7 +45,8 @@
             "onBlock": "-13",
             "hitLevel": "mid,mid",
             "GoodFor": "",
-            "Feature": "Wall Splat"
+            "Feature": "Wall Splat",
+            "Character": "Kazuya"
         },
         {
             "name": "Slaughter Uppercut",
@@ -53,7 +57,8 @@
             "onBlock": "-8",
             "hitLevel": "mid,mid",
             "GoodFor": "",
-            "Feature": "Launcher"
+            "Feature": "Launcher",
+            "Character": "Kazuya"
         },
         {
             "name": "Devil Fist",
@@ -64,7 +69,8 @@
             "onBlock": "-9",
             "hitLevel": "mid",
             "GoodFor": "",
-            "Feature": "Heat engager"
+            "Feature": "Heat engager",
+            "Character": "Kazuya"
         },
         {
             "name": "Devil's Steel Petal",
@@ -75,7 +81,8 @@
             "onBlock": "-9",
             "hitLevel": "high",
             "GoodFor": "",
-            "Feature": ""
+            "Feature": "",
+            "Character": "Kazuya"
         },
         {
             "name": "Flash Tornado",
@@ -86,7 +93,8 @@
             "onBlock": "-5",
             "hitLevel": "high",
             "GoodFor": "",
-            "Feature": "Heat engager, homing"
+            "Feature": "Heat engager, homing",
+            "Character": "Kazuya"
         },
         {
             "name": "Sliding Low Kick",
@@ -97,7 +105,8 @@
             "onBlock": "-12",
             "hitLevel": "low",
             "GoodFor": "",
-            "Feature": ""
+            "Feature": "",
+            "Character": "Kazuya"
         },
         {
             "name": "Stature Smash",
@@ -108,7 +117,8 @@
             "onBlock": "-12",
             "hitLevel": "low",
             "GoodFor": "",
-            "Feature": ""
+            "Feature": "",
+            "Character": "Kazuya"
         },
         {
             "name": "Demonic Catastrophe",
@@ -119,7 +129,8 @@
             "onBlock": "-15",
             "hitLevel": "mid",
             "GoodFor": "",
-            "Feature": "Rage art"
+            "Feature": "Rage art",
+            "Character": "Kazuya"
         },
         {
             "name": "Left Splits Kick",
@@ -130,7 +141,8 @@
             "onBlock": "+3",
             "hitLevel": "mid",
             "GoodFor": "",
-            "Feature": "Launcher"
+            "Feature": "Launcher",
+            "Character": "Kazuya"
         },
         {
             "name": "Oni Stomp",
@@ -141,7 +153,8 @@
             "onBlock": "-12",
             "hitLevel": "low",
             "GoodFor": "Grounded opponent",
-            "Feature": ""
+            "Feature": "",
+            "Character": "Kazuya"
         },
         {
             "name": "Nejiri Uraken",
@@ -152,7 +165,8 @@
             "onBlock": "-14",
             "hitLevel": "low",
             "GoodFor": "",
-            "Feature": ""
+            "Feature": "",
+            "Character": "Kazuya"
         },
         {
             "name": "Glorious Demon God Fist",
@@ -162,8 +176,9 @@
             "onHit": "+11",
             "onBlock": "-9",
             "hitLevel": "high",
-            "GoodFor": "+11oH",
-            "Feature": ""
+            "GoodFor": "",
+            "Feature": "",
+            "Character": "Kazuya"
         },
         {
             "name": "Inferno",
@@ -174,7 +189,8 @@
             "onBlock": "-15",
             "hitLevel": "high, mid",
             "GoodFor": "",
-            "Feature": "Delayed impact"
+            "Feature": "Delayed impact",
+            "Character": "Kazuya"
         },
         {
             "name": "Sokushitsu Goda",
@@ -185,7 +201,8 @@
             "onBlock": "-14",
             "hitLevel": "high",
             "GoodFor": "Punish",
-            "Feature": "Knockdown, wall splat"
+            "Feature": "Knockdown, wall splat",
+            "Character": "Kazuya"
         },
         {
             "name": "Acute Pain",
@@ -196,7 +213,8 @@
             "onBlock": "-13",
             "hitLevel": "high",
             "GoodFor": "Punish",
-            "Feature": "Wall splat"
+            "Feature": "Wall splat",
+            "Character": "Kazuya"
         },
         {
             "name": "Tsunami Kick",
@@ -207,7 +225,8 @@
             "onBlock": "-15",
             "hitLevel": "mid,mid",
             "GoodFor": "Punish",
-            "Feature": "Multi-hit with knockback"
+            "Feature": "Multi-hit with knockback",
+            "Character": "Kazuya"
         },
         {
             "name": "Goutsuiken",
@@ -218,7 +237,8 @@
             "onBlock": "-19",
             "hitLevel": "mid,mid",
             "GoodFor": "Punish",
-            "Feature": "Heat engager"
+            "Feature": "Heat engager",
+            "Character": "Kazuya"
         },
         {
             "name": "Wind God Fist",
@@ -229,7 +249,8 @@
             "onBlock": "-10",
             "hitLevel": "high",
             "GoodFor": "Punish",
-            "Feature": "Launcher"
+            "Feature": "Launcher",
+            "Character": "Kazuya"
         },
         {
             "name": "Abolishing Fist",
@@ -240,7 +261,8 @@
             "onBlock": "-12",
             "hitLevel": "mid",
             "GoodFor": "Punish",
-            "Feature": "Homing"
+            "Feature": "Homing",
+            "Character": "Kazuya"
         },
         {
             "name": "Slaughter Hook",
@@ -251,7 +273,8 @@
             "onBlock": "-8",
             "hitLevel": "mid,high",
             "GoodFor": "Punish",
-            "Feature": "Heat engager"
+            "Feature": "Heat engager",
+            "Character": "Kazuya"
         },
         {
             "name": "Slaughter High Kick",
@@ -262,7 +285,8 @@
             "onBlock": "-11",
             "hitLevel": "mid,high",
             "GoodFor": "Punish",
-            "Feature": "Launcher"
+            "Feature": "Launcher",
+            "Character": "Kazuya"
         }
     ],
     "punishmentMoves": [
@@ -274,7 +298,8 @@
             "onHit": "-4",
             "onBlock": "-15",
             "hitLevel": "mid,mid",
-            "Feature": ""
+            "Feature": "",
+            "Character": "Kazuya"
         },
         {
             "name": "Twin Pistons",
@@ -284,7 +309,8 @@
             "onHit": "+73",
             "onBlock": "-12",
             "hitLevel": "mid,mid",
-            "Feature": "Launcher"
+            "Feature": "Launcher",
+            "Character": "Kazuya"
         },
         {
             "name": "Demon God Fist",
@@ -294,7 +320,8 @@
             "onHit": "+57",
             "onBlock": "-18",
             "hitLevel": "mid",
-            "Feature": "Homing"
+            "Feature": "Homing",
+            "Character": "Kazuya"
         },
         {
             "name": "Flash Punch",
@@ -305,7 +332,8 @@
             "onBlock": "-17",
             "hitLevel": "high",
             "GoodFor": "Punish",
-            "Feature": "Knockdown"
+            "Feature": "Knockdown",
+            "Character": "Kazuya"
         },
         {
             "name": "Back Fist",
@@ -316,7 +344,8 @@
             "onBlock": "-12",
             "hitLevel": "high",
             "GoodFor": "Punish",
-            "Feature": "Combo extender"
+            "Feature": "Combo extender",
+            "Character": "Kazuya"
         },
         {
             "name": "Wind God Fist",
@@ -327,7 +356,8 @@
             "onBlock": "-10",
             "hitLevel": "high",
             "GoodFor": "Punish",
-            "Feature": "Launcher"
+            "Feature": "Launcher",
+            "Character": "Kazuya"
         }
     ],
     "mentalFrameTraps": [
@@ -339,7 +369,8 @@
             "onHit": "-4",
             "onBlock": "-15",
             "hitLevel": "h,h,h | h,h,l | h,h,m | h,h,l,m",
-            "Feature": ""
+            "Feature": "",
+            "Character": "Kazuya"
         }
     ],
     "azucena": [
