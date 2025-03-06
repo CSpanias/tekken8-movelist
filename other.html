@@ -4,7 +4,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kazuya's Movelist</title>
+    <title>Other</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +21,7 @@
         <a href="other.html" class="active">Other</a>
     </nav>
 
-    <table id="otherChars">
+    <table id="otherChars-table">
         <thead>
             <tr>
                 <th onclick="sortTable(0)">Move Name</th>
@@ -50,7 +50,7 @@
             fetch("data.json")
                 .then(response => response.json())
                 .then(data => {
-                    window.movelist = data.azucena; // Store regular moves globally
+                    window.azucena = data.azucena; // Store regular moves globally
                     displayMoves(data.azucena, "movelist-body");
                 });
         });
