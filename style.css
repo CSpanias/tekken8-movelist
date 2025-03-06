@@ -242,3 +242,114 @@ nav a.active {
     background-color: #ff1a1a;
     color: #ffffff;
 }
+
+/* Theory Page Specific Styles */
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff4d4d; /* Red accent */
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff4d4d; /* Red underline */
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff4d4d; /* Red accent */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+ul, ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+
+ul li::before {
+    content: "→"; /* Right arrow as bullet */
+    color: #ff4d4d; /* Red accent */
+    position: absolute;
+    left: -15px;
+}
+
+ol {
+    list-style-type: decimal; /* Numbered list */
+    padding-left: 30px;
+}
+
+/* Tables */
+#techniques-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #262626; /* Dark gray */
+    color: #ffffff; /* White text */
+}
+
+#techniques-table th, #techniques-table td {
+    padding: 12px;
+    border: 1px solid #444; /* Darker borders */
+    text-align: center;
+}
+
+#techniques-table th {
+    background-color: #ff4d4d; /* Red header */
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#techniques-table tr:nth-child(even) {
+    background-color: #333; /* Alternate row color */
+}
+
+#techniques-table tr:hover {
+    background-color: #444; /* Hover effect */
+    transition: background-color 0.3s ease;
+}
+
+/* Notes Section */
+.note {
+    background-color: #333; /* Dark gray */
+    padding: 15px;
+    border-left: 5px solid #ff4d4d; /* Red accent */
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.note p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #ffffff;
+}
+
+.note a {
+    color: #ff4d4d; /* Red accent */
+    text-decoration: none;
+}
+
+.note a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #888; /* Light gray */
+    font-size: 0.9em;
+}
