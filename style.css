@@ -152,20 +152,20 @@ p {
     text-align: left; /* Align left */
 }
 
-/* Remove default bullets */
+/* Remove default bullets from unordered lists */
 ul {
-    list-style-type: none;
-    padding-left: 20px;
+    list-style: none;
+    padding-left: 0; /* Remove unnecessary left padding */
 }
 
-/* Style for first-level list items */
+/* Style for first-level list items (ONLY apply to first-level <ul>) */
 ul > li {
     position: relative;
-    padding-left: 25px; /* Space for arrow */
-    margin-bottom: 8px;
+    padding-left: 20px; /* Space for arrow */
+    margin-bottom: 6px;
 }
 
-/* Add arrow only to first-level <li> */
+/* Add red arrow only to first-level list items */
 ul > li::before {
     content: "→"; /* Red arrow */
     color: #ff4d4d;
@@ -175,17 +175,29 @@ ul > li::before {
     transform: translateY(-50%); /* Fix vertical alignment */
 }
 
-/* Nested lists should not have extra arrows */
-ul ul {
-    padding-left: 15px; /* Reduce indent for better nesting */
-}
-
-/* Nested list items should NOT have arrows */
+/* Nested lists should not have arrows */
 ul ul > li::before {
     content: none;
 }
 
+/* Fix ordered lists (prevent them from being affected) */
+ol {
+    list-style: decimal; /* Ensure numbers are used */
+    padding-left: 20px;
+}
 
+/* Ensure table lists don't get unexpected arrows */
+table ul {
+    padding-left: 15px;
+}
+
+/* Fix for code blocks inside lists */
+li code {
+    background: #222; /* Slightly dark background */
+    color: #ffcc00; /* Tekken-style yellow */
+    padding: 2px 5px;
+    border-radius: 3px;
+}
 
 /* Code Styling */
 code {
