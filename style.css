@@ -365,3 +365,18 @@ footer {
     margin: 0 auto;
     padding: 20px;
 }
+
+#rank-goals td {
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+#rank-goals th {
+    background-color: #f3f3f3;
+    padding: 15px;
+}
+#rank-goals tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+#rank-goals tr:hover {
+    background-color: #e0e0e0;
+}
