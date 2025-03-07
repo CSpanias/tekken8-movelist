@@ -152,27 +152,39 @@ p {
     text-align: left; /* Align left */
 }
 
-/* Lists */
+/* Remove default bullets */
 ul {
-    list-style-type: none; /* Remove default dots */
-    padding-left: 20px; /* Add left padding to create spacing */
+    list-style-type: none;
+    padding-left: 20px;
 }
 
-ul li {
-    margin-bottom: 10px;
-    padding-left: 20px; /* Space for the arrow */
+/* Style for first-level list items */
+ul > li {
     position: relative;
+    padding-left: 25px; /* Space for arrow */
+    margin-bottom: 8px;
 }
 
-/* Fix for nested lists */
-ul li::before {
-    content: "→"; /* Right arrow */
-    color: #ff4d4d; /* Red accent */
+/* Add arrow only to first-level <li> */
+ul > li::before {
+    content: "→"; /* Red arrow */
+    color: #ff4d4d;
     position: absolute;
-    left: 0px; /* Align correctly */
-    top: 50%; /* Position in the middle of the text */
-    transform: translateY(-50%); /* Center it vertically */
+    left: 0; /* Align properly */
+    top: 50%; /* Center the arrow */
+    transform: translateY(-50%); /* Fix vertical alignment */
 }
+
+/* Nested lists should not have extra arrows */
+ul ul {
+    padding-left: 15px; /* Reduce indent for better nesting */
+}
+
+/* Nested list items should NOT have arrows */
+ul ul > li::before {
+    content: none;
+}
+
 
 
 /* Code Styling */
