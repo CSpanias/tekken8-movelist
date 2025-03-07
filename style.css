@@ -152,51 +152,47 @@ p {
     text-align: left; /* Align left */
 }
 
-/* Remove default bullets from unordered lists */
-ul {
+/* Remove default bullets/numbers but keep structure */
+ul, ol {
     list-style: none;
-    padding-left: 0; /* Remove unnecessary left padding */
+    padding-left: 15px; /* Light indentation for structure */
+    margin: 0;
 }
 
-/* Style for first-level list items (ONLY apply to first-level <ul>) */
-ul > li {
+/* Standard list items */
+li {
+    margin-bottom: 6px; /* Keeps spacing readable */
+    padding-left: 15px; /* Indentation for sublists */
     position: relative;
-    padding-left: 20px; /* Space for arrow */
-    margin-bottom: 6px;
 }
 
-/* Add red arrow only to first-level list items */
+/* Sublist indentation */
+ul ul, ol ol {
+    padding-left: 20px; /* Slightly more indent for nested lists */
+}
+
+/* Minimal custom arrow for main lists (no extra arrows on nested lists) */
 ul > li::before {
-    content: "→"; /* Red arrow */
-    color: #ff4d4d;
+    content: "→"; /* Simple right arrow */
+    color: #ff4d4d; /* Tekken-style red */
     position: absolute;
     left: 0; /* Align properly */
-    top: 50%; /* Center the arrow */
-    transform: translateY(-50%); /* Fix vertical alignment */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
 }
 
-/* Nested lists should not have arrows */
-ul ul > li::before {
-    content: none;
-}
-
-/* Fix ordered lists (prevent them from being affected) */
-ol {
-    list-style: decimal; /* Ensure numbers are used */
-    padding-left: 20px;
-}
-
-/* Ensure table lists don't get unexpected arrows */
-table ul {
-    padding-left: 15px;
-}
-
-/* Fix for code blocks inside lists */
+/* Inline code inside lists styled cleanly */
 li code {
-    background: #222; /* Slightly dark background */
-    color: #ffcc00; /* Tekken-style yellow */
+    background: #222; /* Dark background */
+    color: #ffcc00; /* Tekken yellow */
     padding: 2px 5px;
     border-radius: 3px;
+    font-size: 0.9em;
+}
+
+/* Nested lists won't have extra arrows */
+ul ul li::before {
+    content: none;
 }
 
 /* Code Styling */
