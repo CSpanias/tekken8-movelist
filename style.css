@@ -226,7 +226,7 @@ nav a.active {
 }
 
 /* Theory Page Specific Styles */
-h2 {
+.page-theory h2 {
     font-family: 'Orbitron', sans-serif;
     color: #ff4d4d; /* Red accent */
     text-transform: uppercase;
@@ -236,14 +236,39 @@ h2 {
     padding-bottom: 5px;
 }
 
-h3 {
+.page-theory h3 {
     font-family: 'Orbitron', sans-serif;
     color: #ff4d4d; /* Red accent */
     margin-top: 20px;
     margin-bottom: 10px;
 }
 
-p {
+.page-theory p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    text-align: left; /* Align to the left */
+}
+
+/* Learning Plan Page Specific Styles */
+.page-learning-plan h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff4d4d; /* Red accent */
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff4d4d; /* Red underline */
+    padding-bottom: 5px;
+}
+
+.page-learning-plan h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff4d4d; /* Red accent */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.page-learning-plan p {
     font-size: 1.1em;
     margin-bottom: 15px;
     line-height: 1.6;
@@ -370,13 +395,16 @@ footer {
     padding: 12px;
     border: 1px solid #ccc;
 }
+
 #rank-goals th {
     background-color: #f3f3f3;
     padding: 15px;
 }
+
 #rank-goals tr:nth-child(even) {
     background-color: #f9f9f9;
 }
+
 #rank-goals tr:hover {
     background-color: #e0e0e0;
 }
