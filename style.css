@@ -312,38 +312,31 @@ nav a.active {
     text-align: left; /* Align text left */
 }
 
-#rank-goals th, #greenYellowOrangeGoals th, #rank-goals td, #greenYellowOrangeGoals td {
-    padding: 10px;
-    border: 1px solid #444;
-}
-
 #rank-goals th, #greenYellowOrangeGoals th {
-    background-color: #ff4d4d; /* Red header */
+    background-color: #f3f3f3; /* Preferred header background color */
     color: #ffffff;
+    padding: 15px; /* Same padding for both tables */
 }
 
-/* #rank-goals td {
+#rank-goals td, #greenYellowOrangeGoals td {
     padding: 12px;
     border: 1px solid #ccc;
 }
 
-#rank-goals th {
-    background-color: #f3f3f3;
-    padding: 15px;
-}
-
-#rank-goals tr:nth-child(even) {
+#rank-goals tr:nth-child(even), #greenYellowOrangeGoals tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-#rank-goals tr:hover {
+#rank-goals tr:hover, #greenYellowOrangeGoals tr:hover {
     background-color: #e0e0e0;
 }
 
+/* Header color change for #greenYellowOrangeGoals only */
 #greenYellowOrangeGoals th {
-    background-color: #ffeb3b;
-    color: black;
-} */
+    background-color: #ffeb3b; /* Different header color for this table */
+    color: black; /* Black text for the second table header */
+}
+
 
 /* Full-page container */
 .page-container {
