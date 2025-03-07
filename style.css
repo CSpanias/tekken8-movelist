@@ -154,27 +154,26 @@ p {
 
 /* Lists */
 ul {
-    list-style-type: none;
-    padding-left: 20px;
+    list-style-type: none; /* Remove default dots */
+    padding-left: 20px; /* Add left padding to create spacing */
 }
 
 ul li {
     margin-bottom: 10px;
-    padding-left: 20px;
+    padding-left: 20px; /* Space for the arrow */
     position: relative;
 }
 
+/* Fix for nested lists */
 ul li::before {
-    content: "→";
-    color: #ff4d4d;
+    content: "→"; /* Right arrow */
+    color: #ff4d4d; /* Red accent */
     position: absolute;
-    left: -15px;
+    left: 0px; /* Align correctly */
+    top: 50%; /* Position in the middle of the text */
+    transform: translateY(-50%); /* Center it vertically */
 }
 
-ol {
-    list-style-type: decimal; /* Numbered list */
-    padding-left: 30px;
-}
 
 /* Code Styling */
 code {
