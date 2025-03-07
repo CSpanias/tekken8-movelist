@@ -152,49 +152,6 @@ p {
     text-align: left; /* Align left */
 }
 
-/* Remove default bullets/numbers but keep structure */
-ul, ol {
-    list-style: none;
-    padding-left: 15px; /* Light indentation for structure */
-    margin: 0;
-}
-
-/* Standard list items */
-li {
-    margin-bottom: 6px; /* Keeps spacing readable */
-    padding-left: 15px; /* Indentation for sublists */
-    position: relative;
-}
-
-/* Sublist indentation */
-ul ul, ol ol {
-    padding-left: 20px; /* Slightly more indent for nested lists */
-}
-
-/* Minimal custom arrow for main lists (no extra arrows on nested lists) */
-ul > li::before {
-    content: "→"; /* Simple right arrow */
-    color: #ff4d4d; /* Tekken-style red */
-    position: absolute;
-    left: 0; /* Align properly */
-    top: 50%; /* Center vertically */
-    transform: translateY(-50%);
-}
-
-/* Inline code inside lists styled cleanly */
-li code {
-    background: #222; /* Dark background */
-    color: #ffcc00; /* Tekken yellow */
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-size: 0.9em;
-}
-
-/* Nested lists won't have extra arrows */
-ul ul li::before {
-    content: none;
-}
-
 /* Code Styling */
 code {
     background-color: #333;
