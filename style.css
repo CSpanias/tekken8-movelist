@@ -306,30 +306,30 @@ nav a.active {
 }
 
 /* Learning Plan tables */
-#rank-goals, #greenYellowOrangeGoals {
+#rank-goals, #greenYellowOrangeGoals, #redGoals, #purpleGoals, #blueGoals, #tKingPlusGoals {
     width: auto;
     border-collapse: collapse;
     text-align: left; /* Align text left */
 }
 
-#rank-goals th, #greenYellowOrangeGoals th {
+#rank-goals th, #greenYellowOrangeGoals th, #redGoals th, #purpleGoals th, #blueGoals th, #tKingPlusGoals th {
     background-color: #f3f3f3; /* Preferred header background color */
     color: #ffffff;
     padding: 15px; /* Same padding for both tables */
     vertical-align: top; /* Align text to the top of the cell */
 }
 
-#rank-goals td, #greenYellowOrangeGoals td {
+#rank-goals td, #greenYellowOrangeGoals td, #redGoals td, #purpleGoals td, #blueGoals td, #tKingPlusGoals td {
     padding: 12px;
     border: 1px solid #ccc;
     vertical-align: top; /* Align text to the top of the cell */
 }
 
-#rank-goals tr:nth-child(even), #greenYellowOrangeGoals tr:nth-child(even) {
+#rank-goals tr:nth-child(even), #greenYellowOrangeGoals tr:nth-child(even), #redGoals tr:nth-child(even), #purpleGoals tr:nth-child(even), #blueGoals tr:nth-child(even), #tKingPlusGoals tr:nth-child(even) {
     background-color: #f9f9f9;
 }
 
-#rank-goals tr:hover, #greenYellowOrangeGoals tr:hover {
+#rank-goals tr:hover, #greenYellowOrangeGoals tr:hover, #redGoals  tr:hover, #purpleGoals tr:hover, #blueGoals tr:hover, #tKingPlusGoals tr:hover {
     background-color: #e0e0e0;
 }
 
