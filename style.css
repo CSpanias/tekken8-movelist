@@ -305,7 +305,7 @@ nav a.active {
     text-decoration: underline;
 }
 
-/* General Rank-goals table */
+/* Learning Plan tables */
 #rank-goals, #greenYellowOrangeGoals {
     width: auto;
     border-collapse: collapse;
@@ -322,20 +322,7 @@ nav a.active {
     color: #ffffff;
 }
 
-#greenYellowOrangeGoals th {
-    background-color: #ffeb3b;
-    color: black;
-}
-
-/* Full-page container */
-.page-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-#rank-goals td {
+/* #rank-goals td {
     padding: 12px;
     border: 1px solid #ccc;
 }
@@ -351,4 +338,17 @@ nav a.active {
 
 #rank-goals tr:hover {
     background-color: #e0e0e0;
+}
+
+#greenYellowOrangeGoals th {
+    background-color: #ffeb3b;
+    color: black;
+} */
+
+/* Full-page container */
+.page-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
