@@ -21,7 +21,11 @@
         <a href="other.html" class="active">Other</a>
     </nav>
 
-    <input type="text" id="searchBox" placeholder="Search by character..." onkeyup="filterMoves()">
+    <div class="search-box">
+        <input type="text" id="searchBox" placeholder="Search by character..." onkeyup="filterMoves()">
+        <button type="button" onclick="search()">🔍</button> <!-- Optional, search icon button -->
+    </div>
+    
 
     <div class="note">
         <p>
