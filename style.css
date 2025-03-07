@@ -78,6 +78,8 @@ tr:hover {
     margin-bottom: 20px;
     border-radius: 5px;
     text-align: left; /* Align to left */
+    width: auto; /* Allow width to adjust to content */
+    display: inline-block; /* Makes the box fit the content */
 }
 
 .note p {
