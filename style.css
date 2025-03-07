@@ -1,9 +1,8 @@
 /* General Table Styling */
 table, #movelist, #punishments-table, #mentalFrameTraps-table, #rank-points, #techniques-table, #otherChars-table {
-    width: auto; /* Adjust to fit content */
-    table-layout: auto; /* Let the table size itself based on the content */
+    width: auto;
+    margin: 0 auto;
     border-collapse: collapse;
-    margin-top: 30px;
     background-color: #262626;
     color: #ffffff;
     border-radius: 8px;
@@ -22,7 +21,7 @@ th {
     color: #ffffff;
     font-weight: bold;
     cursor: pointer;
-    border-radius: 8px 8px 0 0; /* Rounded top corners */
+    border-radius: 8px 8px 0 0;
 }
 
 th:hover {
@@ -38,97 +37,226 @@ tr:hover {
     transition: background-color 0.3s ease;
 }
 
-tr:first-child {
-    border-top: none; /* Remove top border for a cleaner header */
+/* Centering content and tables on pages with only tables (movelist, punishments, frame traps, rank system, other) */
+.page-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-tfoot {
-    background-color: #333;
+/* Red Arrow Fixing */
+ul li, ol li {
+    margin-bottom: 10px;
+    padding-left: 30px; /* Added padding to make room for the arrow */
+    position: relative;
+    list-style: none;
+}
+
+ul li::before, ol li::before {
+    content: "→"; /* Red arrow */
+    color: #ff4d4d;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the arrow */
+    font-size: 1.5em;
+}
+
+/* Theory and Learning Plan Pages - Align content to the left */
+.page-theory, .page-learning-plan {
+    text-align: left;
+}
+
+.page-theory h2, .page-learning-plan h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff4d4d;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff4d4d;
+    padding-bottom: 5px;
+}
+
+.page-theory h3, .page-learning-plan h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff4d4d;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.page-theory p, .page-learning-plan p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* General Page Styles for Theory and Learning Plan Pages */
+.page-theory ul, .page-learning-plan ul,
+.page-theory ol, .page-learning-plan ol {
+    padding-left: 25px;
+}
+
+/* Ensure lists are left-aligned on theory/learning plan pages */
+.page-theory ul, .page-learning-plan ul {
+    padding-left: 25px;
+}
+
+.page-theory ol, .page-learning-plan ol {
+    padding-left: 25px;
+    text-align: left;
+}
+
+/* To ensure all page content is left-aligned */
+.page-theory, .page-learning-plan {
+    text-align: left;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Rank Color Classes */
+.rank-green { color: #00FF00; font-weight: bold; }
+.rank-yellow { color: #FFEB3B; font-weight: bold; }
+.rank-orange { color: #FF9800; font-weight: bold; }
+.rank-red { color: #F44336; font-weight: bold; }
+.rank-purple { color: #9C27B0; font-weight: bold; }
+.rank-blue { color: #2196F3; font-weight: bold; }
+.rank-tekken-king { color: #FFD700; font-weight: bold; }
+
+/* Note Styling */
+.note {
+    text-align: center;  /* Center the text */
+    margin: 20px 0;   /* Centering with spacing */
+    width: fit-content;  /* Match table width dynamically */
+    background-color: #333; /* Darker background to distinguish */
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+    font-size: 0.9em; /* Slightly smaller font */
+}
+
+.note a {
+    color: #ff4d4d; /* Match the red accent */
     font-weight: bold;
 }
 
-tfoot td {
-    padding: 15px;
+.note a:hover {
+    color: #ff1a1a; /* Slightly brighter red on hover */
 }
 
-/* Search Box Styling */
-#searchBox {
-    width: 100%;
-    max-width: 400px;
-    padding: 10px;
-    font-size: 1.1em;
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #444;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    transition: all 0.3s ease;
-}
-
-#searchBox::placeholder {
-    color: #888;
-}
-
-#searchBox:focus {
-    outline: none;
-    border-color: #ff4d4d;
-    background-color: #444;
-}
-
-#searchBox:hover {
-    border-color: #ff4d4d;
+/* Divider Styling */
+.divider {
+    border: 0;
+    height: 1px;
+    background: #444; /* Dark gray line */
+    margin: 20px auto;
+    max-width: 800px;
 }
 
 /* General Styles */
 body {
-    background-color: #1a1a1a;
     font-family: 'Roboto', sans-serif;
-    color: #fff;
+    background-color: #1a1a1a;
+    color: #ffffff;
     margin: 0;
     padding: 20px;
     line-height: 1.6;
-}
-
-/* Container for the main content */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Headings */
 h1, h2, h3 {
     font-family: 'Orbitron', sans-serif;
     color: #ff4d4d;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
     text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 /* Paragraphs */
 p {
     font-size: 1.1em;
     margin-bottom: 15px;
-    line-height: 1.6;
+}
+
+/* Lists */
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+ul li::before {
+    content: "→";
+    color: #ff4d4d;
+    position: absolute;
+    left: 0;
+}
+
+ol {
+    list-style-type: decimal; /* Numbered list */
+    padding-left: 30px;
+}
+
+/* Code Styling */
+code {
+    background-color: #333;
+    color: #ff4d4d;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    text-align: left;
+    color: #888;
+    font-size: 0.9em;
 }
 
 /* Navigation Bar */
 nav {
-    background-color: #262626;
-    padding: 15px;
-    text-align: center;
-    margin-bottom: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    background-color: #333;
+    padding: 10px;
+    text-align: left; /* Align the content to the left */
+    margin-bottom: 20px;
+    border-radius: 5px;
+    width: 100%;
+    position: relative; /* Required for absolute positioning of submenu */
 }
 
 nav a {
     color: #ff4d4d;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 10px;
     font-weight: bold;
     font-family: 'Orbitron', sans-serif;
-    transition: all 0.3s ease;
 }
 
 nav a:hover {
@@ -139,27 +267,93 @@ nav a:hover {
 nav a.active {
     color: #ffffff;
     background-color: #ff4d4d;
-    padding: 7px 15px;
-    border-radius: 5px;
+    padding: 5px 10px;
+    border-radius: 3px;
 }
 
-/* Footer */
-footer {
-    margin-top: 40px;
+/* Theory Page Specific Styles */
+h2 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff4d4d; /* Red accent */
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff4d4d; /* Red underline */
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff4d4d; /* Red accent */
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+ul, ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+ul li, ol li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    position: relative;
+}
+
+ul li::before {
+    content: "→"; /* Right arrow as bullet */
+    color: #ff4d4d; /* Red accent */
+    position: absolute;
+    left: -15px;
+}
+
+ol {
+    list-style-type: decimal; /* Numbered list */
+    padding-left: 30px;
+}
+
+/* Tables */
+#techniques-table {
+    width: auto;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #262626; /* Dark gray */
+    color: #ffffff; /* White text */
+}
+
+#techniques-table th, #techniques-table td {
+    padding: 12px;
+    border: 1px solid #444; /* Darker borders */
     text-align: center;
-    color: #888;
-    font-size: 0.9em;
-    background-color: #262626;
-    padding: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#techniques-table th {
+    background-color: #ff4d4d; /* Red header */
+    color: #ffffff;
+    font-weight: bold;
+}
+
+#techniques-table tr:nth-child(even) {
+    background-color: #333; /* Alternate row color */
+}
+
+#techniques-table tr:hover {
+    background-color: #444; /* Hover effect */
+    transition: background-color 0.3s ease;
 }
 
 /* Notes Section */
 .note {
-    background-color: #333;
+    background-color: #333; /* Dark gray */
     padding: 15px;
-    border-left: 5px solid #ff4d4d;
+    border-left: 5px solid #ff4d4d; /* Red accent */
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
@@ -172,7 +366,7 @@ footer {
 }
 
 .note a {
-    color: #ff4d4d;
+    color: #ff4d4d; /* Red accent */
     text-decoration: none;
 }
 
@@ -180,61 +374,12 @@ footer {
     text-decoration: underline;
 }
 
-/* Divider Styling */
-.divider {
-    border: 0;
-    height: 1px;
-    background: #444;
-    margin: 20px auto;
-    max-width: 800px;
-}
-
-/* Rank Colors */
-.rank-green { color: #00FF00; font-weight: bold; }
-.rank-yellow { color: #FFEB3B; font-weight: bold; }
-.rank-orange { color: #FF9800; font-weight: bold; }
-.rank-red { color: #F44336; font-weight: bold; }
-.rank-purple { color: #9C27B0; font-weight: bold; }
-.rank-blue { color: #2196F3; font-weight: bold; }
-.rank-tekken-king { color: #FFD700; font-weight: bold; }
-
-/* Theory Page Specific Styles */
-h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d;
-    text-transform: uppercase;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ff4d4d;
-    padding-bottom: 5px;
-}
-
-h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-ul, ol {
-    margin-bottom: 20px;
-    padding-left: 20px;
-}
-
-/* Updated List Styling for only red arrow */
-ul li, ol li {
-    margin-bottom: 10px;
-    padding-left: 10px;
-    position: relative;
-    list-style: none; /* Remove default dot */
-}
-
-ul li::before, ol li::before {
-    content: "→"; /* Red arrow */
-    color: #ff4d4d;
-    position: absolute;
-    left: -20px;
-    font-size: 1.5em;
+/* Footer */
+footer {
+    margin-top: 40px;
+    text-align: left;
+    color: #888; /* Light gray */
+    font-size: 0.9em;
 }
 
 /* Index Menu */
@@ -265,53 +410,25 @@ ul li::before, ol li::before {
     text-align: center;
 }
 
-#rank-goals th, #rank-goals td, #greenYellowOrangeGoals th, #greenYellowOrangeGoals td {
+#rank-goals th, #greenYellowOrangeGoals th, #rank-goals td, #greenYellowOrangeGoals td {
     padding: 10px;
-    border: 1px solid #ddd;
-    vertical-align: top;
+    border: 1px solid #444;
 }
 
-.rank-green { color: green; }
-.rank-yellow { color: #FFD700; }
-.rank-orange { color: orange; }
-.rank-red { color: red; }
-.rank-purple { color: #9370DB; }
-.rank-blue { color: #4169E1; }
-.rank-tekken-king { color: #DAA520; }
-
-ol {
-    padding-left: 15px;
-    text-align: left;
-}
-
-/* Updated Left-aligned list class for proper nesting */
-.left-aligned-list {
-    text-align: left;
-    padding-left: 15px;
-    list-style-position: inside;
-    margin: 0;
-}
-
-.left-aligned-list ul {
-    padding-left: 20px;
-}
-
-table#greenYellowOrangeGoals td {
-    padding: 10px;
-    vertical-align: top;
-}
-
-table#greenYellowOrangeGoals th {
-    background-color: #ff4d4d;
+#rank-goals th, #greenYellowOrangeGoals th {
+    background-color: #ff4d4d; /* Red header */
     color: #ffffff;
-    font-weight: bold;
 }
 
-table#greenYellowOrangeGoals tr:nth-child(even) {
-    background-color: #333;
+#greenYellowOrangeGoals th {
+    background-color: #ffeb3b;
+    color: black;
 }
 
-table#greenYellowOrangeGoals tr:hover {
-    background-color: #444;
-    transition: background-color 0.3s ease;
+/* Full-page container */
+.page-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
