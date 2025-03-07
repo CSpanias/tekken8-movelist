@@ -316,11 +316,13 @@ nav a.active {
     background-color: #f3f3f3; /* Preferred header background color */
     color: #ffffff;
     padding: 15px; /* Same padding for both tables */
+    vertical-align: top; /* Align text to the top of the cell */
 }
 
 #rank-goals td, #greenYellowOrangeGoals td {
     padding: 12px;
     border: 1px solid #ccc;
+    vertical-align: top; /* Align text to the top of the cell */
 }
 
 #rank-goals tr:nth-child(even), #greenYellowOrangeGoals tr:nth-child(even) {
