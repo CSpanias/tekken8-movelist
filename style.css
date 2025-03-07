@@ -51,7 +51,7 @@ tr:hover {
 .page-theory-learning-plan h3 {
     font-family: 'Orbitron', sans-serif;
     color: #ff4d4d; /* Red accent */
-    margin-top: 30px;
+    margin-top: 40px; /* Increased margin-top for better separation */
     margin-bottom: 15px;
     border-bottom: 2px solid #ff4d4d; /* Red underline */
     padding-bottom: 5px;
@@ -59,8 +59,8 @@ tr:hover {
 }
 
 .page-theory-learning-plan h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 30px; /* Increased margin-top for better separation */
+    margin-bottom: 15px;
 }
 
 .page-theory-learning-plan p {
@@ -129,15 +129,18 @@ h1 {
 
 h2 {
     font-size: 2em;
-    margin-top: 30px;
-    margin-bottom: 15px;
+    margin-top: 40px; /* Increased top margin */
+    margin-bottom: 20px; /* Increased bottom margin */
     text-align: left; /* Align left */
+    border-top: 2px solid #ff4d4d; /* Red border on top */
+    padding-top: 10px; /* Added padding to top */
+    padding-bottom: 5px; /* Adjusted padding for a cleaner look */
 }
 
 h3 {
     font-size: 1.5em;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 30px; /* Increased top margin */
+    margin-bottom: 15px;
     text-align: left; /* Align left */
 }
 
