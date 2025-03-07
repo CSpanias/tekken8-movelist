@@ -1,7 +1,7 @@
 /* General Table Styling */
 table, #movelist, #punishments-table, #mentalFrameTraps-table, #rank-points, #techniques-table, #otherChars-table {
     width: auto;
-    margin: 0 auto;
+    margin: 0;
     border-collapse: collapse;
     background-color: #262626;
     color: #ffffff;
@@ -12,7 +12,7 @@ table, #movelist, #punishments-table, #mentalFrameTraps-table, #rank-points, #te
 th, td {
     padding: 15px;
     border: 1px solid #444;
-    text-align: center;
+    text-align: left;
     white-space: nowrap;
 }
 
@@ -37,12 +37,10 @@ tr:hover {
     transition: background-color 0.3s ease;
 }
 
-/* Centering content and tables on pages with only tables (movelist, punishments, frame traps, rank system, other) */
-.page-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+/* Content alignment to the left */
+.page-content, .page-theory, .page-learning-plan {
+    text-align: left;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
@@ -71,54 +69,6 @@ ul li::before, ol li::before {
     text-align: left;
 }
 
-.page-theory h2, .page-learning-plan h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d;
-    text-transform: uppercase;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ff4d4d;
-    padding-bottom: 5px;
-}
-
-.page-theory h3, .page-learning-plan h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.page-theory p, .page-learning-plan p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-/* General Page Styles for Theory and Learning Plan Pages */
-.page-theory ul, .page-learning-plan ul,
-.page-theory ol, .page-learning-plan ol {
-    padding-left: 25px;
-}
-
-/* Ensure lists are left-aligned on theory/learning plan pages */
-.page-theory ul, .page-learning-plan ul {
-    padding-left: 25px;
-}
-
-.page-theory ol, .page-learning-plan ol {
-    padding-left: 25px;
-    text-align: left;
-}
-
-/* To ensure all page content is left-aligned */
-.page-theory, .page-learning-plan {
-    text-align: left;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
 /* Rank Color Classes */
 .rank-green { color: #00FF00; font-weight: bold; }
 .rank-yellow { color: #FFEB3B; font-weight: bold; }
@@ -130,9 +80,9 @@ ul li::before, ol li::before {
 
 /* Note Styling */
 .note {
-    text-align: center;  /* Center the text */
-    margin: 20px 0;   /* Centering with spacing */
-    width: fit-content;  /* Match table width dynamically */
+    text-align: left;  /* Align to the left */
+    margin: 20px 0;
+    width: fit-content;
     background-color: #333; /* Darker background to distinguish */
     padding: 10px 15px;
     border-radius: 5px;
@@ -178,25 +128,28 @@ h1, h2, h3 {
 h1 {
     font-size: 2.5em;
     margin-bottom: 20px;
-    text-align: center;
+    text-align: left; /* Align left */
 }
 
 h2 {
     font-size: 2em;
     margin-top: 30px;
     margin-bottom: 15px;
+    text-align: left; /* Align left */
 }
 
 h3 {
     font-size: 1.5em;
     margin-top: 20px;
     margin-bottom: 10px;
+    text-align: left; /* Align left */
 }
 
 /* Paragraphs */
 p {
     font-size: 1.1em;
     margin-bottom: 15px;
+    text-align: left; /* Align left */
 }
 
 /* Lists */
@@ -215,7 +168,7 @@ ul li::before {
     content: "→";
     color: #ff4d4d;
     position: absolute;
-    left: 0;
+    left: -15px;
 }
 
 ol {
@@ -293,6 +246,7 @@ p {
     font-size: 1.1em;
     margin-bottom: 15px;
     line-height: 1.6;
+    text-align: left; /* Align to the left */
 }
 
 ul, ol {
@@ -331,7 +285,7 @@ ol {
 #techniques-table th, #techniques-table td {
     padding: 12px;
     border: 1px solid #444; /* Darker borders */
-    text-align: center;
+    text-align: left; /* Left align text */
 }
 
 #techniques-table th {
@@ -357,6 +311,7 @@ ol {
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
+    text-align: left; /* Align to left */
 }
 
 .note p {
@@ -407,7 +362,7 @@ footer {
 #rank-goals, #greenYellowOrangeGoals {
     width: auto;
     border-collapse: collapse;
-    text-align: center;
+    text-align: left; /* Align text left */
 }
 
 #rank-goals th, #greenYellowOrangeGoals th, #rank-goals td, #greenYellowOrangeGoals td {
