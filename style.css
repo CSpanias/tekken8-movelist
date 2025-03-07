@@ -1,4 +1,4 @@
-/* General Table Styling */
+/* General Table Styling for all tables */
 table, #movelist, #punishments-table, #mentalFrameTraps-table, #rank-points, #techniques-table, #otherChars-table {
     width: auto;
     margin: 0;
@@ -37,6 +37,46 @@ tr:hover {
     transition: background-color 0.3s ease;
 }
 
+/* Specific styling for rank-goals and greenYellowOrangeGoals tables in learning-plan.html */
+#rank-goals, #greenYellowOrangeGoals {
+    width: 100%; /* Ensure both tables span the full width */
+    border-collapse: collapse;
+    text-align: left; /* Align text left */
+    margin-bottom: 20px; /* Space between the tables */
+}
+
+#rank-goals td, #greenYellowOrangeGoals td,
+#rank-goals th, #greenYellowOrangeGoals th {
+    padding: 12px; /* Consistent padding for both tables */
+    border: 1px solid #444; /* Uniform border for both tables */
+}
+
+#rank-goals th, #greenYellowOrangeGoals th {
+    font-weight: bold;
+    color: white; /* White text for headers */
+    background-color: #ff4d4d; /* Red header for both tables */
+}
+
+#rank-goals tr:nth-child(even), #greenYellowOrangeGoals tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray for even rows */
+}
+
+#rank-goals tr:nth-child(odd), #greenYellowOrangeGoals tr:nth-child(odd) {
+    background-color: #ffffff; /* White for odd rows */
+}
+
+#rank-goals tr:hover, #greenYellowOrangeGoals tr:hover {
+    background-color: #e0e0e0; /* Slightly darker gray on hover */
+}
+
+/* Full-page container */
+.page-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 /* General Content Styling */
 .page-content, .page-theory-learning-plan {
     text-align: left;
@@ -44,29 +84,6 @@ tr:hover {
     max-width: 1200px;
     margin: 0 ;
     padding: 20px;
-}
-
-/* Consolidated Theory and Learning Plan Pages */
-.page-theory-learning-plan h2,
-.page-theory-learning-plan h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d; /* Red accent */
-    margin-top: 40px; /* Increased margin-top for better separation */
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ff4d4d; /* Red underline */
-    padding-bottom: 5px;
-    text-transform: uppercase;
-}
-
-.page-theory-learning-plan h3 {
-    margin-top: 30px; /* Increased margin-top for better separation */
-    margin-bottom: 15px;
-}
-
-.page-theory-learning-plan p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    line-height: 1.6;
 }
 
 /* Notes Section */
@@ -106,99 +123,34 @@ tr:hover {
     max-width: 800px;
 }
 
-/* General Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    margin: 0;
-    padding: 20px;
-    line-height: 1.6;
-}
+/* Rank Color Classes */
+.rank-green { color: #00FF00; font-weight: bold; }
+.rank-yellow { color: #FFEB3B; font-weight: bold; }
+.rank-orange { color: #FF9800; font-weight: bold; }
+.rank-red { color: #F44336; font-weight: bold; }
+.rank-purple { color: #9C27B0; font-weight: bold; }
+.rank-blue { color: #2196F3; font-weight: bold; }
+.rank-tekken-king { color: #FFD700; font-weight: bold; }
 
-/* Headings */
-h1, h2, h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d;
-    text-transform: uppercase;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-align: left; /* Align left */
-}
-
-h2 {
-    font-size: 2em;
-    margin-top: 40px; /* Increased top margin */
-    margin-bottom: 20px; /* Increased bottom margin */
-    text-align: left; /* Align left */
-    border-top: 2px solid #ff4d4d; /* Red border on top */
-    padding-top: 10px; /* Added padding to top */
-    padding-bottom: 5px; /* Adjusted padding for a cleaner look */
-}
-
-h3 {
-    font-size: 1.5em;
-    margin-top: 30px; /* Increased top margin */
-    margin-bottom: 15px;
-    text-align: left; /* Align left */
-}
-
-/* Paragraphs */
-p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    text-align: left; /* Align left */
-}
-
-/* Code Styling */
-code {
-    background-color: #333;
-    color: #ff4d4d;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-/* Footer */
-footer {
-    margin-top: 40px;
-    text-align: left;
-    color: #888;
-    font-size: 0.9em;
-}
-
-/* Navigation Bar */
-nav {
+/* Index Menu */
+#index-menu {
     background-color: #333;
     padding: 10px;
-    text-align: left; /* Align the content to the left */
+    text-align: left;
     margin-bottom: 20px;
     border-radius: 5px;
-    width: 100%;
-    position: relative; /* Required for absolute positioning of submenu */
 }
 
-nav a {
+#index-menu a {
     color: #ff4d4d;
     text-decoration: none;
     margin: 0 10px;
     font-weight: bold;
-    font-family: 'Orbitron', sans-serif;
 }
 
-nav a:hover {
+#index-menu a:hover {
     color: #ff1a1a;
     text-decoration: underline;
-}
-
-nav a.active {
-    color: #ffffff;
-    background-color: #ff4d4d;
-    padding: 5px 10px;
-    border-radius: 3px;
 }
 
 /* Search Box Styling */
@@ -273,82 +225,4 @@ nav a.active {
 #techniques-table tr:hover {
     background-color: #444; /* Hover effect */
     transition: background-color 0.3s ease;
-}
-
-/* Rank Color Classes */
-.rank-green { color: #00FF00; font-weight: bold; }
-.rank-yellow { color: #FFEB3B; font-weight: bold; }
-.rank-orange { color: #FF9800; font-weight: bold; }
-.rank-red { color: #F44336; font-weight: bold; }
-.rank-purple { color: #9C27B0; font-weight: bold; }
-.rank-blue { color: #2196F3; font-weight: bold; }
-.rank-tekken-king { color: #FFD700; font-weight: bold; }
-
-/* Index Menu */
-#index-menu {
-    background-color: #333;
-    padding: 10px;
-    text-align: left;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-#index-menu a {
-    color: #ff4d4d;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-}
-
-#index-menu a:hover {
-    color: #ff1a1a;
-    text-decoration: underline;
-}
-
-/* General Rank-goals table */
-#rank-goals, #greenYellowOrangeGoals {
-    width: auto;
-    border-collapse: collapse;
-    text-align: left; /* Align text left */
-}
-
-#rank-goals th, #greenYellowOrangeGoals th, #rank-goals td, #greenYellowOrangeGoals td {
-    padding: 10px;
-    border: 1px solid #444;
-}
-
-#rank-goals th, #greenYellowOrangeGoals th {
-    background-color: #ff4d4d; /* Red header */
-    color: #ffffff;
-}
-
-#greenYellowOrangeGoals th {
-    background-color: #ffeb3b;
-    color: black;
-}
-
-/* Full-page container */
-.page-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-#rank-goals td {
-    padding: 12px;
-    border: 1px solid #ccc;
-}
-
-#rank-goals th {
-    background-color: #f3f3f3;
-    padding: 15px;
-}
-
-#rank-goals tr:nth-child(even) {
-    background-color: #f9f9f9;
-}
-
-#rank-goals tr:hover {
-    background-color: #e0e0e0;
 }
