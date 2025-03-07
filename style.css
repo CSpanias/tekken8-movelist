@@ -1,7 +1,7 @@
 /* General Table Styling */
 table, #movelist, #punishments-table, #mentalFrameTraps-table, #rank-points, #techniques-table, #otherChars-table {
-    width: 100%;
-    table-layout: fixed;
+    width: auto; /* Adjust to fit content */
+    table-layout: auto; /* Let the table size itself based on the content */
     border-collapse: collapse;
     margin-top: 30px;
     background-color: #262626;
@@ -221,22 +221,20 @@ ul, ol {
     padding-left: 20px;
 }
 
+/* Updated List Styling for only red arrow */
 ul li, ol li {
     margin-bottom: 10px;
     padding-left: 10px;
     position: relative;
+    list-style: none; /* Remove default dot */
 }
 
-ul li::before {
-    content: "→";
+ul li::before, ol li::before {
+    content: "→"; /* Red arrow */
     color: #ff4d4d;
     position: absolute;
-    left: -15px;
-}
-
-ol {
-    list-style-type: decimal;
-    padding-left: 30px;
+    left: -20px;
+    font-size: 1.5em;
 }
 
 /* Index Menu */
@@ -262,7 +260,7 @@ ol {
 
 /* General Rank-goals table */
 #rank-goals, #greenYellowOrangeGoals {
-    width: 100%;
+    width: auto;
     border-collapse: collapse;
     text-align: center;
 }
