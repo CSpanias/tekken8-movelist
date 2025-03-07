@@ -37,48 +37,62 @@ tr:hover {
     transition: background-color 0.3s ease;
 }
 
-/* Content alignment to the left */
-.page-content, .page-theory, .page-learning-plan {
+/* General Content Styling */
+.page-content, .page-theory-learning-plan {
     text-align: left;
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 ;
     padding: 20px;
 }
 
-/* Theory and Learning Plan Pages - Align content to the left */
-.page-theory, .page-learning-plan {
-    text-align: left;
+/* Consolidated Theory and Learning Plan Pages */
+.page-theory-learning-plan h2,
+.page-theory-learning-plan h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff4d4d; /* Red accent */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #ff4d4d; /* Red underline */
+    padding-bottom: 5px;
+    text-transform: uppercase;
 }
 
-/* Rank Color Classes */
-.rank-green { color: #00FF00; font-weight: bold; }
-.rank-yellow { color: #FFEB3B; font-weight: bold; }
-.rank-orange { color: #FF9800; font-weight: bold; }
-.rank-red { color: #F44336; font-weight: bold; }
-.rank-purple { color: #9C27B0; font-weight: bold; }
-.rank-blue { color: #2196F3; font-weight: bold; }
-.rank-tekken-king { color: #FFD700; font-weight: bold; }
+.page-theory-learning-plan h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
 
-/* Note Styling */
+.page-theory-learning-plan p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Notes Section */
 .note {
-    text-align: left;  /* Align to the left */
-    margin: 20px 0;
-    width: fit-content;
-    background-color: #333; /* Darker background to distinguish */
-    padding: 10px 15px;
+    background-color: #333; /* Dark gray */
+    padding: 15px;
+    border-left: 5px solid #ff4d4d; /* Red accent */
+    margin-top: 20px;
+    margin-bottom: 20px;
     border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    font-size: 0.9em; /* Slightly smaller font */
+    text-align: left; /* Align to left */
+}
+
+.note p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #ffffff;
 }
 
 .note a {
-    color: #ff4d4d; /* Match the red accent */
-    font-weight: bold;
+    color: #ff4d4d; /* Red accent */
+    text-decoration: none;
 }
 
 .note a:hover {
-    color: #ff1a1a; /* Slightly brighter red on hover */
+    text-decoration: underline;
 }
 
 /* Divider Styling */
@@ -225,56 +239,6 @@ nav a.active {
     background-color: #ff1a1a;
 }
 
-/* Theory Page Specific Styles */
-.page-theory h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d; /* Red accent */
-    text-transform: uppercase;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ff4d4d; /* Red underline */
-    padding-bottom: 5px;
-}
-
-.page-theory h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d; /* Red accent */
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.page-theory p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    text-align: left; /* Align to the left */
-}
-
-/* Learning Plan Page Specific Styles */
-.page-learning-plan h2 {
-    font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d; /* Red accent */
-    text-transform: uppercase;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    border-bottom: 2px solid #ff4d4d; /* Red underline */
-    padding-bottom: 5px;
-}
-
-.page-learning-plan h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d; /* Red accent */
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-.page-learning-plan p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    line-height: 1.6;
-    text-align: left; /* Align to the left */
-}
-
 /* Tables */
 #techniques-table {
     width: auto;
@@ -306,39 +270,14 @@ nav a.active {
     transition: background-color 0.3s ease;
 }
 
-/* Notes Section */
-.note {
-    background-color: #333; /* Dark gray */
-    padding: 15px;
-    border-left: 5px solid #ff4d4d; /* Red accent */
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    text-align: left; /* Align to left */
-}
-
-.note p {
-    margin: 0;
-    font-size: 0.95em;
-    color: #ffffff;
-}
-
-.note a {
-    color: #ff4d4d; /* Red accent */
-    text-decoration: none;
-}
-
-.note a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    margin-top: 40px;
-    text-align: left;
-    color: #888; /* Light gray */
-    font-size: 0.9em;
-}
+/* Rank Color Classes */
+.rank-green { color: #00FF00; font-weight: bold; }
+.rank-yellow { color: #FFEB3B; font-weight: bold; }
+.rank-orange { color: #FF9800; font-weight: bold; }
+.rank-red { color: #F44336; font-weight: bold; }
+.rank-purple { color: #9C27B0; font-weight: bold; }
+.rank-blue { color: #2196F3; font-weight: bold; }
+.rank-tekken-king { color: #FFD700; font-weight: bold; }
 
 /* Index Menu */
 #index-menu {
