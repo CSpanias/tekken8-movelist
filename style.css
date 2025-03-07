@@ -1,15 +1,17 @@
 /* General Table Styling */
 table, #movelist, #punishments-table, #mentalFrameTraps-table, #rank-points, #techniques-table, #otherChars-table {
-    width: auto;
-    table-layout: auto;
+    width: 100%;
+    table-layout: fixed;
     border-collapse: collapse;
-    margin: 20px 0; /* left-aligned tables */
+    margin-top: 30px;
     background-color: #262626;
     color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 th, td {
-    padding: 12px;
+    padding: 15px;
     border: 1px solid #444;
     text-align: center;
     white-space: nowrap;
@@ -20,6 +22,7 @@ th {
     color: #ffffff;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 8px 8px 0 0; /* Rounded top corners */
 }
 
 th:hover {
@@ -35,32 +38,153 @@ tr:hover {
     transition: background-color 0.3s ease;
 }
 
-/* Note Styling */
-.note {
-    text-align: center;  /* Center the text */
-    margin: 20px 0;   /* Centering with spacing */
-    width: fit-content;  /* Match table width dynamically */
-    background-color: #333; /* Darker background to distinguish */
-    padding: 10px 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow */
-    font-size: 0.9em; /* Slightly smaller font */
+tr:first-child {
+    border-top: none; /* Remove top border for a cleaner header */
 }
 
-.note a {
-    color: #ff4d4d; /* Match the red accent */
+tfoot {
+    background-color: #333;
     font-weight: bold;
 }
 
+tfoot td {
+    padding: 15px;
+}
+
+/* Search Box Styling */
+#searchBox {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 1.1em;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+#searchBox::placeholder {
+    color: #888;
+}
+
+#searchBox:focus {
+    outline: none;
+    border-color: #ff4d4d;
+    background-color: #444;
+}
+
+#searchBox:hover {
+    border-color: #ff4d4d;
+}
+
+/* General Styles */
+body {
+    background-color: #1a1a1a;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Container for the main content */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Headings */
+h1, h2, h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #ff4d4d;
+    text-align: center;
+}
+
+/* Paragraphs */
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #262626;
+    padding: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+nav a {
+    color: #ff4d4d;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff1a1a;
+    text-decoration: underline;
+}
+
+nav a.active {
+    color: #ffffff;
+    background-color: #ff4d4d;
+    padding: 7px 15px;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #888;
+    font-size: 0.9em;
+    background-color: #262626;
+    padding: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Notes Section */
+.note {
+    background-color: #333;
+    padding: 15px;
+    border-left: 5px solid #ff4d4d;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.note p {
+    margin: 0;
+    font-size: 0.95em;
+    color: #ffffff;
+}
+
+.note a {
+    color: #ff4d4d;
+    text-decoration: none;
+}
+
 .note a:hover {
-    color: #ff1a1a; /* Slightly brighter red on hover */
+    text-decoration: underline;
 }
 
 /* Divider Styling */
 .divider {
     border: 0;
     height: 1px;
-    background: #444; /* Dark gray line */
+    background: #444;
     margin: 20px auto;
     max-width: 800px;
 }
@@ -74,144 +198,22 @@ tr:hover {
 .rank-blue { color: #2196F3; font-weight: bold; }
 .rank-tekken-king { color: #FFD700; font-weight: bold; }
 
-/* General Styles */
-body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #1a1a1a;
-    color: #ffffff;
-    margin: 0;
-    padding: 20px;
-    line-height: 1.6;
-}
-
-/* Headings */
-h1, h2, h3 {
-    font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d;
-    text-transform: uppercase;
-}
-
-h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 2em;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-h3 {
-    font-size: 1.5em;
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-/* Paragraphs */
-p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-}
-
-/* Lists */
-ul {
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-ul li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-    position: relative;
-}
-
-ul li::before {
-    content: "→";
-    color: #ff4d4d;
-    position: absolute;
-    left: 0;
-}
-
-/* Code Styling */
-code {
-    background-color: #333;
-    color: #ff4d4d;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-family: 'Courier New', Courier, monospace;
-}
-
-/* Footer */
-footer {
-    margin-top: 40px;
-    text-align: left;
-    color: #888;
-    font-size: 0.9em;
-}
-
-td .left-aligned-list {
-    text-align: left;  /* Align text to the left */
-    list-style-position: inside; /* Keep numbers close to text */
-    padding-right: 10px; /* Adjust spacing */
-    margin: 0; /* Remove any extra spacing */
-    display: block; /* Ensure proper alignment */
-}
-
-/* Navigation Bar */
-nav {
-    background-color: #333;
-    padding: 10px;
-    text-align: left; /* Align the content to the left */
-    margin-bottom: 20px;
-    border-radius: 5px;
-    width: 100%;
-    position: relative; /* Required for absolute positioning of submenu */
-}
-
-nav a {
-    color: #ff4d4d;
-    text-decoration: none;
-    margin: 0 10px;
-    font-weight: bold;
-    font-family: 'Orbitron', sans-serif;
-}
-
-nav a:hover {
-    color: #ff1a1a;
-    text-decoration: underline;
-}
-
-nav a.active {
-    color: #ffffff;
-    background-color: #ff4d4d;
-    padding: 5px 10px;
-    border-radius: 3px;
-}
-
 /* Theory Page Specific Styles */
 h2 {
     font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d; /* Red accent */
+    color: #ff4d4d;
     text-transform: uppercase;
     margin-top: 30px;
     margin-bottom: 15px;
-    border-bottom: 2px solid #ff4d4d; /* Red underline */
+    border-bottom: 2px solid #ff4d4d;
     padding-bottom: 5px;
 }
 
 h3 {
     font-family: 'Orbitron', sans-serif;
-    color: #ff4d4d; /* Red accent */
+    color: #ff4d4d;
     margin-top: 20px;
     margin-bottom: 10px;
-}
-
-p {
-    font-size: 1.1em;
-    margin-bottom: 15px;
-    line-height: 1.6;
 }
 
 ul, ol {
@@ -226,79 +228,15 @@ ul li, ol li {
 }
 
 ul li::before {
-    content: "→"; /* Right arrow as bullet */
-    color: #ff4d4d; /* Red accent */
+    content: "→";
+    color: #ff4d4d;
     position: absolute;
     left: -15px;
 }
 
 ol {
-    list-style-type: decimal; /* Numbered list */
+    list-style-type: decimal;
     padding-left: 30px;
-}
-
-/* Tables */
-#techniques-table {
-    width: auto;
-    border-collapse: collapse;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    background-color: #262626; /* Dark gray */
-    color: #ffffff; /* White text */
-}
-
-#techniques-table th, #techniques-table td {
-    padding: 12px;
-    border: 1px solid #444; /* Darker borders */
-    text-align: center;
-}
-
-#techniques-table th {
-    background-color: #ff4d4d; /* Red header */
-    color: #ffffff;
-    font-weight: bold;
-}
-
-#techniques-table tr:nth-child(even) {
-    background-color: #333; /* Alternate row color */
-}
-
-#techniques-table tr:hover {
-    background-color: #444; /* Hover effect */
-    transition: background-color 0.3s ease;
-}
-
-/* Notes Section */
-.note {
-    background-color: #333; /* Dark gray */
-    padding: 15px;
-    border-left: 5px solid #ff4d4d; /* Red accent */
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-.note p {
-    margin: 0;
-    font-size: 0.95em;
-    color: #ffffff;
-}
-
-.note a {
-    color: #ff4d4d; /* Red accent */
-    text-decoration: none;
-}
-
-.note a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
-footer {
-    margin-top: 40px;
-    text-align: left;
-    color: #888; /* Light gray */
-    font-size: 0.9em;
 }
 
 /* Index Menu */
@@ -324,7 +262,7 @@ footer {
 
 /* General Rank-goals table */
 #rank-goals, #greenYellowOrangeGoals {
-    width: auto;
+    width: 100%;
     border-collapse: collapse;
     text-align: center;
 }
@@ -336,12 +274,12 @@ footer {
 }
 
 .rank-green { color: green; }
-.rank-yellow { color: #FFD700; } /* Gold */
+.rank-yellow { color: #FFD700; }
 .rank-orange { color: orange; }
 .rank-red { color: red; }
-.rank-purple { color: #9370DB; } /* Medium Purple */
-.rank-blue { color: #4169E1; } /* Royal Blue */
-.rank-tekken-king { color: #DAA520; } /* Dark gold */
+.rank-purple { color: #9370DB; }
+.rank-blue { color: #4169E1; }
+.rank-tekken-king { color: #DAA520; }
 
 ol {
     padding-left: 15px;
@@ -351,36 +289,13 @@ ol {
 /* Updated Left-aligned list class for proper nesting */
 .left-aligned-list {
     text-align: left;
-    padding-left: 15px; /* Adjust for indentation */
-    list-style-position: inside; /* Keep numbers close to the text */
+    padding-left: 15px;
+    list-style-position: inside;
     margin: 0;
 }
 
 .left-aligned-list ul {
-    padding-left: 20px; /* Add padding to nested lists */
-}
-
-table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-}
-
-th, td {
-    padding: 12px;
-    border: 1px solid #444;
-    text-align: center;
-}
-
-td .left-aligned-list {
-    text-align: left;
-    padding-right: 10px;
-    margin: 0;
-    display: block;
-}
-
-td {
-    vertical-align: top;
+    padding-left: 20px;
 }
 
 table#greenYellowOrangeGoals td {
