@@ -406,3 +406,53 @@ footer {
     margin: 0 auto;
     padding: 20px;
 }
+
+/* Minimal styling for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+/* Styling for the collapsible sections */
+.collapsible {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    font-size: 15px;
+    margin: 5px 0;
+}
+
+.collapsible:hover {
+    background-color: #45a049;
+}
+
+/* Style for the content inside collapsible sections */
+.content {
+    display: none;
+    padding: 10px;
+    margin: 5px 0;
+    background-color: white;
+    border: 1px solid #ddd;
+}
+
+/* Style when the collapsible section is active */
+.collapsible.active {
+    background-color: #555;
+}
