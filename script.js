@@ -61,11 +61,24 @@ function sortTable(n) {
     table.setAttribute("data-sort", ascending ? "asc" : "desc");
 }
 
-// Filter moves by character name
-function filterMoves() {
+function filterTable() {
     let searchInput = document.getElementById("searchBox").value.toLowerCase();
-    let filteredMoves = window.otherCharactersMovelist.filter(move =>
-        move.Character.toLowerCase().includes(searchInput)
-    );
-    displayMoves(filteredMoves, "otherCharsMovelist-body");
+    let columnIndex = document.getElementById("columnSelect").value;
+
+    let table = document.querySelector("table"); // Auto-detects the table
+    if (!table) {
+        console.error("No table found on this page.");
+        return;
+    }
+
+    let tbody = table.getElementsByTagName("tbody")[0];
+    let rows = tbody.getElementsByTagName("tr");
+
+    for (let row of rows) {
+        let cell = row.getElementsByTagName("td")[columnIndex]; // Get selected column
+        if (cell) {
+            let cellText = cell.textContent.toLowerCase();
+            row.style.display = cellText.includes(searchInput) ? "" : "none"; // Hide/show row
+        }
+    }
 }
