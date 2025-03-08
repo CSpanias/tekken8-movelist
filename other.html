@@ -62,8 +62,8 @@
             fetch("data.json")
                 .then(response => response.json())
                 .then(data => {
-                    window.azucena = data.azucena; // Store regular moves globally
-                    displayMoves(data.azucena, "azucena-body");
+                    window.otherCharsMovelist = data.otherCharsMovelist; // Store regular moves globally
+                    displayMoves(data.otherCharsMovelist, "otherCharsMovelist-body");
                 });
         });
     </script>
