@@ -373,7 +373,7 @@
             "Character": "Kazuya"
         }
     ],
-    "azucena": [
+    "otherCharactersMovelist": [
         {
             "name": "Luna Llena",
             "input": "f,F,3",

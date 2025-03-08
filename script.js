@@ -60,23 +60,8 @@ function sortTable(n) {
 // Filter moves by character name
 function filterMoves() {
     let searchInput = document.getElementById("searchBox").value.toLowerCase();
-    let filteredMoves = window.movelist.filter(move =>
+    let filteredMoves = window.otherCharactersMovelist.filter(move =>
         move.Character.toLowerCase().includes(searchInput)
     );
-    displayMoves(filteredMoves, "azucena-body");
-}
-
-// JavaScript for collapsible functionality
-var coll = document.getElementsByClassName("collapsible");
-for (var i = 0; i < coll.length; i++) {
-    coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        // Check the current display state and toggle it
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
+    displayMoves(filteredMoves, "otherCharsMovelist-body");
 }
