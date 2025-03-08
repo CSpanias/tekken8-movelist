@@ -578,6 +578,28 @@
             "hitLevel": "mid",
             "Feature": "",
             "Character": "Bryan"
+        },
+        {
+            "name": "Borrasca Kick",
+            "input": "db,3,4",
+            "startup": 16,
+            "damage": 34,
+            "onHit": "+66",
+            "onBlock": "-41",
+            "hitLevel": "low,high",
+            "Feature": "Tornado, Wall Break",
+            "Character": "Azucena"
+        },
+        {
+            "name": "Aero Press Pegar",
+            "input": "f,1+2",
+            "startup": 16,
+            "damage": 25,
+            "onHit": "+41",
+            "onBlock": "-9",
+            "hitLevel": "high",
+            "Feature": "Armor, Heat Engager",
+            "Character": "Azucena"
         }
     ]
 }
