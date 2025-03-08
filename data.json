@@ -556,6 +556,28 @@
             "hitLevel": "low,low",
             "Feature": "",
             "Character": "Reina"
+        },
+        {
+            "name": "Snake Edge",
+            "input": "df,3",
+            "startup": 29,
+            "damage": 20,
+            "onHit": "+70",
+            "onBlock": "-26",
+            "hitLevel": "low",
+            "Feature": "Homing",
+            "Character": "Bryan"
+        },
+        {
+            "name": "Chopping Elbow",
+            "input": "b,1",
+            "startup": 20,
+            "damage": 21,
+            "onHit": "+7",
+            "onBlock": "+4",
+            "hitLevel": "mid",
+            "Feature": "",
+            "Character": "Bryan"
         }
     ]
 }
