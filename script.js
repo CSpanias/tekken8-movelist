@@ -24,16 +24,20 @@ function displayMoves(moves, tableBodyId) {
     });
 }
 
-// Sorting Function
 function sortTable(n) {
-    let table = document.getElementById("movelist") || document.getElementById("punishments-table") || document.getElementById("rank-points");
+    let th = event.target; // Detect the clicked column header
+    let table = th.closest("table"); // Find the nearest table
+
+    if (!table) {
+        console.error("No table found for sorting.");
+        return;
+    }
+
     let tbody = table.getElementsByTagName("tbody")[0];
     let rows = Array.from(tbody.getElementsByTagName("tr"));
 
-    // Determine if sorting is ascending or descending
     let ascending = table.getAttribute("data-sort") !== "asc";
 
-    // Sort rows based on the clicked column
     rows.sort((a, b) => {
         let valA = a.getElementsByTagName("td")[n].textContent.trim();
         let valB = b.getElementsByTagName("td")[n].textContent.trim();
