@@ -26,7 +26,7 @@
         },
         {
             "name": "Low Kick",
-            "input": "d, 4",
+            "input": "d,4",
             "startup": 12,
             "damage": 6,
             "onHit": "-4",
@@ -201,7 +201,7 @@
             "onBlock": "-14",
             "hitLevel": "high",
             "GoodFor": "Punish",
-            "Feature": "Knockdown, wall splat",
+            "Feature": "Wall Break",
             "Character": "Kazuya"
         },
         {
@@ -211,9 +211,9 @@
             "damage": 25,
             "onHit": "+13",
             "onBlock": "-13",
-            "hitLevel": "high",
+            "hitLevel": "mid,mid",
             "GoodFor": "Punish",
-            "Feature": "Wall splat",
+            "Feature": "Wall Break",
             "Character": "Kazuya"
         },
         {
@@ -237,7 +237,7 @@
             "onBlock": "-19",
             "hitLevel": "mid,mid",
             "GoodFor": "Punish",
-            "Feature": "Heat engager",
+            "Feature": "Heat Engager, Wall Break",
             "Character": "Kazuya"
         },
         {
@@ -273,7 +273,7 @@
             "onBlock": "-8",
             "hitLevel": "mid,high",
             "GoodFor": "Punish",
-            "Feature": "Heat engager",
+            "Feature": "Wall Break, Tornado",
             "Character": "Kazuya"
         },
         {
@@ -285,7 +285,91 @@
             "onBlock": "-11",
             "hitLevel": "mid,high",
             "GoodFor": "Punish",
+            "Feature": "Wall Break",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Soul Thrust",
+            "input": "F,2",
+            "startup": 20,
+            "damage": 23,
+            "onHit": "+13",
+            "onBlock": "-12",
+            "hitLevel": "mid",
+            "GoodFor": "",
+            "Feature": "Wall Break, Tornado, Armor",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Oni Front Kick",
+            "input": "F,3",
+            "startup": 17,
+            "damage": 22,
+            "onHit": "+5",
+            "onBlock": "-13",
+            "hitLevel": "mid",
+            "GoodFor": "",
+            "Feature": "",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Demon God Fist",
+            "input": "WS,2",
+            "startup": 16,
+            "damage": 25,
+            "onHit": "+57",
+            "onBlock": "-18",
+            "hitLevel": "mid",
+            "GoodFor": "Punish",
+            "Feature": "Homing",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Tsunami Kick",
+            "input": "WS,4,4",
+            "startup": 11,
+            "damage": 29,
+            "onHit": "-4",
+            "onBlock": "-15",
+            "hitLevel": "mid,mid",
+            "GoodFor": "Punish",
+            "Feature": "",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Twin Pistons",
+            "input": "WS,1,2",
+            "startup": 13,
+            "damage": 22,
+            "onHit": "+73",
+            "onBlock": "-12",
+            "hitLevel": "mid,mid",
+            "GoodFor": "Punish",
             "Feature": "Launcher",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Illusive Demon",
+            "input": "f,df,4,4",
+            "startup": 16,
+            "damage": 34,
+            "onHit": "+10",
+            "onBlock": "-23",
+            "hitLevel": "low,high",
+            "GoodFor": "Mixups",
+            "Feature": "Wall Break",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Spinning Demon to Left Hook",
+            "input": "f,df,4,1",
+            "startup": 16,
+            "damage": 32,
+            "onHit": "+17",
+            "onBlock": "-23",
+            "hitLevel": "low,high",
+            "GoodFor": "Mixups",
+            "Feature": "Wall Break",
             "Character": "Kazuya"
         }
     ],
@@ -439,6 +523,39 @@
             "hitLevel": "mid",
             "Feature": "Launcher",
             "Character": "Jun"
+        },
+        {
+            "name": "Flash Punch",
+            "input": "1,1,2",
+            "startup": 10,
+            "damage": 23,
+            "onHit": "+23",
+            "onBlock": "-17",
+            "hitLevel": "high,high,mid",
+            "Feature": "",
+            "Character": "Reina"
+        },
+        {
+            "name": "Eisaimon",
+            "input": "db,2",
+            "startup": 20,
+            "damage": 22,
+            "onHit": "-3",
+            "onBlock": "-16",
+            "hitLevel": "low,low",
+            "Feature": "",
+            "Character": "Reina"
+        },
+        {
+            "name": "Queen Bee Stinger",
+            "input": "df,2",
+            "startup": 15,
+            "damage": 13,
+            "onHit": "+30",
+            "onBlock": "-12",
+            "hitLevel": "low,low",
+            "Feature": "",
+            "Character": "Reina"
         }
     ]
 }
