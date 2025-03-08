@@ -406,6 +406,39 @@
             "hitLevel": "high,mid",
             "Feature": "",
             "Character": "Azucena"
+        },
+        {
+            "name": "Kazakiri",
+            "input": "df,3",
+            "startup": 17,
+            "damage": 22,
+            "onHit": "+19",
+            "onBlock": "-8",
+            "hitLevel": "mid",
+            "Feature": "Homing, Wall Break",
+            "Character": "Jun"
+        },
+        {
+            "name": "Katabami",
+            "input": "df,4",
+            "startup": 15,
+            "damage": 22,
+            "onHit": "+48",
+            "onBlock": "-14",
+            "hitLevel": "mid",
+            "Feature": "Tornado",
+            "Character": "Jun"
+        },
+        {
+            "name": "Mizuho",
+            "input": "df,2",
+            "startup": 16,
+            "damage": 14,
+            "onHit": "+29",
+            "onBlock": "-12",
+            "hitLevel": "mid",
+            "Feature": "Launcher",
+            "Character": "Jun"
         }
     ]
 }
