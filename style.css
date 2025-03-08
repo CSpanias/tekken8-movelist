@@ -203,39 +203,56 @@ nav a.active {
 
 /* Search Box Styling */
 .search-box {
-    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     width: 100%;
-    max-width: 400px;  /* Set max width for the search box */
-    margin: 20px 0;
+    max-width: 200px;  /* Keeps the width limited */
+    margin-bottom: 15px;
 }
 
-.search-box input {
-    width: 100%;
+/* Search Input Field */
+#searchBox {
+    flex: 1; /* Takes full width */
     padding: 10px 15px;
-    background-color: #333;
-    color: #fff;
-    border: 1px solid #444;
+    font-size: 16px;
+    border: 2px solid #ff4d4d;
     border-radius: 8px;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
+    background-color: #222;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    transition: border-color 0.3s ease;
 }
 
-.search-box input:focus {
-    background-color: #444;
-    border-color: #ff4d4d;
+#searchBox:focus {
+    border-color: #ffeb3b; /* Yellow highlight on focus */
     outline: none;
 }
 
+/* Dropdown Menu */
+#columnSelect {
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ff4d4d;
+    border-radius: 8px;
+    background-color: #222;
+    color: white;
+    font-family: "Roboto", sans-serif;
+    cursor: pointer;
+    transition: border-color 0.3s ease;
+}
+
+#columnSelect:hover, #columnSelect:focus {
+    border-color: #ffeb3b;
+}
+
+/* Search Button (if needed) */
 .search-box button {
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
     background-color: #ff4d4d;
     color: #fff;
     border: none;
-    padding: 10px;
-    border-radius: 50%;
+    padding: 10px 12px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -243,6 +260,7 @@ nav a.active {
 .search-box button:hover {
     background-color: #ff1a1a;
 }
+
 
 /* Tables */
 #techniques-table {
