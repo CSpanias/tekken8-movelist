@@ -600,6 +600,94 @@
             "hitLevel": "high",
             "Feature": "Armor, Heat Engager",
             "Character": "Azucena"
+        },
+        {
+            "name": "Anaconda Rage",
+            "input": "3,3,4",
+            "startup": 16,
+            "damage": 25,
+            "onHit": "+37",
+            "onBlock": "-12",
+            "hitLevel": "mid,high,mid",
+            "Feature": "Wall Break",
+            "Character": "Bryan"
+        },
+        {
+            "name": "Knee Break",
+            "input": "b,4",
+            "startup": 16,
+            "damage": 18,
+            "onHit": "+15",
+            "onBlock": "-10",
+            "hitLevel": "mid",
+            "Feature": "",
+            "Character": "Bryan"
+        },
+        {
+            "name": "One Two Neck Breaker",
+            "input": "1,2,4",
+            "startup": 105,
+            "damage": 24,
+            "onHit": "+20",
+            "onBlock": "-5",
+            "hitLevel": "high,high,high",
+            "Feature": "Wall Break, Heat Engager",
+            "Character": "Bryan"
+        },
+        {
+            "name": "Anaconda Bite",
+            "input": "3,3,2",
+            "startup": 16,
+            "damage": 20,
+            "onHit": "+76",
+            "onBlock": "-7",
+            "hitLevel": "mid,high,high",
+            "Feature": "Tornado",
+            "Character": "Bryan"
+        },
+        {
+            "name": "Malicious Mace",
+            "input": "db,2",
+            "startup": 21,
+            "damage": 15,
+            "onHit": "+3",
+            "onBlock": "-13",
+            "hitLevel": "low",
+            "Feature": "",
+            "Character": "Devin Jin"
+        },
+        {
+            "name": "Alaya",
+            "input": "WS,2",
+            "startup": 15,
+            "damage": 20,
+            "onHit": "+72",
+            "onBlock": "-12",
+            "hitLevel": "mid",
+            "Feature": "Tornado",
+            "Character": "Devin Jin"
+        },
+        {
+            "name": "Wicked Jambu Spear",
+            "input": "b,3",
+            "startup": 29,
+            "damage": 24,
+            "onHit": "+10",
+            "onBlock": "-18",
+            "hitLevel": "mid",
+            "Feature": "Wall Break, Heat Engager",
+            "Character": "Devin Jin"
+        },
+        {
+            "name": "Tsujikaze",
+            "input": "1+2",
+            "startup": 17,
+            "damage": 25,
+            "onHit": "+7",
+            "onBlock": "-12",
+            "hitLevel": "mid,mid",
+            "Feature": "Homing, Wall Break",
+            "Character": "Devin Jin"
         }
     ]
 }
