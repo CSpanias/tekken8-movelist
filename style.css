@@ -365,16 +365,14 @@ nav a.active {
     padding: 20px;
 }
 
-/* Adjusted rule to ensure links in paragraphs within sections are targeted */
-.page-theory-learning-plan section p a[href^="drills.html"] {
-    color: #ff4d00; /* Set the color to orange */
-    font-weight: bold; /* Makes it stand out more */
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.95em;
+/* General link styling for readability */
+a {
+    color: #ff4d4d; /* Red accent */
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* Add a more specific hover effect */
-.page-theory-learning-plan section p a[href^="drills.html"]:hover {
+a:hover {
+    color: #ff1a1a; /* Brighter red on hover */
     text-decoration: underline;
-    color: #ff9500; /* Slightly lighter on hover */
 }
