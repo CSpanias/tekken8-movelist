@@ -365,3 +365,14 @@ nav a.active {
     margin: 0 auto;
     padding: 20px;
 }
+
+/* Link to drills.html */
+a[href^="drills.html"] {
+    color: #ffa500; /* Change this to your preferred color */
+    font-weight: bold; /* Optional: makes it more readable */
+}
+
+a[href^="drills.html"]:hover {
+    text-decoration: underline;
+    color: #ffcc66; /* Slightly lighter orange on hover */
+}
