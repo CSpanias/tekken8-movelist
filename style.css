@@ -370,6 +370,10 @@ nav a.active {
 a[href^="drills.html"] {
     color: #ffa500; /* Change this to your preferred color */
     font-weight: bold; /* Optional: makes it more readable */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
 }
 
 a[href^="drills.html"]:hover {
