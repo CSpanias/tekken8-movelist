@@ -357,7 +357,6 @@ nav a.active {
     color: black; /* Black text for the second table header */
 }
 
-
 /* Full-page container */
 .page-container {
     width: 100%;
@@ -366,15 +365,15 @@ nav a.active {
     padding: 20px;
 }
 
-/* Specific to drills-related links in content */
-body.page-theory-learning-plan section a[href^="drills.html"] {
-    color: #ff4d00; /* Set the color to orange */
-    font-weight: bold; /* Makes it stand out more */
+/* Specific to drills-related links in content (not in the menu) */
+.page-theory-learning-plan section a[href^="drills.html"] {
+    color: #ff4d00; /* Set the color to orange for drills links */
+    font-weight: bold; 
     font-family: 'Roboto', sans-serif;
     font-size: 0.95em;
 }
 
-body.page-theory-learning-plan section a[href^="drills.html"]:hover {
+.page-theory-learning-plan section a[href^="drills.html"]:hover {
     text-decoration: underline;
-    color: #ff4d00; /* Slightly lighter on hover */
+    color: #ff9500; /* Slightly lighter on hover */
 }
