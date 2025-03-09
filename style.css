@@ -371,6 +371,7 @@ a[href^="drills.html"] {
     color: #ffa500; /* Change this to your preferred color */
     font-weight: bold; /* Optional: makes it more readable */
     font-family: 'Roboto', sans-serif;
+    font-size: 0.95em;
 }
 
 a[href^="drills.html"]:hover {
