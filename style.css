@@ -97,6 +97,10 @@ tr:hover {
     text-decoration: underline;
 }
 
+.note p strong {
+    color: #ffffff; /* Ensures "Resources:" stays white */
+}
+
 /* Divider Styling */
 .divider {
     border: 0;
