@@ -368,7 +368,7 @@ nav a.active {
 
 /* Link to drills.html */
 a[href^="drills.html"] {
-    color: #ffa500; /* Change this to your preferred color */
+    color: #ff4d00; /* Change this to your preferred color */
     font-weight: bold; /* Optional: makes it more readable */
     font-family: 'Roboto', sans-serif;
     font-size: 0.95em;
@@ -376,5 +376,5 @@ a[href^="drills.html"] {
 
 a[href^="drills.html"]:hover {
     text-decoration: underline;
-    color: #ffcc66; /* Slightly lighter orange on hover */
+    color: #ff4d00; /* Slightly lighter orange on hover */
 }
