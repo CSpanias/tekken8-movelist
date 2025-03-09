@@ -366,15 +366,15 @@ nav a.active {
     padding: 20px;
 }
 
-/* Link to drills.html */
-a[href^="drills.html"] {
-    color: #ff4d00; /* Change this to your preferred color */
-    font-weight: bold; /* Optional: makes it more readable */
+/* Specific to drills-related links in content */
+body.page-theory-learning-plan section a[href^="drills.html"] {
+    color: #ff4d00; /* Set the color to orange */
+    font-weight: bold; /* Makes it stand out more */
     font-family: 'Roboto', sans-serif;
     font-size: 0.95em;
 }
 
-a[href^="drills.html"]:hover {
+body.page-theory-learning-plan section a[href^="drills.html"]:hover {
     text-decoration: underline;
-    color: #ff4d00; /* Slightly lighter orange on hover */
+    color: #ff4d00; /* Slightly lighter on hover */
 }
