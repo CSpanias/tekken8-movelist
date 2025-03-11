@@ -377,6 +377,7 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Drill collapsible styling */
 .drill-section {
     border: 2px solid #444;
     border-radius: 10px;
@@ -390,8 +391,10 @@ a:hover {
     background-color: #333;
     padding: 10px 15px;
     margin: 0 auto;
-    display: inline-block; /* Make the title fit its text */
-    border-radius: 2px solid #4db8ff; /* Add a visible border */
+    border-radius: 10px;
+    width: fit-content; /* Makes the width fit the text content */
+    border: 2px solid #4db8ff; /* Adds the border */
+    display: block; /* Align to block to make sure it appears centered */
 }
 
 .drill-title:hover {
