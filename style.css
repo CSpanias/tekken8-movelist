@@ -388,9 +388,10 @@ a:hover {
 .drill-title {
     cursor: pointer;
     background-color: #333;
-    padding: 10px;
-    margin: 0;
-    border-radius: 10px;
+    padding: 10px 15px;
+    margin: 0 auto;
+    display: inline-block; /* Make the title fit its text */
+    border-radius: 2px solid #4db8ff; /* Add a visible border */
 }
 
 .drill-title:hover {
