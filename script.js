@@ -82,3 +82,15 @@ function filterTable() {
         }
     }
 }
+
+document.addEventListener("DOMContentLoaded", function () {
+    const drillTitles = document.querySelectorAll(".drill-title");
+
+    drillTitles.forEach(title => {
+        title.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+    });
+});
+

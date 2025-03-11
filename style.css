@@ -376,3 +376,29 @@ a:hover {
     color: #ff1a1a; /* Brighter red on hover */
     text-decoration: underline;
 }
+
+.drill-section {
+    border: 2px solid #444;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #222;
+}
+
+.drill-title {
+    cursor: pointer;
+    background-color: #333;
+    padding: 10px;
+    margin: 0;
+    border-radius: 10px;
+}
+
+.drill-title:hover {
+    background-color: #555;
+}
+
+.drill-content {
+    display: none;
+    padding: 10px;
+    border-top: 1px solid #444;
+}
