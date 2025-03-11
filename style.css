@@ -390,11 +390,11 @@ a:hover {
     cursor: pointer;
     background-color: #333;
     padding: 10px 15px;
-    margin: 0 auto;
+    margin: 0; /* Remove any extra margin */
     border-radius: 10px;
-    width: fit-content; /* Makes the width fit the text content */
+    width: fit-content; /* Border fits content */
     border: 2px solid #4db8ff; /* Adds the border */
-    display: block; /* Align to block to make sure it appears centered */
+    display: inline-block; /* Keeps it left-aligned */
 }
 
 .drill-title:hover {
