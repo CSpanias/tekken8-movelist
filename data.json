@@ -371,6 +371,90 @@
             "GoodFor": "Mixups",
             "Feature": "Wall Break",
             "Character": "Kazuya"
+        },
+        {
+            "name": "Impaling Knee Twin Skewer",
+            "input": "df,3,2,1",
+            "startup": 18,
+            "damage": 47,
+            "onHit": "+8",
+            "onBlock": "-14",
+            "hitLevel": "mid,mid,mid",
+            "GoodFor": "",
+            "Feature": "Tornado, Wall Break",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Leaping Side Kick",
+            "input": "f,f,F,3",
+            "startup": 22,
+            "damage": 30,
+            "onHit": "+14",
+            "onBlock": "+7",
+            "hitLevel": "mid",
+            "GoodFor": "",
+            "Feature": "Tornado, Wall Break",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Patricide Fist",
+            "input": "f,n,df,1+2",
+            "startup": 24,
+            "damage": 33,
+            "onHit": "+25",
+            "onBlock": "+5",
+            "hitLevel": "mid",
+            "GoodFor": "",
+            "Feature": "Tornado, Wall Break, Chip Damage",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Elkeid",
+            "input": "SS,1+2",
+            "startup": 19,
+            "damage": 25,
+            "onHit": "+11",
+            "onBlock": "+5",
+            "hitLevel": "high",
+            "GoodFor": "",
+            "Feature": "",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Right Splits Kick",
+            "input": "f,4",
+            "startup": 19,
+            "damage": 20,
+            "onHit": "+4",
+            "onBlock": "+7",
+            "hitLevel": "mid",
+            "GoodFor": "",
+            "Feature": "",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Left Jab",
+            "input": "1",
+            "startup": 10,
+            "damage": 5,
+            "onHit": "+8",
+            "onBlock": "+1",
+            "hitLevel": "high",
+            "GoodFor": "",
+            "Feature": "",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Right Jab",
+            "input": "2",
+            "startup": 12,
+            "damage": 12,
+            "onHit": "+8",
+            "onBlock": "-3",
+            "hitLevel": "high",
+            "GoodFor": "",
+            "Feature": "",
+            "Character": "Kazuya"
         }
     ],
     "punishmentMoves": [
