@@ -455,6 +455,18 @@
             "GoodFor": "",
             "Feature": "",
             "Character": "Kazuya"
+        },
+        {
+            "name": "Engetsusen",
+            "input": "WS,3",
+            "startup": 21,
+            "damage": 24,
+            "onHit": "+20",
+            "onBlock": "-5",
+            "hitLevel": "mid",
+            "GoodFor": "",
+            "Feature": "Homing, Wall Break",
+            "Character": "Kazuya"
         }
     ],
     "punishmentMoves": [
