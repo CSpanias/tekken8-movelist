@@ -50,14 +50,14 @@
         },
         {
             "name": "Slaughter Uppercut",
-            "input": "df,1,2",
+            "input": "df,1,DF,2",
             "startup": 15,
             "damage": 31,
             "onHit": "+18",
             "onBlock": "-8",
             "hitLevel": "mid,mid",
             "GoodFor": "",
-            "Feature": "Launcher",
+            "Feature": "Tornado, Wall Break",
             "Character": "Kazuya"
         },
         {
@@ -237,7 +237,7 @@
             "onBlock": "-19",
             "hitLevel": "mid,mid",
             "GoodFor": "Punish",
-            "Feature": "Heat Engager, Wall Break",
+            "Feature": "Heat Engager, Wall Break, Chip Damage",
             "Character": "Kazuya"
         },
         {
@@ -273,7 +273,7 @@
             "onBlock": "-8",
             "hitLevel": "mid,high",
             "GoodFor": "Punish",
-            "Feature": "Wall Break, Tornado",
+            "Feature": "Heat Engager, Chip Damage",
             "Character": "Kazuya"
         },
         {
@@ -466,6 +466,18 @@
             "hitLevel": "mid",
             "GoodFor": "",
             "Feature": "Homing, Wall Break",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Hell Lancer",
+            "input": "f,n,df,3",
+            "startup": 18,
+            "damage": 30,
+            "onHit": "+12",
+            "onBlock": "-9",
+            "hitLevel": "high",
+            "GoodFor": "",
+            "Feature": "Wall Break, Chip Damage",
             "Character": "Kazuya"
         }
     ],
