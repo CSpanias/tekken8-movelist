@@ -803,7 +803,21 @@
             "name": "Level 1",
             "input": "f,n,df,2 + f,2 + dash + 3,1 + df,1,DF,2",
             "startup": 13,
-            "damage": "58",
+            "damage": 58,
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Level 2",
+            "input": "f,n,df,2 + b,4 + df,1,DF,2 + dash + b,2,2,1+2",
+            "startup": 13,
+            "damage": 63,
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Level 3",
+            "input": "f,n,df,2 + dash + 3,1,4 + dash + 3,1,DF,1+2 + dash + f,n,DF,4,4",
+            "startup": 13,
+            "damage": 67,
             "Character": "Kazuya"
         }
     ]

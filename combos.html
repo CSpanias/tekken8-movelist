@@ -46,5 +46,17 @@
     </footer>
 
 <script src="script.js"></script>
+
+<script>
+    // Load and display mental frame trap moves
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("data.json")
+            .then(response => response.json())
+            .then(data => {
+                window.combos = data.combos; // Store moves globally
+                displayMoves(data.combos, "combos-body");
+            });
+    });
+</script>
 </body>
 </html>
