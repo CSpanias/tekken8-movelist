@@ -800,6 +800,17 @@
     ],
     "combos": [
         {
+            "name": "Level 0",
+            "input": "f,n,df,2 + df,3 + df,1,DF,2 + f,n,DF,3",
+            "startup": 13,
+            "damage": 58,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "N/A",
+            "Feature": "N/A",
+            "Character": "Kazuya"
+        },
+        {
             "name": "Level 1",
             "input": "f,n,df,2 + f,2 + dash + 3,1 + df,1,DF,2",
             "startup": 13,
