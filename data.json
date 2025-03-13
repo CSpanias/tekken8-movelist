@@ -797,5 +797,14 @@
             "Feature": "Homing, Wall Break",
             "Character": "Devin Jin"
         }
+    ],
+    "combos": [
+        {
+            "name": "Level 1",
+            "input": "f,n,df,2 + f,2 + dash + 3,1 + df,1,DF,2",
+            "startup": 13,
+            "damage": "58",
+            "Character": "Kazuya"
+        }
     ]
 }
