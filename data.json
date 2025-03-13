@@ -803,7 +803,7 @@
             "name": "Level 0",
             "input": "f,n,df,2 + df,3 + df,1,DF,2 + f,n,DF,3",
             "startup": 13,
-            "damage": 58,
+            "damage": 51,
             "onHit": "N/A",
             "onBlock": "N/A",
             "hitLevel": "N/A",
