@@ -833,7 +833,7 @@
             "Character": "Kazuya"
         },
         {
-            "name": "Level 3",
+            "name": "Level 3 ➔ 9 hits",
             "input": "f,n,df,2 + dash + 3,1,4 + dash + 3,1,DF,1+2 + dash + f,n,DF,4,4",
             "startup": 13,
             "damage": 67,
