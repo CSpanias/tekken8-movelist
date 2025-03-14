@@ -823,9 +823,9 @@
         },
         {
             "name": "Level 2 ➔ 7 hits",
-            "input": "f,n,df,2 + b,4 + df,1,DF,2 + dash + b,2,2 + bu,1+2",
+            "input": "f,n,df,2 + b,4 + df,1,DF,2 + dash + b,2,2,1+2",
             "startup": 13,
-            "damage": 54,
+            "damage": 63,
             "onHit": "N/A",
             "onBlock": "N/A",
             "hitLevel": "N/A",
