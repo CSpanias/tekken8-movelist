@@ -194,24 +194,12 @@
         },
         {
             "name": "Sokushitsu Goda",
-            "input": "bu,1+2",
+            "input": "b,1,2",
             "startup": 11,
             "damage": 30,
             "onHit": "+9",
             "onBlock": "-14",
-            "hitLevel": "high",
-            "GoodFor": "Punish",
-            "Feature": "Wall Break",
-            "Character": "Kazuya"
-        },
-        {
-            "name": "Acute Pain",
-            "input": "1+2",
-            "startup": 12,
-            "damage": 25,
-            "onHit": "+13",
-            "onBlock": "-13",
-            "hitLevel": "mid,mid",
+            "hitLevel": "high,mid",
             "GoodFor": "Punish",
             "Feature": "Wall Break",
             "Character": "Kazuya"
