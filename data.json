@@ -611,6 +611,18 @@
             "GoodFor": "",
             "Feature": "Devil Form, Tornado",
             "Character": "Kazuya"
+        },
+        {
+            "name": "Rampaging Demon",
+            "input": "b,2,4,1",
+            "startup": 14,
+            "damage": 30,
+            "onHit": "+11",
+            "onBlock": "-14",
+            "hitLevel": "mid,high,mid",
+            "GoodFor": "",
+            "Feature": "Wall Break",
+            "Character": "Kazuya"
         }
     ],
     "punishmentMoves": [
