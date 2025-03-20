@@ -684,19 +684,6 @@
             "Character": "Kazuya"
         }
     ],
-    "mentalFrameTraps": [
-        {
-            "name": "Back Fist",
-            "input": "1,2,2 | 1,2,4 | 1,2,2,3 | 1,2,4,3",
-            "startup": 10,
-            "damage": "25 | 31 | 36 | 61",
-            "onHit": "-4",
-            "onBlock": "-15",
-            "hitLevel": "h,h,h | h,h,l | h,h,m | h,h,l,m",
-            "Feature": "",
-            "Character": "Kazuya"
-        }
-    ],
     "otherCharsMovelist": [
         {
             "name": "Luna Llena",
