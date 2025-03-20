@@ -385,7 +385,7 @@
             "Character": "Kazuya"
         },
         {
-            "name": "Patricide Fist",
+            "name": "Parricide Fist",
             "input": "f,n,df,1+2",
             "startup": 24,
             "damage": 33,
