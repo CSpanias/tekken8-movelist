@@ -554,7 +554,7 @@
         },
         {
             "name": "Chaos Inferno",
-            "input": "f,F,2,b",
+            "input": "f,F,2",
             "startup": 16,
             "damage": 40,
             "onHit": "0",
