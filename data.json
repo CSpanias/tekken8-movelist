@@ -489,7 +489,7 @@
             "onBlock": "N/A",
             "hitLevel": "",
             "GoodFor": "",
-            "Feature": "Devil Form, Unbreakable, Wall Break",
+            "Feature": "Devil Form, Unblockable, Wall Break",
             "Character": "Kazuya"
         },
         {
@@ -537,7 +537,7 @@
             "onBlock": "N/A",
             "hitLevel": "high",
             "GoodFor": "",
-            "Feature": "Devil Form, Unbreakable, Wall Break",
+            "Feature": "Devil Form, Unblockable, Wall Break",
             "Character": "Kazuya"
         },
         {
