@@ -927,6 +927,39 @@
             "hitLevel": "mid,mid",
             "Feature": "Homing, Wall Break",
             "Character": "Devin Jin"
+        },
+        {
+            "name": "Born of Fire",
+            "input": "ub,4",
+            "startup": 22,
+            "damage": 20,
+            "onHit": "+13",
+            "onBlock": "-13",
+            "hitLevel": "mid",
+            "Feature": "Tornado, Armor, Wall Break",
+            "Character": "Xiaoyu"
+        },
+        {
+            "name": "Phoenix Tail",
+            "input": "db,3",
+            "startup": 29,
+            "damage": 23,
+            "onHit": "+71",
+            "onBlock": "-23",
+            "hitLevel": "low",
+            "Feature": "Homing",
+            "Character": "Xiaoyu"
+        },
+        {
+            "name": "Clouded Peak",
+            "input": "f,1+2",
+            "startup": 12,
+            "damage": 25,
+            "onHit": "+15",
+            "onBlock": "-16",
+            "hitLevel": "mid",
+            "Feature": "Wall Break",
+            "Character": "Xiaoyu"
         }
     ],
     "combos": [
