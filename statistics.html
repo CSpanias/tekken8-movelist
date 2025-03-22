@@ -125,10 +125,6 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Goal</th>
-                                <th>Success</th>
-                                <th>Defended</th>
-                                <th>Whiffed</th>
-                                <th>Total</th>
                                 <th>Success (%)</th>
                                 <th>Defended (%)</th>
                                 <th>Whiffed (%)</th>
@@ -141,10 +137,6 @@
                                     <tr key={index}>
                                         <td>{item.date}</td>
                                         <td>{item.goal}</td>
-                                        <td>{item.success}</td>
-                                        <td>{item.defended}</td>
-                                        <td>{item.whiffed}</td>
-                                        <td>{total}</td>
                                         <td>{calculatePercentage(item.success, total)}</td>
                                         <td>{calculatePercentage(item.defended, total)}</td>
                                         <td>{calculatePercentage(item.whiffed, total)}</td>
