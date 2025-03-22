@@ -115,12 +115,12 @@
 
     <!-- Export and Upload Section -->
     <div class="backup-section">
-        <!-- Backup Button -->
-        <button onclick="exportToJSON()">Backup Data</button>
-
         <!-- Upload File Input and Label -->
         <input type="file" id="uploadFile" accept=".json" onchange="uploadFromJSON(event)">
         <label for="uploadFile">Upload Backup Data</label>
+
+        <!-- Backup Button -->
+        <button onclick="exportToJSON()">Backup Data</button>
     </div>
 
 

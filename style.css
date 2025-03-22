@@ -486,21 +486,23 @@ button:hover {
     transition: background-color 0.3s ease;
     display: inline-block; /* Ensure label behaves like a button */
     text-align: center; /* Center the text */
-    width: auto; /* Allow width to fit content */
     min-width: 160px; /* Set a minimum width for consistent size */
     text-align: center;
+    font-size: 16px; /* Ensures text inside the button is of the same size */
 }
 
+/* Add hover effect */
 .backup-section button:hover,
 .backup-section label:hover {
     background-color: #ff1a1a;
 }
 
+/* Hide the file input but keep the label styled */
 .backup-section input[type="file"] {
     display: none; /* Hides the file input element */
 }
 
+/* Styling for the label when associated with file input */
 .backup-section input[type="file"]:focus + label {
     outline: 2px solid #ffeb3b; /* Yellow border when file input is focused */
 }
-
