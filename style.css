@@ -463,3 +463,48 @@ button:hover {
 .form-row button:hover {
     background-color: #ff1a1a;
 }
+
+/* Style for the Export and Upload Section */
+.backup-section {
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.backup-section button,
+.backup-section input[type="file"] {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background-color: #ff4d4d;
+    color: #ffffff;  /* White text for both buttons */
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.backup-section button:hover,
+.backup-section input[type="file"]:hover {
+    background-color: #ff1a1a;
+}
+
+.backup-section label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    color: #ffffff; /* White text for label to match button */
+    background-color: #ff4d4d;  /* Red background for label to match button */
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.backup-section input[type="file"] {
+    display: none; /* Hides the file input element */
+}
+
+.backup-section input[type="file"]:focus + label {
+    outline: 2px solid #ffeb3b; /* Yellow border when file input is focused */
+}
