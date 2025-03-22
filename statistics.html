@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistics</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="script.js"></script>
+    
+    <!-- React and ReactDOM CDN Links -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    <!-- Babel CDN Link for JSX compilation -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <script defer src="script.js"></script> 
 </head>
-
 <body class="page-theory-learning-plan">
     <div class="container">
         <nav>
@@ -20,7 +24,7 @@
             <a href="punishments.html">Punishments</a> |
             <a href="combos.html">Combos</a> |
             <a href="learning-plan.html" id="learning-plan">Learning Plan</a> |
-            <a hfer="stats.html" id="statistics" class="active">Statistics</a> |
+            <a href="stats.html" id="statistics" class="active">Statistics</a> |
             <a href="drills.html">Drills</a> |
             <a href="rank-system.html">Rank System</a> |
             <a href="theory.html">Theory</a> |
@@ -31,21 +35,21 @@
     <div id="root"></div> <!-- React app will render here -->
 
     <script type="text/babel">
-        // Sample data for the table
-        const data = [
-            { date: "2025-03-20", goal: "WGS", success: 4, defended: 2, whiffed: 4 },
-            { date: "2025-03-21", goal: "LSK", success: 4, defended: 2, whiffed: 6 },
-            { date: "2025-03-22", goal: "H1: Devil Impact to WGS", success: 1, defended: 4, whiffed: 4 },
-            { date: "2025-03-22", goal: "H2: Abyss Damnation", success: 13, defended: 1, whiffed: 9 },
-            { date: "2025-03-22", goal: "H3: Devil Bleak", success: 0, defended: 0, whiffed: 0 },
-            { date: "2025-03-22", goal: "H4: Tempest Blaster", success: 0, defended: 0, whiffed: 1 },
-            { date: "2025-03-22", goal: "db,4 to f,2", success: 2, defended: 0, whiffed: 0 },
-            { date: "2025-03-23", goal: "1,2,4,3 to Soul Thrust", success: 5, defended: 2, whiffed: 1 },
-        ];
+        // Function to get data from localStorage or default to an empty array
+        const getDataFromLocalStorage = () => {
+            const data = localStorage.getItem('statsData');
+            return data ? JSON.parse(data) : [];
+        };
+
+        // Function to save data to localStorage
+        const saveDataToLocalStorage = (data) => {
+            localStorage.setItem('statsData', JSON.stringify(data));
+        };
 
         // StatsTable Component
         function StatsTable() {
             const [filterDate, setFilterDate] = React.useState("");
+            const [data, setData] = React.useState(getDataFromLocalStorage());
 
             // Filter data based on the selected date
             const filteredData = filterDate
@@ -55,7 +59,27 @@
             // Function to calculate the percentage
             const calculatePercentage = (success, total) => {
                 return total ? ((success / total) * 100).toFixed(0) + "%" : "#DIV/0!";
-            }
+            };
+
+            // Handle new data submission
+            const handleNewData = (e) => {
+                e.preventDefault();
+                const date = e.target.date.value;
+                const goal = e.target.goal.value;
+                const success = parseInt(e.target.success.value);
+                const defended = parseInt(e.target.defended.value);
+                const whiffed = parseInt(e.target.whiffed.value);
+
+                const newData = { date, goal, success, defended, whiffed };
+                const updatedData = [...data, newData];
+
+                // Save new data to localStorage
+                setData(updatedData);
+                saveDataToLocalStorage(updatedData);
+
+                // Clear form fields
+                e.target.reset();
+            };
 
             return (
                 <div>
@@ -69,6 +93,31 @@
                         value={filterDate}
                         onChange={e => setFilterDate(e.target.value)}
                     />
+                    
+                    {/* Data Entry Form */}
+                    <form onSubmit={handleNewData}>
+                        <div>
+                            <label htmlFor="date">Date: </label>
+                            <input type="date" id="date" required />
+                        </div>
+                        <div>
+                            <label htmlFor="goal">Goal: </label>
+                            <input type="text" id="goal" required />
+                        </div>
+                        <div>
+                            <label htmlFor="success">Success: </label>
+                            <input type="number" id="success" required />
+                        </div>
+                        <div>
+                            <label htmlFor="defended">Defended: </label>
+                            <input type="number" id="defended" required />
+                        </div>
+                        <div>
+                            <label htmlFor="whiffed">Whiffed: </label>
+                            <input type="number" id="whiffed" required />
+                        </div>
+                        <button type="submit">Add Data</button>
+                    </form>
 
                     {/* Stats Table */}
                     <table border="1">
