@@ -434,3 +434,20 @@ button {
 button:hover {
     background-color: #ff1a1a;
 }
+
+/* Form Input Fields in a Row */
+.form-row {
+    display: flex;
+    flex-wrap: wrap; /* Wrap if there's not enough space */
+    gap: 10px; /* Space between inputs */
+    align-items: center; /* Align input fields vertically */
+}
+
+.form-row label {
+    width: 100px; /* Adjust width of the labels */
+}
+
+.form-row input {
+    flex: 1; /* Make input fields take the remaining space */
+    min-width: 100px; /* Ensures inputs aren't too small */
+}
