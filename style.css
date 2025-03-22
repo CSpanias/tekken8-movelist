@@ -438,7 +438,7 @@ button:hover {
 /* Form Input Fields in a Row */
 .form-row {
     display: flex;
-    flex-wrap: wrap; /* Wrap if there's not enough space */
+    flex-wrap: wrap; /* Allow wrapping when needed */
     gap: 10px; /* Space between inputs */
     align-items: center; /* Align input fields vertically */
 }
@@ -450,4 +450,10 @@ button:hover {
 .form-row input {
     flex: 1; /* Make input fields take the remaining space */
     min-width: 100px; /* Ensures inputs aren't too small */
+    max-width: 150px; /* Set a max width for larger inputs */
+}
+
+/* Specific styling for Success, Defended, and Whiffed input boxes */
+.form-row input[type="number"] {
+    width: 80px; /* Smaller width for the numerical inputs */
 }

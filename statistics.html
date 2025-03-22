@@ -126,29 +126,29 @@
                     
                     {/* Data Entry Form */}
                     <form onSubmit={handleNewData}>
-                    <div className="form-row">
-                        <div>
-                            <label htmlFor="date">Date: </label>
-                            <input type="date" id="date" required />
+                        <div className="form-row">
+                            <div>
+                                <label htmlFor="date">Date: </label>
+                                <input type="date" id="date" required />
+                            </div>
+                            <div>
+                                <label htmlFor="goal">Goal: </label>
+                                <input type="text" id="goal" required />
+                            </div>
+                            <div>
+                                <label htmlFor="success">Success: </label>
+                                <input type="number" id="success" required />
+                            </div>
+                            <div>
+                                <label htmlFor="defended">Defended: </label>
+                                <input type="number" id="defended" required />
+                            </div>
+                            <div>
+                                <label htmlFor="whiffed">Whiffed: </label>
+                                <input type="number" id="whiffed" required />
+                            </div>
                         </div>
-                        <div>
-                            <label htmlFor="goal">Goal: </label>
-                            <input type="text" id="goal" required />
-                        </div>
-                        <div>
-                            <label htmlFor="success">Success: </label>
-                            <input type="number" id="success" required />
-                        </div>
-                        <div>
-                            <label htmlFor="defended">Defended: </label>
-                            <input type="number" id="defended" required />
-                        </div>
-                        <div>
-                            <label htmlFor="whiffed">Whiffed: </label>
-                            <input type="number" id="whiffed" required />
-                        </div>
-                    </div>
-                    <button type="submit">{editIndex !== null ? "Update Data" : "Add Data"}</button>
+                        <button type="submit">{editIndex !== null ? "Update Data" : "Add Data"}</button>
                 </form>
 
                     {/* Stats Table */}
