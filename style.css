@@ -443,17 +443,23 @@ button:hover {
     align-items: center; /* Align input fields vertically */
 }
 
-.form-row label {
-    width: 100px; /* Adjust width of the labels */
-}
-
-.form-row input {
-    flex: 1; /* Make input fields take the remaining space */
-    min-width: 100px; /* Ensures inputs aren't too small */
-    max-width: 150px; /* Set a max width for larger inputs */
-}
-
 /* Specific styling for Success, Defended, and Whiffed input boxes */
 .form-row input[type="number"] {
     width: 80px; /* Smaller width for the numerical inputs */
+}
+
+/* Button aligned next to Whiffed */
+.form-row button {
+    width: auto;
+    padding: 10px 15px;
+    background-color: #ff4d4d; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form-row button:hover {
+    background-color: #ff1a1a;
 }
