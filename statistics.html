@@ -15,8 +15,95 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
     
     <script defer src="script.js"></script> 
+
+    <script>
+        // Function to export table data to JSON
+        function exportToJSON() {
+            const data = [];
+            const rows = document.querySelectorAll("table tr");
+
+            rows.forEach(row => {
+                const cells = row.querySelectorAll("th, td");
+                const rowData = [];
+                cells.forEach(cell => {
+                    rowData.push(cell.textContent.trim());
+                });
+                if (rowData.length > 0) data.push(rowData);
+            });
+
+            const jsonFile = new Blob([JSON.stringify(data)], { type: "application/json" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(jsonFile);
+            link.download = "statistics_backup.json"; // File name for download
+            link.click(); // Trigger the download
+        }
+
+        // Function to upload and restore table data from JSON file
+        function uploadFromJSON(event) {
+            const file = event.target.files[0]; // Get the selected file
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    restoreTable(data);
+                } catch (err) {
+                    alert("Error reading the file. Please make sure it's a valid JSON file.");
+                }
+            };
+
+            reader.readAsText(file); // Read the file as text
+        }
+
+        // Function to restore the table data
+        function restoreTable(data) {
+            const table = document.querySelector("table tbody");
+            table.innerHTML = ""; // Clear the table
+
+            data.forEach(rowData => {
+                const row = document.createElement("tr");
+                rowData.forEach(cellData => {
+                    const cell = document.createElement("td");
+                    cell.textContent = cellData;
+                    row.appendChild(cell);
+                });
+                table.appendChild(row);
+            });
+        }
+    </script>
+
+    <script>
+        function exportToJSON() {
+            const data = [];
+            const rows = document.querySelectorAll("table tr");
+
+            rows.forEach(row => {
+                const cells = row.querySelectorAll("th, td");
+                const rowData = [];
+                cells.forEach(cell => {
+                    rowData.push(cell.textContent.trim());
+                });
+                if (rowData.length > 0) data.push(rowData);
+            });
+
+            const jsonFile = new Blob([JSON.stringify(data)], { type: "application/json" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(jsonFile);
+            link.download = "statistics_backup.json"; // File name for download
+            link.click(); // Trigger the download
+        }
+    </script>
+
 </head>
+
 <body class="page-theory-learning-plan">
+
+    <button onclick="exportToJSON()">Backup Data</button>
+
+    <!-- Upload Section -->
+    <input type="file" id="uploadFile" accept=".json" onchange="uploadFromJSON(event)">
+    <label for="uploadFile">Upload Backup Data</label>
+    
     <div class="container">
         <nav>
             <a href="index.html">Home</a> |
@@ -189,30 +276,5 @@
         // Render the StatsTable component
         ReactDOM.createRoot(document.getElementById('root')).render(<StatsTable />);
     </script>
-
-    <script>
-        function exportToJSON() {
-            const data = [];
-            const rows = document.querySelectorAll("table tr");
-
-            rows.forEach(row => {
-                const cells = row.querySelectorAll("th, td");
-                const rowData = [];
-                cells.forEach(cell => {
-                    rowData.push(cell.textContent.trim());
-                });
-                if (rowData.length > 0) data.push(rowData);
-            });
-
-            const jsonFile = new Blob([JSON.stringify(data)], { type: "application/json" });
-            const link = document.createElement("a");
-            link.href = URL.createObjectURL(jsonFile);
-            link.download = "statistics_backup.json"; // File name for download
-            link.click(); // Trigger the download
-        }
-    </script>
-
-    <!-- Button to trigger export to JSON -->
-    <button onclick="exportToJSON()">Backup Data</button>
 </body>
 </html>
