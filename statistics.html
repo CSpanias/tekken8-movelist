@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script> 
+</head>
+<body class="page-theory-learning-plan">
+    <div class="container">
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="movelist.html">Movelist</a> |
+            <a href="punishments.html">Punishments</a> |
+            <a href="combos.html">Combos</a> |
+            <a href="learning-plan.html" id="learning-plan">Learning Plan</a> |
+            <a hfer="stats.html" id="statistics" class="active">Statistics</a> |
+            <a href="drills.html">Drills</a> |
+            <a href="rank-system.html">Rank System</a> |
+            <a href="theory.html">Theory</a> |
+            <a href="other.html">Other</a>
+        </nav>
+</head>
+
+    <body>
+        <div id="root"></div>
+
+        <script type="text/babel">
+            // Sample data for the table
+            const data = [
+                { date: "2025-03-20", goal: "WGS", success: 4, defended: 2, whiffed: 4 },
+                { date: "2025-03-21", goal: "LSK", success: 4, defended: 2, whiffed: 6 },
+                { date: "2025-03-22", goal: "H1: Devil Impact to WGS", success: 1, defended: 4, whiffed: 4 },
+                { date: "2025-03-22", goal: "H2: Abyss Damnation", success: 13, defended: 1, whiffed: 9 },
+                { date: "2025-03-22", goal: "H3: Devil Bleak", success: 0, defended: 0, whiffed: 0 },
+                { date: "2025-03-22", goal: "H4: Tempest Blaster", success: 0, defended: 0, whiffed: 1 },
+                { date: "2025-03-22", goal: "db,4 to f,2", success: 2, defended: 0, whiffed: 0 },
+                { date: "2025-03-23", goal: "1,2,4,3 to Soul Thrust", success: 5, defended: 2, whiffed: 1 },
+            ];
+
+            // StatsTable Component
+            function StatsTable() {
+                const [filterDate, setFilterDate] = React.useState("");
+                
+                // Filter data based on the selected date
+                const filteredData = filterDate 
+                    ? data.filter(item => item.date === filterDate) 
+                    : data;
+
+                // Function to calculate the percentage
+                const calculatePercentage = (success, total) => {
+                    return total ? ((success / total) * 100).toFixed(0) + "%" : "#DIV/0!";
+                }
+
+                return (
+                    <div>
+                        <h1>Daily Stats Tracker</h1>
+                        
+                        {/* Date Filter */}
+                        <label htmlFor="dateFilter">Filter by Date: </label>
+                        <input
+                            type="date"
+                            id="dateFilter"
+                            value={filterDate}
+                            onChange={e => setFilterDate(e.target.value)}
+                        />
+                        
+                        {/* Stats Table */}
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Goal</th>
+                                    <th>Success</th>
+                                    <th>Defended</th>
+                                    <th>Whiffed</th>
+                                    <th>Total</th>
+                                    <th>Success (%)</th>
+                                    <th>Defended (%)</th>
+                                    <th>Whiffed (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {filteredData.map((item, index) => {
+                                    const total = item.success + item.defended + item.whiffed;
+                                    return (
+                                        <tr key={index}>
+                                            <td>{item.date}</td>
+                                            <td>{item.goal}</td>
+                                            <td>{item.success}</td>
+                                            <td>{item.defended}</td>
+                                            <td>{item.whiffed}</td>
+                                            <td>{total}</td>
+                                            <td>{calculatePercentage(item.success, total)}</td>
+                                            <td>{calculatePercentage(item.defended, total)}</td>
+                                            <td>{calculatePercentage(item.whiffed, total)}</td>
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                );
+            }
+
+            // Render the StatsTable component
+            ReactDOM.createRoot(document.getElementById('root')).render(<StatsTable />);
+        </script>
+    </body>
+
+</html>
