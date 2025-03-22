@@ -188,6 +188,29 @@
 
         // Render the StatsTable component
         ReactDOM.createRoot(document.getElementById('root')).render(<StatsTable />);
+
+        function exportToJSON() {
+            const data = [];
+            const rows = document.querySelectorAll("table tr");
+            
+            rows.forEach(row => {
+                const cells = row.querySelectorAll("th, td");
+                const rowData = [];
+                cells.forEach(cell => {
+                    rowData.push(cell.textContent.trim());
+                });
+                if (rowData.length > 0) data.push(rowData);
+            });
+            
+            const jsonFile = new Blob([JSON.stringify(data)], { type: "application/json" });
+            const link = document.createElement("a");
+            link.href = URL.createObjectURL(jsonFile);
+            link.download = "statistics_backup.json"; // File name for download
+            link.click(); // Trigger the download
+        }
+
+        <button onclick="exportToCSV()">Backup Data</button>
+
     </script>
 </body>
 </html>
