@@ -472,8 +472,9 @@ button:hover {
     align-items: center;
 }
 
+/* Make both button and file input look the same */
 .backup-section button,
-.backup-section input[type="file"] {
+.backup-section label {
     padding: 12px 20px;
     border-radius: 8px;
     background-color: #ff4d4d;
@@ -483,22 +484,16 @@ button:hover {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: inline-block; /* Ensure label behaves like a button */
+    text-align: center; /* Center the text */
+    width: auto; /* Allow width to fit content */
+    min-width: 160px; /* Set a minimum width for consistent size */
+    text-align: center;
 }
 
 .backup-section button:hover,
-.backup-section input[type="file"]:hover {
+.backup-section label:hover {
     background-color: #ff1a1a;
-}
-
-.backup-section label {
-    font-family: 'Roboto', sans-serif;
-    font-weight: bold;
-    color: #ffffff; /* White text for label to match button */
-    background-color: #ff4d4d;  /* Red background for label to match button */
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .backup-section input[type="file"] {
@@ -508,3 +503,4 @@ button:hover {
 .backup-section input[type="file"]:focus + label {
     outline: 2px solid #ffeb3b; /* Yellow border when file input is focused */
 }
+
