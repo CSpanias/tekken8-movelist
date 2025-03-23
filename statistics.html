@@ -46,9 +46,13 @@
             border: none;
             border-radius: 5px;
             margin: 2px;
+            color: white;
         }
-        .edit-btn { background-color: yellow; }
-        .delete-btn { background-color: red; color: white; }
+        .edit-btn { background-color: blue; }
+        .delete-btn { background-color: red; }
+        .filter-box {
+            margin: 10px 0;
+        }
     </style>
 </head>
 
@@ -74,6 +78,11 @@
         function StatsTable() {
             const [data, setData] = React.useState(JSON.parse(localStorage.getItem("statsData")) || []);
             const [editIndex, setEditIndex] = React.useState(null);
+            const [filterDate, setFilterDate] = React.useState("");
+
+            React.useEffect(() => {
+                updateChart();
+            }, [data]);
 
             const handleNewData = (e) => {
                 e.preventDefault();
@@ -115,6 +124,36 @@
                 localStorage.setItem("statsData", JSON.stringify(updatedData));
             };
 
+            const updateChart = () => {
+                if (window.statsChart) {
+                    window.statsChart.destroy();
+                }
+
+                const ctx = document.getElementById("statsChart").getContext("2d");
+                const labels = data.map(item => item.date);
+                const successData = data.map(item => item.success);
+                const defendedData = data.map(item => item.defended);
+                const whiffedData = data.map(item => item.whiffed);
+
+                window.statsChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            { label: "Success", data: successData, backgroundColor: "green" },
+                            { label: "Defended", data: defendedData, backgroundColor: "orange" },
+                            { label: "Whiffed", data: whiffedData, backgroundColor: "red" }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: { beginAtZero: true }
+                        }
+                    }
+                });
+            };
+
             return (
                 <div>
                     <h1>Daily Stats Tracker</h1>
@@ -127,6 +166,10 @@
                         <label>Whiffed: <input type="number" id="whiffed" required /></label>
                         <button type="submit">{editIndex !== null ? "Update Data" : "Add Data"}</button>
                     </form>
+
+                    <div className="filter-box">
+                        <label>Filter by Date: <input type="date" onChange={(e) => setFilterDate(e.target.value)} /></label>
+                    </div>
 
                     <h2>Statistics</h2>
                     <table>
@@ -141,7 +184,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {data.map((item, index) => (
+                            {data.filter(item => !filterDate || item.date === filterDate).map((item, index) => (
                                 <tr key={index}>
                                     <td>{item.date}</td>
                                     <td>{item.goal}</td>
@@ -156,6 +199,9 @@
                             ))}
                         </tbody>
                     </table>
+
+                    <h2>Performance Chart</h2>
+                    <canvas id="statsChart"></canvas>
                 </div>
             );
         }
