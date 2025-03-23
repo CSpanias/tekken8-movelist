@@ -19,6 +19,7 @@
         .delete-btn { background-color: red; color: white; padding: 5px 10px; border: none; cursor: pointer; }
         .edit-btn { background-color: blue; color: white; padding: 5px 10px; border: none; cursor: pointer; }
         .export-btn { padding: 10px; background-color: #008CBA; color: white; border: none; cursor: pointer; margin-top: 20px; }
+        .upload-btn { padding: 10px; background-color: #FF9800; color: white; border: none; cursor: pointer; margin-top: 10px; }
     </style>
 </head>
 <body>
@@ -75,7 +76,7 @@
             // Export data to CSV
             const exportToCSV = () => {
                 const csvRows = [];
-                const headers = ["Date", "Goal", "Success", "Defended", "Whiffed"];
+                const headers = ["Date", "Goal", "Total", "Success", "Defended", "Whiffed"];
                 csvRows.push(headers.join(","));
 
                 data.forEach((item) => {
@@ -83,9 +84,10 @@
                     const row = [
                         item.date,
                         item.goal,
-                        calculatePercentage(item.success, total),
-                        calculatePercentage(item.defended, total),
-                        calculatePercentage(item.whiffed, total)
+                        total,
+                        item.success,
+                        item.defended,
+                        item.whiffed
                     ];
                     csvRows.push(row.join(","));
                 });
@@ -99,6 +101,28 @@
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);
+            };
+
+            // Import CSV File
+            const handleFileUpload = (event) => {
+                const file = event.target.files[0];
+                if (!file) return;
+
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const text = e.target.result;
+                    const rows = text.split("\n").slice(1); // Skip header row
+                    const newData = rows.map(row => {
+                        const [date, goal, , success, defended, whiffed] = row.split(",");
+                        return { date, goal, success: +success, defended: +defended, whiffed: +whiffed };
+                    }).filter(item => item.date); // Filter out empty rows
+
+                    const updatedData = [...data, ...newData];
+                    setData(updatedData);
+                    localStorage.setItem("statsData", JSON.stringify(updatedData));
+                };
+
+                reader.readAsText(file);
             };
 
             return (
@@ -120,6 +144,9 @@
                         <label>Filter by Date: <input type="date" onChange={(e) => setFilterDate(e.target.value)} /></label>
                     </div>
 
+                    {/* CSV Upload */}
+                    <input type="file" accept=".csv" onChange={handleFileUpload} className="upload-btn" />
+
                     {/* Table */}
                     <h2>Statistics</h2>
                     <table>
@@ -127,6 +154,7 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Goal</th>
+                                <th>Total</th>
                                 <th>Success (%)</th>
                                 <th>Defended (%)</th>
                                 <th>Whiffed (%)</th>
@@ -135,11 +163,12 @@
                         </thead>
                         <tbody>
                             {data.filter(item => !filterDate || item.date === filterDate).map((item, index) => {
-                                const total = item.success + item.defended + item.whiffed; // Total occurrences
+                                const total = item.success + item.defended + item.whiffed;
                                 return (
                                     <tr key={index}>
                                         <td>{item.date}</td>
                                         <td>{item.goal}</td>
+                                        <td>{total}</td>
                                         <td>{calculatePercentage(item.success, total)}%</td>
                                         <td>{calculatePercentage(item.defended, total)}%</td>
                                         <td>{calculatePercentage(item.whiffed, total)}%</td>
