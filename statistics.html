@@ -145,8 +145,13 @@
             const [editIndex, setEditIndex] = React.useState(null); // Track index of the row being edited
 
             // Filter data based on the selected date
+            const normalizeDate = (dateStr) => {
+                const [yyyy, mm, dd] = dateStr.split("-");
+                return `${dd}/${mm}/${yyyy}`;
+            };
+
             const filteredData = filterDate
-                ? data.filter(item => item.date === filterDate)
+                ? data.filter(item => item.date === normalizeDate(filterDate))
                 : data;
 
             // Function to calculate the percentage
