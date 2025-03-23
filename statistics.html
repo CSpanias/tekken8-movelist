@@ -3,176 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Statistics</title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- React and ReactDOM -->
+    <title>Test</title>
+    
     <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
-    
-    <!-- Babel for JSX -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
-    <!-- Chart.js for graphs -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <style>
-        .form-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-        }
-        .edit-btn { background-color: blue; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; }
-        .delete-btn { background-color: red; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { padding: 8px; text-align: center; border: 1px solid black; }
+        h1 { color: green; }
     </style>
 </head>
-
 <body>
     <div id="root"></div> <!-- React will render here -->
 
     <script type="text/babel">
-        // StatsTable Component
-        function StatsTable() {
-            const [data, setData] = React.useState(JSON.parse(localStorage.getItem("statsData")) || []);
-            const [formData, setFormData] = React.useState({ date: "", goal: "", success: "", defended: "", whiffed: "" });
-            const [editIndex, setEditIndex] = React.useState(null);
-            const [filterDate, setFilterDate] = React.useState("");
-            const chartRef = React.useRef(null); // Chart.js reference
-
-            // Update the chart when the data changes
-            React.useEffect(() => {
-                if (chartRef.current) {
-                    updateChart();
-                }
-            }, [data]); // Dependency array ensures chart updates when data changes
-
-            // Handle input change
-            const handleChange = (e) => {
-                setFormData({ ...formData, [e.target.name]: e.target.value });
-            };
-
-            // Handle form submission (Add or Update data)
-            const handleSubmit = (e) => {
-                e.preventDefault();
-                const newData = { ...formData, success: +formData.success, defended: +formData.defended, whiffed: +formData.whiffed };
-                
-                let updatedData = [...data];
-                if (editIndex !== null) {
-                    updatedData[editIndex] = newData;
-                    setEditIndex(null);
-                } else {
-                    updatedData.push(newData);
-                }
-
-                setData(updatedData);
-                localStorage.setItem("statsData", JSON.stringify(updatedData));
-                setFormData({ date: "", goal: "", success: "", defended: "", whiffed: "" });
-            };
-
-            // Handle Edit button click
-            const handleEdit = (index) => {
-                setFormData(data[index]);
-                setEditIndex(index);
-            };
-
-            // Handle Delete button click
-            const handleDelete = (index) => {
-                const updatedData = data.filter((_, i) => i !== index);
-                setData(updatedData);
-                localStorage.setItem("statsData", JSON.stringify(updatedData));
-            };
-
-            // Update the chart with current data
-            const updateChart = () => {
-                if (chartRef.current) {
-                    const ctx = chartRef.current.getContext("2d");
-
-                    // Destroy existing chart before creating a new one
-                    if (window.statsChart) {
-                        window.statsChart.destroy();
-                    }
-
-                    const labels = data.map(item => item.date);
-                    const successData = data.map(item => item.success);
-                    const defendedData = data.map(item => item.defended);
-                    const whiffedData = data.map(item => item.whiffed);
-
-                    window.statsChart = new Chart(ctx, {
-                        type: 'bar',
-                        data: {
-                            labels: labels,
-                            datasets: [
-                                { label: "Success", data: successData, backgroundColor: "green" },
-                                { label: "Defended", data: defendedData, backgroundColor: "orange" },
-                                { label: "Whiffed", data: whiffedData, backgroundColor: "red" }
-                            ]
-                        },
-                        options: {
-                            responsive: true,
-                            scales: { y: { beginAtZero: true } }
-                        }
-                    });
-                }
-            };
-
-            return (
-                <div>
-                    <h1>Daily Stats Tracker</h1>
-                    
-                    <form onSubmit={handleSubmit} className="form-row">
-                        <input type="date" name="date" value={formData.date} onChange={handleChange} required />
-                        <input type="text" name="goal" placeholder="Goal" value={formData.goal} onChange={handleChange} required />
-                        <input type="number" name="success" placeholder="Success" value={formData.success} onChange={handleChange} required />
-                        <input type="number" name="defended" placeholder="Defended" value={formData.defended} onChange={handleChange} required />
-                        <input type="number" name="whiffed" placeholder="Whiffed" value={formData.whiffed} onChange={handleChange} required />
-                        <button type="submit">{editIndex !== null ? "Update Data" : "Add Data"}</button>
-                    </form>
-
-                    <div>
-                        <label>Filter by Date: <input type="date" onChange={(e) => setFilterDate(e.target.value)} /></label>
-                    </div>
-
-                    <h2>Statistics</h2>
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Goal</th>
-                                <th>Success</th>
-                                <th>Defended</th>
-                                <th>Whiffed</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {data.filter(item => !filterDate || item.date === filterDate).map((item, index) => (
-                                <tr key={index}>
-                                    <td>{item.date}</td>
-                                    <td>{item.goal}</td>
-                                    <td>{item.success}</td>
-                                    <td>{item.defended}</td>
-                                    <td>{item.whiffed}</td>
-                                    <td>
-                                        <button className="edit-btn" onClick={() => handleEdit(index)}>Edit</button>
-                                        <button className="delete-btn" onClick={() => handleDelete(index)}>Delete</button>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                    </table>
-
-                    <h2>Performance Chart</h2>
-                    <canvas ref={chartRef} id="statsChart"></canvas>
-                </div>
-            );
-        }
-
-        // Render StatsTable Component inside the "root" div
-        ReactDOM.createRoot(document.getElementById("root")).render(<StatsTable />);
+        ReactDOM.createRoot(document.getElementById('root')).render(
+          <h1>Hello React is working!</h1>
+        );
     </script>
-
 </body>
 </html>
