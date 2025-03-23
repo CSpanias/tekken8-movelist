@@ -40,11 +40,14 @@
             const [formData, setFormData] = React.useState({ date: "", goal: "", success: "", defended: "", whiffed: "" });
             const [editIndex, setEditIndex] = React.useState(null);
             const [filterDate, setFilterDate] = React.useState("");
+            const chartRef = React.useRef(null); // Chart.js reference
 
             // Update the chart when the data changes
             React.useEffect(() => {
-                updateChart();
-            }, [data]);
+                if (chartRef.current) {
+                    updateChart();
+                }
+            }, [data]); // Dependency array ensures chart updates when data changes
 
             // Handle input change
             const handleChange = (e) => {
@@ -84,33 +87,35 @@
 
             // Update the chart with current data
             const updateChart = () => {
-                if (!document.getElementById("statsChart")) return;
+                if (chartRef.current) {
+                    const ctx = chartRef.current.getContext("2d");
 
-                if (window.statsChart) {
-                    window.statsChart.destroy();
-                }
-
-                const ctx = document.getElementById("statsChart").getContext("2d");
-                const labels = data.map(item => item.date);
-                const successData = data.map(item => item.success);
-                const defendedData = data.map(item => item.defended);
-                const whiffedData = data.map(item => item.whiffed);
-
-                window.statsChart = new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: labels,
-                        datasets: [
-                            { label: "Success", data: successData, backgroundColor: "green" },
-                            { label: "Defended", data: defendedData, backgroundColor: "orange" },
-                            { label: "Whiffed", data: whiffedData, backgroundColor: "red" }
-                        ]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: { y: { beginAtZero: true } }
+                    // Destroy existing chart before creating a new one
+                    if (window.statsChart) {
+                        window.statsChart.destroy();
                     }
-                });
+
+                    const labels = data.map(item => item.date);
+                    const successData = data.map(item => item.success);
+                    const defendedData = data.map(item => item.defended);
+                    const whiffedData = data.map(item => item.whiffed);
+
+                    window.statsChart = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [
+                                { label: "Success", data: successData, backgroundColor: "green" },
+                                { label: "Defended", data: defendedData, backgroundColor: "orange" },
+                                { label: "Whiffed", data: whiffedData, backgroundColor: "red" }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            scales: { y: { beginAtZero: true } }
+                        }
+                    });
+                }
             };
 
             return (
@@ -160,7 +165,7 @@
                     </table>
 
                     <h2>Performance Chart</h2>
-                    <canvas id="statsChart"></canvas>
+                    <canvas ref={chartRef} id="statsChart"></canvas>
                 </div>
             );
         }
