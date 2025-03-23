@@ -286,5 +286,50 @@
         // Render the StatsTable component
         ReactDOM.createRoot(document.getElementById('root')).render(<StatsTable />);
     </script>
+
+    <script>
+        const groupedData = filteredData.reduce((acc, item) => {
+            if (!acc[item.date]) {
+                acc[item.date] = [];
+            }
+            acc[item.date].push(item);
+            return acc;
+        }, {});
+
+        return (
+            <div>
+                {Object.keys(groupedData).map(date => (
+                    <div key={date}>
+                        <h3>{date}</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Goal</th>
+                                    <th>Success (%)</th>
+                                    <th>Defended (%)</th>
+                                    <th>Whiffed (%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {groupedData[date].map((item, index) => {
+                                    const total = item.success + item.defended + item.whiffed;
+                                    return (
+                                        <tr key={index}>
+                                            <td>{item.goal}</td>
+                                            <td>{calculatePercentage(item.success, total)}</td>
+                                            <td>{calculatePercentage(item.defended, total)}</td>
+                                            <td>{calculatePercentage(item.whiffed, total)}</td>
+                                        </tr>
+                                    );
+                                })}
+                            </tbody>
+                        </table>
+                    </div>
+                ))}
+            </div>
+        );
+
+
+    </script>
 </body>
 </html>
