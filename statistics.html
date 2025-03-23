@@ -223,8 +223,9 @@
                 return () => window.removeEventListener("resize", adjustColumnWidths);
             }, [data]); // Runs every time `data` updates
 
+
         }
-        
+
         ReactDOM.createRoot(document.getElementById('root')).render(<StatsTable />);
     </script>
 </body>
