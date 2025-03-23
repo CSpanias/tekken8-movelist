@@ -16,6 +16,40 @@
 
     <!-- Chart.js for graphs -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        .form-row label {
+            flex: 1;
+            min-width: 150px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        .edit-btn, .delete-btn {
+            cursor: pointer;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            margin: 2px;
+        }
+        .edit-btn { background-color: yellow; }
+        .delete-btn { background-color: red; color: white; }
+    </style>
 </head>
 
 <body class="page-theory-learning-plan">
@@ -34,56 +68,22 @@
         </nav>
     </div>
 
-    <!-- Backup and Upload Section -->
-    <div class="backup-section">
-        <input type="file" id="uploadFile" accept=".json" onchange="uploadFromJSON(event)">
-        <label for="uploadFile">Upload Backup Data</label>
-        <button onclick="exportToJSON()">Backup Data</button>
-    </div>
-
-    <div id="root"></div> <!-- React app will render here -->
+    <div id="root"></div>
 
     <script type="text/babel">
-        // Get data from localStorage or default to empty array
-        const getDataFromLocalStorage = () => {
-            const data = localStorage.getItem('statsData');
-            return data ? JSON.parse(data) : [];
-        };
-
-        // Save data to localStorage
-        const saveDataToLocalStorage = (data) => {
-            localStorage.setItem('statsData', JSON.stringify(data));
-        };
-
         function StatsTable() {
-            const [filterDate, setFilterDate] = React.useState("");
-            const [data, setData] = React.useState(getDataFromLocalStorage());
+            const [data, setData] = React.useState(JSON.parse(localStorage.getItem("statsData")) || []);
             const [editIndex, setEditIndex] = React.useState(null);
-
-            const normalizeDate = (dateStr) => {
-                const [yyyy, mm, dd] = dateStr.split("-");
-                return `${dd}/${mm}/${yyyy}`;
-            };
-
-            // Group data by date
-            const groupedData = data.reduce((acc, item) => {
-                if (!acc[item.date]) acc[item.date] = [];
-                acc[item.date].push(item);
-                return acc;
-            }, {});
-
-            const calculatePercentage = (value, total) => {
-                return total ? ((value / total) * 100).toFixed(0) + "%" : "0%";
-            };
 
             const handleNewData = (e) => {
                 e.preventDefault();
-                const date = normalizeDate(e.target.date.value);
-                const goal = e.target.goal.value;
-                const success = parseInt(e.target.success.value);
-                const defended = parseInt(e.target.defended.value);
-                const whiffed = parseInt(e.target.whiffed.value);
-                const newData = { date, goal, success, defended, whiffed };
+                const newData = {
+                    date: e.target.date.value,
+                    goal: e.target.goal.value,
+                    success: parseInt(e.target.success.value),
+                    defended: parseInt(e.target.defended.value),
+                    whiffed: parseInt(e.target.whiffed.value)
+                };
 
                 let updatedData = [...data];
 
@@ -95,7 +95,7 @@
                 }
 
                 setData(updatedData);
-                saveDataToLocalStorage(updatedData);
+                localStorage.setItem("statsData", JSON.stringify(updatedData));
                 e.target.reset();
             };
 
@@ -112,33 +112,14 @@
             const handleDelete = (index) => {
                 const updatedData = data.filter((_, i) => i !== index);
                 setData(updatedData);
-                saveDataToLocalStorage(updatedData);
+                localStorage.setItem("statsData", JSON.stringify(updatedData));
             };
-
-            React.useEffect(() => {
-                if (window.Chart) {
-                    new Chart(document.getElementById("trendChart"), {
-                        type: "line",
-                        data: {
-                            labels: Object.keys(groupedData),
-                            datasets: [
-                                { label: "Success %", data: Object.keys(groupedData).map(date => groupedData[date].reduce((sum, item) => sum + item.success, 0)), borderColor: "green", fill: false },
-                                { label: "Defended %", data: Object.keys(groupedData).map(date => groupedData[date].reduce((sum, item) => sum + item.defended, 0)), borderColor: "blue", fill: false },
-                                { label: "Whiffed %", data: Object.keys(groupedData).map(date => groupedData[date].reduce((sum, item) => sum + item.whiffed, 0)), borderColor: "red", fill: false }
-                            ]
-                        }
-                    });
-                }
-            }, [data]);
 
             return (
                 <div>
                     <h1>Daily Stats Tracker</h1>
-
-                    <label htmlFor="dateFilter">Filter by Date: </label>
-                    <input type="date" id="dateFilter" value={filterDate} onChange={e => setFilterDate(e.target.value)} />
-
-                    <form onSubmit={handleNewData}>
+                    
+                    <form onSubmit={handleNewData} className="form-row">
                         <label>Date: <input type="date" id="date" required /></label>
                         <label>Goal: <input type="text" id="goal" required /></label>
                         <label>Success: <input type="number" id="success" required /></label>
@@ -147,33 +128,39 @@
                         <button type="submit">{editIndex !== null ? "Update Data" : "Add Data"}</button>
                     </form>
 
-                    {Object.keys(groupedData).map(date => (
-                        <div key={date}>
-                            <h3>{date}</h3>
-                            <table>
-                                <thead>
-                                    <tr><th>Goal</th><th>Success (%)</th><th>Defended (%)</th><th>Whiffed (%)</th></tr>
-                                </thead>
-                                <tbody>
-                                    {groupedData[date].map((item, index) => (
-                                        <tr key={index}>
-                                            <td>{item.goal}</td>
-                                            <td>{calculatePercentage(item.success, item.success + item.defended + item.whiffed)}</td>
-                                            <td>{calculatePercentage(item.defended, item.success + item.defended + item.whiffed)}</td>
-                                            <td>{calculatePercentage(item.whiffed, item.success + item.defended + item.whiffed)}</td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    ))}
-
-                    <canvas id="trendChart"></canvas>
+                    <h2>Statistics</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Goal</th>
+                                <th>Success</th>
+                                <th>Defended</th>
+                                <th>Whiffed</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {data.map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item.date}</td>
+                                    <td>{item.goal}</td>
+                                    <td>{item.success}</td>
+                                    <td>{item.defended}</td>
+                                    <td>{item.whiffed}</td>
+                                    <td>
+                                        <button className="edit-btn" onClick={() => handleEdit(index)}>Edit</button>
+                                        <button className="delete-btn" onClick={() => handleDelete(index)}>Delete</button>
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
                 </div>
             );
         }
 
-        ReactDOM.createRoot(document.getElementById('root')).render(<StatsTable />);
+        ReactDOM.createRoot(document.getElementById("root")).render(<StatsTable />);
     </script>
 </body>
 </html>
