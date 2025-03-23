@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistics</title>
@@ -24,59 +23,20 @@
             gap: 10px;
             align-items: center;
         }
-        .form-row label {
-            flex: 1;
-            min-width: 150px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        table, th, td {
-            border: 1px solid black;
-        }
-        th, td {
-            padding: 8px;
-            text-align: center;
-        }
-        .edit-btn, .delete-btn {
-            cursor: pointer;
-            padding: 5px 10px;
-            border: none;
-            border-radius: 5px;
-            margin: 2px;
-            color: white;
-        }
-        .edit-btn { background-color: blue; }
-        .delete-btn { background-color: red; }
-        .filter-box {
-            margin: 10px 0;
-        }
+        .edit-btn { background-color: blue; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; }
+        .delete-btn { background-color: red; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 8px; text-align: center; border: 1px solid black; }
     </style>
 </head>
 
-<body class="page-theory-learning-plan">
-    <div class="container">
-        <nav>
-            <a href="index.html">Home</a> |
-            <a href="movelist.html">Movelist</a> |
-            <a href="punishments.html">Punishments</a> |
-            <a href="combos.html">Combos</a> |
-            <a href="learning-plan.html">Learning Plan</a> |
-            <a href="stats.html" class="active">Statistics</a> |
-            <a href="drills.html">Drills</a> |
-            <a href="rank-system.html">Rank System</a> |
-            <a href="theory.html">Theory</a> |
-            <a href="other.html">Other</a>
-        </nav>
-    </div>
-
+<body>
     <div id="root"></div>
 
     <script type="text/babel">
         function StatsTable() {
             const [data, setData] = React.useState(JSON.parse(localStorage.getItem("statsData")) || []);
+            const [formData, setFormData] = React.useState({ date: "", goal: "", success: "", defended: "", whiffed: "" });
             const [editIndex, setEditIndex] = React.useState(null);
             const [filterDate, setFilterDate] = React.useState("");
 
@@ -84,18 +44,15 @@
                 updateChart();
             }, [data]);
 
-            const handleNewData = (e) => {
+            const handleChange = (e) => {
+                setFormData({ ...formData, [e.target.name]: e.target.value });
+            };
+
+            const handleSubmit = (e) => {
                 e.preventDefault();
-                const newData = {
-                    date: e.target.date.value,
-                    goal: e.target.goal.value,
-                    success: parseInt(e.target.success.value),
-                    defended: parseInt(e.target.defended.value),
-                    whiffed: parseInt(e.target.whiffed.value)
-                };
-
+                const newData = { ...formData, success: +formData.success, defended: +formData.defended, whiffed: +formData.whiffed };
+                
                 let updatedData = [...data];
-
                 if (editIndex !== null) {
                     updatedData[editIndex] = newData;
                     setEditIndex(null);
@@ -105,16 +62,11 @@
 
                 setData(updatedData);
                 localStorage.setItem("statsData", JSON.stringify(updatedData));
-                e.target.reset();
+                setFormData({ date: "", goal: "", success: "", defended: "", whiffed: "" });
             };
 
             const handleEdit = (index) => {
-                const item = data[index];
-                document.getElementById("date").value = item.date;
-                document.getElementById("goal").value = item.goal;
-                document.getElementById("success").value = item.success;
-                document.getElementById("defended").value = item.defended;
-                document.getElementById("whiffed").value = item.whiffed;
+                setFormData(data[index]);
                 setEditIndex(index);
             };
 
@@ -125,6 +77,8 @@
             };
 
             const updateChart = () => {
+                if (!document.getElementById("statsChart")) return;
+
                 if (window.statsChart) {
                     window.statsChart.destroy();
                 }
@@ -147,9 +101,7 @@
                     },
                     options: {
                         responsive: true,
-                        scales: {
-                            y: { beginAtZero: true }
-                        }
+                        scales: { y: { beginAtZero: true } }
                     }
                 });
             };
@@ -158,16 +110,16 @@
                 <div>
                     <h1>Daily Stats Tracker</h1>
                     
-                    <form onSubmit={handleNewData} className="form-row">
-                        <label>Date: <input type="date" id="date" required /></label>
-                        <label>Goal: <input type="text" id="goal" required /></label>
-                        <label>Success: <input type="number" id="success" required /></label>
-                        <label>Defended: <input type="number" id="defended" required /></label>
-                        <label>Whiffed: <input type="number" id="whiffed" required /></label>
+                    <form onSubmit={handleSubmit} className="form-row">
+                        <input type="date" name="date" value={formData.date} onChange={handleChange} required />
+                        <input type="text" name="goal" placeholder="Goal" value={formData.goal} onChange={handleChange} required />
+                        <input type="number" name="success" placeholder="Success" value={formData.success} onChange={handleChange} required />
+                        <input type="number" name="defended" placeholder="Defended" value={formData.defended} onChange={handleChange} required />
+                        <input type="number" name="whiffed" placeholder="Whiffed" value={formData.whiffed} onChange={handleChange} required />
                         <button type="submit">{editIndex !== null ? "Update Data" : "Add Data"}</button>
                     </form>
 
-                    <div className="filter-box">
+                    <div>
                         <label>Filter by Date: <input type="date" onChange={(e) => setFilterDate(e.target.value)} /></label>
                     </div>
 
