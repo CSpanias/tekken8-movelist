@@ -6,14 +6,9 @@
     <title>Statistics</title>
     <link rel="stylesheet" href="style.css">
 
+    <!-- React and ReactDOM -->
     <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.21.4/babel.min.js"></script>
-
-
-    <!-- React and ReactDOM -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     
     <!-- Babel for JSX -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
@@ -36,29 +31,27 @@
 </head>
 
 <body>
-    <div id="root"></div>
+    <div id="root"></div> <!-- React will render here -->
 
     <script type="text/babel">
-        ReactDOM.createRoot(document.getElementById('root')).render(
-          <h1>Hello, React is working!</h1>
-        );
-      </script>
-
-    <script type="text/babel">
+        // StatsTable Component
         function StatsTable() {
             const [data, setData] = React.useState(JSON.parse(localStorage.getItem("statsData")) || []);
             const [formData, setFormData] = React.useState({ date: "", goal: "", success: "", defended: "", whiffed: "" });
             const [editIndex, setEditIndex] = React.useState(null);
             const [filterDate, setFilterDate] = React.useState("");
 
+            // Update the chart when the data changes
             React.useEffect(() => {
                 updateChart();
             }, [data]);
 
+            // Handle input change
             const handleChange = (e) => {
                 setFormData({ ...formData, [e.target.name]: e.target.value });
             };
 
+            // Handle form submission (Add or Update data)
             const handleSubmit = (e) => {
                 e.preventDefault();
                 const newData = { ...formData, success: +formData.success, defended: +formData.defended, whiffed: +formData.whiffed };
@@ -76,17 +69,20 @@
                 setFormData({ date: "", goal: "", success: "", defended: "", whiffed: "" });
             };
 
+            // Handle Edit button click
             const handleEdit = (index) => {
                 setFormData(data[index]);
                 setEditIndex(index);
             };
 
+            // Handle Delete button click
             const handleDelete = (index) => {
                 const updatedData = data.filter((_, i) => i !== index);
                 setData(updatedData);
                 localStorage.setItem("statsData", JSON.stringify(updatedData));
             };
 
+            // Update the chart with current data
             const updateChart = () => {
                 if (!document.getElementById("statsChart")) return;
 
@@ -169,7 +165,9 @@
             );
         }
 
-        /*ReactDOM.createRoot(document.getElementById("root")).render(<StatsTable />);*/
+        // Render StatsTable Component inside the "root" div
+        ReactDOM.createRoot(document.getElementById("root")).render(<StatsTable />);
     </script>
+
 </body>
 </html>
