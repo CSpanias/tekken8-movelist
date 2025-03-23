@@ -66,6 +66,11 @@
                 localStorage.setItem("statsData", JSON.stringify(updatedData));
             };
 
+            // Calculate percentage for Success, Defended, and Whiffed based on total occurrences
+            const calculatePercentage = (value, total) => {
+                return total > 0 ? ((value / total) * 100).toFixed(2) : 0;
+            };
+
             return (
                 <div>
                     <h1>Daily Stats Tracker</h1>
@@ -92,26 +97,29 @@
                             <tr>
                                 <th>Date</th>
                                 <th>Goal</th>
-                                <th>Success</th>
-                                <th>Defended</th>
-                                <th>Whiffed</th>
+                                <th>Success (%)</th>
+                                <th>Defended (%)</th>
+                                <th>Whiffed (%)</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {data.filter(item => !filterDate || item.date === filterDate).map((item, index) => (
-                                <tr key={index}>
-                                    <td>{item.date}</td>
-                                    <td>{item.goal}</td>
-                                    <td>{item.success}</td>
-                                    <td>{item.defended}</td>
-                                    <td>{item.whiffed}</td>
-                                    <td>
-                                        <button className="edit-btn" onClick={() => handleEdit(index)}>Edit</button>
-                                        <button className="delete-btn" onClick={() => handleDelete(index)}>Delete</button>
-                                    </td>
-                                </tr>
-                            ))}
+                            {data.filter(item => !filterDate || item.date === filterDate).map((item, index) => {
+                                const total = item.success + item.defended + item.whiffed; // Total occurrences
+                                return (
+                                    <tr key={index}>
+                                        <td>{item.date}</td>
+                                        <td>{item.goal}</td>
+                                        <td>{calculatePercentage(item.success, total)}%</td>
+                                        <td>{calculatePercentage(item.defended, total)}%</td>
+                                        <td>{calculatePercentage(item.whiffed, total)}%</td>
+                                        <td>
+                                            <button className="edit-btn" onClick={() => handleEdit(index)}>Edit</button>
+                                            <button className="delete-btn" onClick={() => handleDelete(index)}>Delete</button>
+                                        </td>
+                                    </tr>
+                                );
+                            })}
                         </tbody>
                     </table>
                 </div>
