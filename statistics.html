@@ -194,21 +194,21 @@
 
             React.useEffect(() => {
                 const adjustColumnWidths = () => {
-                    const table = document.querySelector("table");
-                    if (!table) return;
-
-                    const columns = table.querySelectorAll("th");
-                    columns.forEach((col, index) => {
-                        let maxWidth = 0;
-                        document.querySelectorAll(`td:nth-child(${index + 1})`).forEach((cell) => {
-                            maxWidth = Math.max(maxWidth, cell.scrollWidth);
+                    const tables = document.querySelectorAll("table"); // Select all tables
+                    tables.forEach((table) => {
+                        const columns = table.querySelectorAll("th");
+                        columns.forEach((col, index) => {
+                            let maxWidth = 0;
+                            table.querySelectorAll(`td:nth-child(${index + 1})`).forEach((cell) => {
+                                maxWidth = Math.max(maxWidth, cell.scrollWidth);
+                            });
+                            col.style.width = maxWidth + "px";
                         });
-                        col.style.width = maxWidth + "px";
                     });
                 };
 
                 adjustColumnWidths();
-            }, [data]); // Runs every time `data` changes
+            }, [data]); // Runs every time `data` updates
 
         }
 
