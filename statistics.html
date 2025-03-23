@@ -6,106 +6,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Statistics</title>
     <link rel="stylesheet" href="style.css">
-    
-    <!-- React and ReactDOM CDN Links -->
+
+    <!-- React and ReactDOM -->
     <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     
-    <!-- Babel CDN Link for JSX compilation -->
+    <!-- Babel for JSX -->
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
-    <script defer src="script.js"></script> 
 
-    <script>
-        // Function to export table data to JSON
-        function exportToJSON() {
-            const data = [];
-            const rows = document.querySelectorAll("table tr");
-
-            rows.forEach(row => {
-                const cells = row.querySelectorAll("th, td");
-                const rowData = [];
-                cells.forEach(cell => {
-                    rowData.push(cell.textContent.trim());
-                });
-                if (rowData.length > 0) data.push(rowData);
-            });
-
-            const jsonFile = new Blob([JSON.stringify(data)], { type: "application/json" });
-            const link = document.createElement("a");
-            link.href = URL.createObjectURL(jsonFile);
-            link.download = "statistics_backup.json"; // File name for download
-            link.click(); // Trigger the download
-        }
-
-        // Function to upload and restore table data from JSON file
-        function uploadFromJSON(event) {
-            const file = event.target.files[0]; // Get the selected file
-            const reader = new FileReader();
-
-            reader.onload = function(e) {
-                try {
-                    const data = JSON.parse(e.target.result);
-                    restoreTable(data);
-                } catch (err) {
-                    alert("Error reading the file. Please make sure it's a valid JSON file.");
-                }
-            };
-
-            reader.readAsText(file); // Read the file as text
-        }
-
-        // Function to restore the table data
-        function restoreTable(data) {
-            const table = document.querySelector("table tbody");
-            table.innerHTML = ""; // Clear the table
-
-            data.forEach(rowData => {
-                const row = document.createElement("tr");
-                rowData.forEach(cellData => {
-                    const cell = document.createElement("td");
-                    cell.textContent = cellData;
-                    row.appendChild(cell);
-                });
-                table.appendChild(row);
-            });
-        }
-    </script>
-
-    <script>
-        function exportToJSON() {
-            const data = [];
-            const rows = document.querySelectorAll("table tr");
-
-            rows.forEach(row => {
-                const cells = row.querySelectorAll("th, td");
-                const rowData = [];
-                cells.forEach(cell => {
-                    rowData.push(cell.textContent.trim());
-                });
-                if (rowData.length > 0) data.push(rowData);
-            });
-
-            const jsonFile = new Blob([JSON.stringify(data)], { type: "application/json" });
-            const link = document.createElement("a");
-            link.href = URL.createObjectURL(jsonFile);
-            link.download = "statistics_backup.json"; // File name for download
-            link.click(); // Trigger the download
-        }
-    </script>
-
+    <!-- Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body class="page-theory-learning-plan">
-
     <div class="container">
         <nav>
             <a href="index.html">Home</a> |
             <a href="movelist.html">Movelist</a> |
             <a href="punishments.html">Punishments</a> |
             <a href="combos.html">Combos</a> |
-            <a href="learning-plan.html" id="learning-plan">Learning Plan</a> |
-            <a href="stats.html" id="statistics" class="active">Statistics</a> |
+            <a href="learning-plan.html">Learning Plan</a> |
+            <a href="stats.html" class="active">Statistics</a> |
             <a href="drills.html">Drills</a> |
             <a href="rank-system.html">Rank System</a> |
             <a href="theory.html">Theory</a> |
@@ -113,223 +34,146 @@
         </nav>
     </div>
 
-    <!-- Export and Upload Section -->
+    <!-- Backup and Upload Section -->
     <div class="backup-section">
-        <!-- Upload File Input and Label -->
         <input type="file" id="uploadFile" accept=".json" onchange="uploadFromJSON(event)">
         <label for="uploadFile">Upload Backup Data</label>
-
-        <!-- Backup Button -->
         <button onclick="exportToJSON()">Backup Data</button>
     </div>
-
 
     <div id="root"></div> <!-- React app will render here -->
 
     <script type="text/babel">
-        // Function to get data from localStorage or default to an empty array
+        // Get data from localStorage or default to empty array
         const getDataFromLocalStorage = () => {
             const data = localStorage.getItem('statsData');
             return data ? JSON.parse(data) : [];
         };
 
-        // Function to save data to localStorage
+        // Save data to localStorage
         const saveDataToLocalStorage = (data) => {
             localStorage.setItem('statsData', JSON.stringify(data));
         };
 
-        // StatsTable Component
         function StatsTable() {
             const [filterDate, setFilterDate] = React.useState("");
             const [data, setData] = React.useState(getDataFromLocalStorage());
-            const [editIndex, setEditIndex] = React.useState(null); // Track index of the row being edited
+            const [editIndex, setEditIndex] = React.useState(null);
 
-            // Filter data based on the selected date
             const normalizeDate = (dateStr) => {
                 const [yyyy, mm, dd] = dateStr.split("-");
                 return `${dd}/${mm}/${yyyy}`;
             };
 
-            const filteredData = filterDate
-                ? data.filter(item => item.date === normalizeDate(filterDate))
-                : data;
+            // Group data by date
+            const groupedData = data.reduce((acc, item) => {
+                if (!acc[item.date]) acc[item.date] = [];
+                acc[item.date].push(item);
+                return acc;
+            }, {});
 
-            // Function to calculate the percentage
-            const calculatePercentage = (success, total) => {
-                return total ? ((success / total) * 100).toFixed(0) + "%" : "#DIV/0!";
+            const calculatePercentage = (value, total) => {
+                return total ? ((value / total) * 100).toFixed(0) + "%" : "0%";
             };
 
-            // Handle new data submission
             const handleNewData = (e) => {
                 e.preventDefault();
-                const date = e.target.date.value;
+                const date = normalizeDate(e.target.date.value);
                 const goal = e.target.goal.value;
                 const success = parseInt(e.target.success.value);
                 const defended = parseInt(e.target.defended.value);
                 const whiffed = parseInt(e.target.whiffed.value);
-
                 const newData = { date, goal, success, defended, whiffed };
 
                 let updatedData = [...data];
 
-                // If editing an existing row
                 if (editIndex !== null) {
                     updatedData[editIndex] = newData;
-                    setEditIndex(null); // Reset edit index after update
+                    setEditIndex(null);
                 } else {
                     updatedData.push(newData);
                 }
 
-                // Save updated data to localStorage
                 setData(updatedData);
                 saveDataToLocalStorage(updatedData);
-
-                // Clear form fields
                 e.target.reset();
             };
 
-            // Handle editing data
             const handleEdit = (index) => {
                 const item = data[index];
-                // Pre-fill the form with the item data for editing
                 document.getElementById("date").value = item.date;
                 document.getElementById("goal").value = item.goal;
                 document.getElementById("success").value = item.success;
                 document.getElementById("defended").value = item.defended;
                 document.getElementById("whiffed").value = item.whiffed;
-
-                setEditIndex(index); // Set the edit index
+                setEditIndex(index);
             };
 
-            // Handle deleting data
             const handleDelete = (index) => {
                 const updatedData = data.filter((_, i) => i !== index);
                 setData(updatedData);
                 saveDataToLocalStorage(updatedData);
             };
 
+            React.useEffect(() => {
+                if (window.Chart) {
+                    new Chart(document.getElementById("trendChart"), {
+                        type: "line",
+                        data: {
+                            labels: Object.keys(groupedData),
+                            datasets: [
+                                { label: "Success %", data: Object.keys(groupedData).map(date => groupedData[date].reduce((sum, item) => sum + item.success, 0)), borderColor: "green", fill: false },
+                                { label: "Defended %", data: Object.keys(groupedData).map(date => groupedData[date].reduce((sum, item) => sum + item.defended, 0)), borderColor: "blue", fill: false },
+                                { label: "Whiffed %", data: Object.keys(groupedData).map(date => groupedData[date].reduce((sum, item) => sum + item.whiffed, 0)), borderColor: "red", fill: false }
+                            ]
+                        }
+                    });
+                }
+            }, [data]);
+
             return (
                 <div>
                     <h1>Daily Stats Tracker</h1>
 
-                    {/* Date Filter */}
                     <label htmlFor="dateFilter">Filter by Date: </label>
-                    <input
-                        type="date"
-                        id="dateFilter"
-                        value={filterDate}
-                        onChange={e => setFilterDate(e.target.value)}
-                    />
-                    
-                    {/* Data Entry Form */}
+                    <input type="date" id="dateFilter" value={filterDate} onChange={e => setFilterDate(e.target.value)} />
+
                     <form onSubmit={handleNewData}>
-                        <div className="form-row">
-                            <div>
-                                <label htmlFor="date">Date: </label>
-                                <input type="date" id="date" required />
-                            </div>
-                            <div>
-                                <label htmlFor="goal">Goal: </label>
-                                <input type="text" id="goal" required />
-                            </div>
-                            <div>
-                                <label htmlFor="success">Success: </label>
-                                <input type="number" id="success" required />
-                            </div>
-                            <div>
-                                <label htmlFor="defended">Defended: </label>
-                                <input type="number" id="defended" required />
-                            </div>
-                            <div>
-                                <label htmlFor="whiffed">Whiffed: </label>
-                                <input type="number" id="whiffed" required />
-                            </div>
-                            <button type="submit">{editIndex !== null ? "Update Data" : "Add Data"}</button>
-                        </div>
+                        <label>Date: <input type="date" id="date" required /></label>
+                        <label>Goal: <input type="text" id="goal" required /></label>
+                        <label>Success: <input type="number" id="success" required /></label>
+                        <label>Defended: <input type="number" id="defended" required /></label>
+                        <label>Whiffed: <input type="number" id="whiffed" required /></label>
+                        <button type="submit">{editIndex !== null ? "Update Data" : "Add Data"}</button>
                     </form>
 
-                    {/* Stats Table */}
-                    <table id="stats-table">
-                        <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>Goal</th>
-                                <th>Success (%)</th>
-                                <th>Defended (%)</th>
-                                <th>Whiffed (%)</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {filteredData.map((item, index) => {
-                                const total = item.success + item.defended + item.whiffed;
-                                return (
-                                    <tr key={index}>
-                                        <td>{item.date}</td>
-                                        <td>{item.goal}</td>
-                                        <td>{calculatePercentage(item.success, total)}</td>
-                                        <td>{calculatePercentage(item.defended, total)}</td>
-                                        <td>{calculatePercentage(item.whiffed, total)}</td>
-                                        <td>
-                                            <button onClick={() => handleEdit(index)}>Edit</button>
-                                            <button onClick={() => handleDelete(index)}>Delete</button>
-                                        </td>
-                                    </tr>
-                                );
-                            })}
-                        </tbody>
-                    </table>
+                    {Object.keys(groupedData).map(date => (
+                        <div key={date}>
+                            <h3>{date}</h3>
+                            <table>
+                                <thead>
+                                    <tr><th>Goal</th><th>Success (%)</th><th>Defended (%)</th><th>Whiffed (%)</th></tr>
+                                </thead>
+                                <tbody>
+                                    {groupedData[date].map((item, index) => (
+                                        <tr key={index}>
+                                            <td>{item.goal}</td>
+                                            <td>{calculatePercentage(item.success, item.success + item.defended + item.whiffed)}</td>
+                                            <td>{calculatePercentage(item.defended, item.success + item.defended + item.whiffed)}</td>
+                                            <td>{calculatePercentage(item.whiffed, item.success + item.defended + item.whiffed)}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
+                    ))}
+
+                    <canvas id="trendChart"></canvas>
                 </div>
             );
         }
 
-        // Render the StatsTable component
         ReactDOM.createRoot(document.getElementById('root')).render(<StatsTable />);
-    </script>
-
-    <script>
-        const groupedData = filteredData.reduce((acc, item) => {
-            if (!acc[item.date]) {
-                acc[item.date] = [];
-            }
-            acc[item.date].push(item);
-            return acc;
-        }, {});
-
-        return (
-            <div>
-                {Object.keys(groupedData).map(date => (
-                    <div key={date}>
-                        <h3>{date}</h3>
-                        <table>
-                            <thead>
-                                <tr>
-                                    <th>Goal</th>
-                                    <th>Success (%)</th>
-                                    <th>Defended (%)</th>
-                                    <th>Whiffed (%)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {groupedData[date].map((item, index) => {
-                                    const total = item.success + item.defended + item.whiffed;
-                                    return (
-                                        <tr key={index}>
-                                            <td>{item.goal}</td>
-                                            <td>{calculatePercentage(item.success, total)}</td>
-                                            <td>{calculatePercentage(item.defended, total)}</td>
-                                            <td>{calculatePercentage(item.whiffed, total)}</td>
-                                        </tr>
-                                    );
-                                })}
-                            </tbody>
-                        </table>
-                    </div>
-                ))}
-            </div>
-        );
-
-
     </script>
 </body>
 </html>
