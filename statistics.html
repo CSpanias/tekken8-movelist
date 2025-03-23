@@ -194,23 +194,34 @@
 
             React.useEffect(() => {
                 const adjustColumnWidths = () => {
-                    const tables = document.querySelectorAll("table"); // Select all tables
+                    const tables = document.querySelectorAll("table"); // Get all tables
+
                     tables.forEach((table) => {
                         const columns = table.querySelectorAll("th");
+
                         columns.forEach((col, index) => {
-                            let maxWidth = 0;
-                            table.querySelectorAll(`td:nth-child(${index + 1})`).forEach((cell) => {
-                                maxWidth = Math.max(maxWidth, cell.scrollWidth);
+                            let maxWidth = col.offsetWidth; // Start with header width
+
+                            // Find max width across all rows in this column
+                            table.querySelectorAll(`tr td:nth-child(${index + 1})`).forEach((cell) => {
+                                maxWidth = Math.max(maxWidth, cell.offsetWidth);
                             });
-                            col.style.width = maxWidth + "px";
+
+                            // Apply the max width
+                            col.style.width = `${maxWidth + 10}px`; // Add padding to prevent cutting off text
+                            table.querySelectorAll(`tr td:nth-child(${index + 1})`).forEach((cell) => {
+                                cell.style.width = `${maxWidth + 10}px`;
+                            });
                         });
                     });
                 };
 
                 adjustColumnWidths();
+
+                window.addEventListener("resize", adjustColumnWidths); // Adjust when window resizes
+                return () => window.removeEventListener("resize", adjustColumnWidths);
             }, [data]); // Runs every time `data` updates
 
-        }
 
         ReactDOM.createRoot(document.getElementById('root')).render(<StatsTable />);
     </script>
