@@ -191,6 +191,25 @@
                     <button className="export-btn" onClick={exportToCSV}>Export to CSV</button>
                 </div>
             );
+
+            React.useEffect(() => {
+                const adjustColumnWidths = () => {
+                    const table = document.querySelector("table");
+                    if (!table) return;
+
+                    const columns = table.querySelectorAll("th");
+                    columns.forEach((col, index) => {
+                        let maxWidth = 0;
+                        document.querySelectorAll(`td:nth-child(${index + 1})`).forEach((cell) => {
+                            maxWidth = Math.max(maxWidth, cell.scrollWidth);
+                        });
+                        col.style.width = maxWidth + "px";
+                    });
+                };
+
+                adjustColumnWidths();
+            }, [data]); // Runs every time `data` changes
+
         }
 
         ReactDOM.createRoot(document.getElementById('root')).render(<StatsTable />);
