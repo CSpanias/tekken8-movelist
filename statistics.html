@@ -18,6 +18,7 @@
         th, td { padding: 8px; text-align: center; border: 1px solid #ddd; }
         .delete-btn { background-color: red; color: white; padding: 5px 10px; border: none; cursor: pointer; }
         .edit-btn { background-color: blue; color: white; padding: 5px 10px; border: none; cursor: pointer; }
+        .export-btn { padding: 10px; background-color: #008CBA; color: white; border: none; cursor: pointer; margin-top: 20px; }
     </style>
 </head>
 <body>
@@ -71,6 +72,35 @@
                 return total > 0 ? ((value / total) * 100).toFixed(2) : 0;
             };
 
+            // Export data to CSV
+            const exportToCSV = () => {
+                const csvRows = [];
+                const headers = ["Date", "Goal", "Success", "Defended", "Whiffed"];
+                csvRows.push(headers.join(","));
+
+                data.forEach((item) => {
+                    const total = item.success + item.defended + item.whiffed;
+                    const row = [
+                        item.date,
+                        item.goal,
+                        calculatePercentage(item.success, total),
+                        calculatePercentage(item.defended, total),
+                        calculatePercentage(item.whiffed, total)
+                    ];
+                    csvRows.push(row.join(","));
+                });
+
+                const csvString = csvRows.join("\n");
+                const blob = new Blob([csvString], { type: "text/csv" });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "stats_data.csv";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            };
+
             return (
                 <div>
                     <h1>Daily Stats Tracker</h1>
@@ -122,6 +152,9 @@
                             })}
                         </tbody>
                     </table>
+
+                    {/* Export Button */}
+                    <button className="export-btn" onClick={exportToCSV}>Export to CSV</button>
                 </div>
             );
         }
