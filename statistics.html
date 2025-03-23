@@ -74,6 +74,10 @@
             };
 
             // Export data to CSV
+            const cleanCSVValue = (value) => {
+                return typeof value === "string" ? `"${value.replace(/"/g, '""')}"` : value;
+            };
+
             const exportToCSV = () => {
                 const csvRows = [];
                 const headers = ["Date", "Goal", "Total", "Success", "Defended", "Whiffed"];
@@ -82,11 +86,11 @@
                 data.forEach((item) => {
                     const total = item.success + item.defended + item.whiffed;
                     const row = [
-                        item.date,
-                        item.goal,
+                        cleanCSVValue(item.date),
+                        cleanCSVValue(item.goal),
                         total,
                         item.success,
-                        item.defended,
+                        item.defended, // Ensure this is numeric
                         item.whiffed
                     ];
                     csvRows.push(row.join(","));
@@ -102,6 +106,7 @@
                 a.click();
                 document.body.removeChild(a);
             };
+
 
             // Import CSV File
             const handleFileUpload = (event) => {
