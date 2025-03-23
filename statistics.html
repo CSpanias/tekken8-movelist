@@ -3,23 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stats Tracker</title>
-    
+    <title>Statistics</title>
+    <link rel="stylesheet" href="style.css">
+
     <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.development.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.21.4/babel.min.js"></script>
+
+    <!-- Chart.js for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
-        h1 { color: green; }
-        .form-row { display: flex; gap: 10px; margin-bottom: 20px; }
-        .form-row input { padding: 5px; }
-        .form-row button { padding: 10px; background-color: #4CAF50; color: white; border: none; cursor: pointer; }
-        table { width: 100%; border-collapse: collapse; }
-        th, td { padding: 8px; text-align: center; border: 1px solid #ddd; }
-        .delete-btn { background-color: red; color: white; padding: 5px 10px; border: none; cursor: pointer; }
-        .edit-btn { background-color: blue; color: white; padding: 5px 10px; border: none; cursor: pointer; }
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+        }
+        .edit-btn { background-color: blue; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; }
+        .delete-btn { background-color: red; color: white; padding: 5px 10px; border: none; border-radius: 5px; cursor: pointer; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 8px; text-align: center; border: 1px solid black; }
     </style>
 </head>
+
 <body>
     <div id="root"></div>
 
@@ -30,22 +37,24 @@
             const [editIndex, setEditIndex] = React.useState(null);
             const [filterDate, setFilterDate] = React.useState("");
 
-            // Handle form changes
+            React.useEffect(() => {
+                updateChart();
+            }, [data]);
+
             const handleChange = (e) => {
                 setFormData({ ...formData, [e.target.name]: e.target.value });
             };
 
-            // Handle form submission (Add or Update data)
             const handleSubmit = (e) => {
                 e.preventDefault();
                 const newData = { ...formData, success: +formData.success, defended: +formData.defended, whiffed: +formData.whiffed };
-
+                
                 let updatedData = [...data];
                 if (editIndex !== null) {
-                    updatedData[editIndex] = newData; // Update existing entry
+                    updatedData[editIndex] = newData;
                     setEditIndex(null);
                 } else {
-                    updatedData.push(newData); // Add new entry
+                    updatedData.push(newData);
                 }
 
                 setData(updatedData);
@@ -53,29 +62,74 @@
                 setFormData({ date: "", goal: "", success: "", defended: "", whiffed: "" });
             };
 
-            // Handle Edit button
             const handleEdit = (index) => {
                 setFormData(data[index]);
                 setEditIndex(index);
             };
 
-            // Handle Delete button
             const handleDelete = (index) => {
                 const updatedData = data.filter((_, i) => i !== index);
                 setData(updatedData);
                 localStorage.setItem("statsData", JSON.stringify(updatedData));
             };
 
-            // Calculate percentage for Success, Defended, and Whiffed based on total occurrences
-            const calculatePercentage = (value, total) => {
-                return total > 0 ? ((value / total) * 100).toFixed(2) : 0;
+            const updateChart = () => {
+                if (!document.getElementById("statsChart")) return;
+
+                // Destroy any existing chart before creating a new one
+                if (window.statsChart) {
+                    window.statsChart.destroy();
+                }
+
+                const ctx = document.getElementById("statsChart").getContext("2d");
+                const labels = data.map(item => item.date);
+                const successData = data.map(item => item.success);
+                const defendedData = data.map(item => item.defended);
+                const whiffedData = data.map(item => item.whiffed);
+
+                window.statsChart = new Chart(ctx, {
+                    type: 'line', // You can change this to 'bar' or other types if you prefer
+                    data: {
+                        labels: labels,
+                        datasets: [
+                            { 
+                                label: "Success", 
+                                data: successData, 
+                                backgroundColor: "green", 
+                                borderColor: "green", 
+                                fill: false 
+                            },
+                            { 
+                                label: "Defended", 
+                                data: defendedData, 
+                                backgroundColor: "orange", 
+                                borderColor: "orange", 
+                                fill: false 
+                            },
+                            { 
+                                label: "Whiffed", 
+                                data: whiffedData, 
+                                backgroundColor: "red", 
+                                borderColor: "red", 
+                                fill: false 
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
             };
 
             return (
                 <div>
                     <h1>Daily Stats Tracker</h1>
-
-                    {/* Form */}
+                    
                     <form onSubmit={handleSubmit} className="form-row">
                         <input type="date" name="date" value={formData.date} onChange={handleChange} required />
                         <input type="text" name="goal" placeholder="Goal" value={formData.goal} onChange={handleChange} required />
@@ -85,48 +139,46 @@
                         <button type="submit">{editIndex !== null ? "Update Data" : "Add Data"}</button>
                     </form>
 
-                    {/* Filter */}
                     <div>
                         <label>Filter by Date: <input type="date" onChange={(e) => setFilterDate(e.target.value)} /></label>
                     </div>
 
-                    {/* Table */}
                     <h2>Statistics</h2>
                     <table>
                         <thead>
                             <tr>
                                 <th>Date</th>
                                 <th>Goal</th>
-                                <th>Success (%)</th>
-                                <th>Defended (%)</th>
-                                <th>Whiffed (%)</th>
+                                <th>Success</th>
+                                <th>Defended</th>
+                                <th>Whiffed</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {data.filter(item => !filterDate || item.date === filterDate).map((item, index) => {
-                                const total = item.success + item.defended + item.whiffed; // Total occurrences
-                                return (
-                                    <tr key={index}>
-                                        <td>{item.date}</td>
-                                        <td>{item.goal}</td>
-                                        <td>{calculatePercentage(item.success, total)}%</td>
-                                        <td>{calculatePercentage(item.defended, total)}%</td>
-                                        <td>{calculatePercentage(item.whiffed, total)}%</td>
-                                        <td>
-                                            <button className="edit-btn" onClick={() => handleEdit(index)}>Edit</button>
-                                            <button className="delete-btn" onClick={() => handleDelete(index)}>Delete</button>
-                                        </td>
-                                    </tr>
-                                );
-                            })}
+                            {data.filter(item => !filterDate || item.date === filterDate).map((item, index) => (
+                                <tr key={index}>
+                                    <td>{item.date}</td>
+                                    <td>{item.goal}</td>
+                                    <td>{item.success}</td>
+                                    <td>{item.defended}</td>
+                                    <td>{item.whiffed}</td>
+                                    <td>
+                                        <button className="edit-btn" onClick={() => handleEdit(index)}>Edit</button>
+                                        <button className="delete-btn" onClick={() => handleDelete(index)}>Delete</button>
+                                    </td>
+                                </tr>
+                            ))}
                         </tbody>
                     </table>
+
+                    <h2>Performance Chart</h2>
+                    <canvas id="statsChart"></canvas>
                 </div>
             );
         }
 
-        ReactDOM.createRoot(document.getElementById('root')).render(<StatsTable />);
+        ReactDOM.createRoot(document.getElementById("root")).render(<StatsTable />);
     </script>
 </body>
 </html>
