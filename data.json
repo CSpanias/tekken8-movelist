@@ -623,6 +623,18 @@
             "GoodFor": "",
             "Feature": "Wall Break",
             "Character": "Kazuya"
+        },
+        {
+            "name": "Kyogeki Goutsuiken",
+            "input": "df,3+4,1,2",
+            "startup": 18,
+            "damage": 70,
+            "onHit": "+7",
+            "onBlock": "-19",
+            "hitLevel": "mid,high,mid,mid,mid",
+            "GoodFor": "Finisher",
+            "Feature": "Wall Break, Chip Damage",
+            "Character": "Kazuya"
         }
     ],
     "punishmentMoves": [
