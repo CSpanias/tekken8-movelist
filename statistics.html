@@ -39,6 +39,12 @@
     <div id="root"></div>
 
     <script type="text/babel">
+        ReactDOM.createRoot(document.getElementById('root')).render(
+          <h1>Hello, React is working!</h1>
+        );
+      </script>
+
+    <script type="text/babel">
         function StatsTable() {
             const [data, setData] = React.useState(JSON.parse(localStorage.getItem("statsData")) || []);
             const [formData, setFormData] = React.useState({ date: "", goal: "", success: "", defended: "", whiffed: "" });
