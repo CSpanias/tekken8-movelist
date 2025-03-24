@@ -1051,6 +1051,17 @@
             "hitLevel": "high,high,low,mid,mid",
             "Feature": "Mental Frame Trap: 1,2,4/1,2,2/1,2,2,4",
             "Character": "Kazuya"
+        },
+        {
+            "name": "Slaughter Hook to 1,2,4,3 to Armor",
+            "input": "df,1,2 ➔ 1,2,4,3 ➔ Soul Thrust",
+            "startup": 15,
+            "damage": 71,
+            "onHit": "+17",
+            "onBlock": "0",
+            "hitLevel": "mid,high",
+            "Feature": "Frame Trap: at worse trade jabs",
+            "Character": "Kazuya"
         }
 
     ]
