@@ -258,7 +258,7 @@
             "startup": 15,
             "damage": 31,
             "onHit": "+17",
-            "onBlock": "-8",
+            "onBlock": "0",
             "hitLevel": "mid,high",
             "GoodFor": "Punish",
             "Feature": "Heat Engager, Chip Damage",
