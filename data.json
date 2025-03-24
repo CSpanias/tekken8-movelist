@@ -1018,6 +1018,40 @@
             "hitLevel": "N/A",
             "Feature": "N/A",
             "Character": "Kazuya"
+        },
+        {
+            "name": "Right Splits Kick to Launcher",
+            "input": "f,4 ➔ EWGS",
+            "startup": 19,
+            "damage": 67,
+            "onHit": "+7",
+            "onBlock": "+4",
+            "hitLevel": "mid,high",
+            "Feature": "Frame Trap: EWGS becomes 9f",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Elkeid to Launcher",
+            "input": "ss,1+2 ➔ EWGS",
+            "startup": 19,
+            "damage": 64,
+            "onHit": "+11",
+            "onBlock": "+5",
+            "hitLevel": "high,high",
+            "Feature": "Frame Trap: EWGS becomes 8f",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "1,2,4,3 to Armor",
+            "input": "1,2,4,3 ➔ Soul Thrust",
+            "startup": 10,
+            "damage": 41,
+            "onHit": "+13",
+            "onBlock": "N/A",
+            "hitLevel": "high,high,low,mid,mid",
+            "Feature": "Mental Frame Trap: 1,2,4/1,2,2/1,2,2,4",
+            "Character": "Kazuya"
         }
+
     ]
 }
