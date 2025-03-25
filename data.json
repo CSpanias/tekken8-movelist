@@ -995,7 +995,7 @@
             "onHit": "N/A",
             "onBlock": "N/A",
             "hitLevel": "N/A",
-            "Feature": "N/A",
+            "Feature": "Combo",
             "Character": "Kazuya"
         },
         {
@@ -1006,7 +1006,7 @@
             "onHit": "N/A",
             "onBlock": "N/A",
             "hitLevel": "N/A",
-            "Feature": "N/A",
+            "Feature": "Combo",
             "Character": "Kazuya"
         },
         {
@@ -1017,7 +1017,7 @@
             "onHit": "N/A",
             "onBlock": "N/A",
             "hitLevel": "N/A",
-            "Feature": "N/A",
+            "Feature": "Combo",
             "Character": "Kazuya"
         },
         {
@@ -1028,7 +1028,7 @@
             "onHit": "N/A",
             "onBlock": "N/A",
             "hitLevel": "N/A",
-            "Feature": "N/A",
+            "Feature": "Combo",
             "Character": "Kazuya"
         },
         {
@@ -1039,7 +1039,7 @@
             "onHit": "+7",
             "onBlock": "+4",
             "hitLevel": "mid,high",
-            "Feature": "Frame Trap: EWGS becomes 9f",
+            "Feature": "Frame Trap: EWGS ➔ 9f",
             "Character": "Kazuya"
         },
         {
@@ -1050,7 +1050,7 @@
             "onHit": "+11",
             "onBlock": "+5",
             "hitLevel": "high,high",
-            "Feature": "Frame Trap: EWGS becomes 8f",
+            "Feature": "Frame Trap: EWGS ➔ 8f",
             "Character": "Kazuya"
         },
         {
@@ -1061,7 +1061,7 @@
             "onHit": "+13",
             "onBlock": "N/A",
             "hitLevel": "high,high,low,mid,mid",
-            "Feature": "Mental Frame Trap: 1,2,4/1,2,2/1,2,2,4",
+            "Feature": "Armor Trap",
             "Character": "Kazuya"
         },
         {
@@ -1072,7 +1072,7 @@
             "onHit": "+17",
             "onBlock": "0",
             "hitLevel": "mid,high",
-            "Feature": "Frame Trap: at worse trade jabs",
+            "Feature": "Frame Trap",
             "Character": "Kazuya"
         },
         {
@@ -1083,7 +1083,7 @@
             "onHit": "+17",
             "onBlock": "+5",
             "hitLevel": "mid,mid",
-            "Feature": "Frame Trap: AF becomes 9f",
+            "Feature": "Frame Trap: AF ➔ 9f",
             "Character": "Kazuya"
         }
 
