@@ -21,6 +21,21 @@
         <a href="other.html">Other</a>
     </nav>
 
+    <div class="search-box">
+        <select id="columnSelect">
+            <option value="0">Move Name</option>
+            <option value="1">Input</option>
+            <option value="2">Damage</option>
+            <option value="3">Startup</option>
+            <option value="4">Hit Level</option>
+            <option value="5">On Block</option>
+            <option value="6">On Hit</option>
+            <option value="7">Feature</option>
+            <option value="8">Character</option>
+        </select>
+        <input type="text" id="searchBox" placeholder="Search..." onkeyup="filterTable()">
+    </div>
+
     <table id="combos-table">
         <thead>
             <tr>
