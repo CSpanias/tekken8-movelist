@@ -635,6 +635,18 @@
             "GoodFor": "Finisher",
             "Feature": "Wall Break, Chip Damage",
             "Character": "Kazuya"
+        },
+        {
+            "name": "Danzui Raizanba",
+            "input": "b,2,2,1+2",
+            "startup": 14,
+            "damage": 46,
+            "onHit": "+46",
+            "onBlock": "-19",
+            "hitLevel": "mid,mid,high",
+            "GoodFor": "Finisher",
+            "Feature": "Wall Break, Chip Damage",
+            "Character": "Kazuya"
         }
     ],
     "punishmentMoves": [
