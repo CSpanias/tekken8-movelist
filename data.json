@@ -177,7 +177,7 @@
             "onBlock": "-9",
             "hitLevel": "high",
             "GoodFor": "",
-            "Feature": "",
+            "Feature": "Wall Break",
             "Character": "Kazuya"
         },
         {
@@ -390,7 +390,7 @@
             "startup": 24,
             "damage": 33,
             "onHit": "+25",
-            "onBlock": "-9",
+            "onBlock": "+5",
             "hitLevel": "mid",
             "GoodFor": "",
             "Feature": "Tornado, Wall Break, Chip Damage",
@@ -1033,7 +1033,7 @@
         },
         {
             "name": "Right Splits Kick to Launcher",
-            "input": "f,4 ➔ EWGS",
+            "input": "f,4 ➔ f,n,df,2",
             "startup": 19,
             "damage": 67,
             "onHit": "+7",
@@ -1044,7 +1044,7 @@
         },
         {
             "name": "Elkeid to Launcher",
-            "input": "ss,1+2 ➔ EWGS",
+            "input": "ss,1+2 ➔ f,n,df,2",
             "startup": 19,
             "damage": 64,
             "onHit": "+11",
@@ -1054,8 +1054,8 @@
             "Character": "Kazuya"
         },
         {
-            "name": "1,2,4,3 to Armor",
-            "input": "1,2,4,3 ➔ Soul Thrust",
+            "name": "1,2,4,3 to Soul Thrust",
+            "input": "1,2,4,3 ➔ f,2",
             "startup": 10,
             "damage": 41,
             "onHit": "+13",
@@ -1065,14 +1065,25 @@
             "Character": "Kazuya"
         },
         {
-            "name": "Slaughter Hook to 1,2,4,3 to Armor",
-            "input": "df,1,2 ➔ 1,2,4,3 ➔ Soul Thrust",
+            "name": "Slaughter Hook to 1,2,4,3 to Soul Thrust",
+            "input": "df,1,2 ➔ 1,2,4,3 ➔ f,2",
             "startup": 15,
-            "damage": 71,
+            "damage": 0,
             "onHit": "+17",
             "onBlock": "0",
             "hitLevel": "mid,high",
             "Feature": "Frame Trap: at worse trade jabs",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Parricide Fist to Abolishing Fist",
+            "input": "f,n,df,1+2 ➔ df,2",
+            "startup": 24,
+            "damage": 22,
+            "onHit": "+17",
+            "onBlock": "+5",
+            "hitLevel": "mid,mid",
+            "Feature": "Frame Trap: AF becomes 9f",
             "Character": "Kazuya"
         }
 
