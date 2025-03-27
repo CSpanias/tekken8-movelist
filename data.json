@@ -1241,6 +1241,17 @@
             "hitLevel": "mid,low,low,mid",
             "Feature": "Combo Ender, Heat Burst Ender",
             "Character": "Kazuya"
+        },
+        {
+            "name": "Stature Smash to Abolishing Fist",
+            "input": "db,4 ➔ df,2",
+            "startup": 20,
+            "damage": 40,
+            "onHit": "N/A",
+            "onBlock": "-12",
+            "hitLevel": "low,mid",
+            "Feature": "Frame Trap on Hit",
+            "Character": "Kazuya"
         }
     ]
 }
