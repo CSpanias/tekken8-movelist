@@ -647,6 +647,30 @@
             "GoodFor": "Finisher",
             "Feature": "Wall Break, Chip Damage",
             "Character": "Kazuya"
+        },
+        {
+            "name": "Searing Edge",
+            "input": "uf,3",
+            "startup": 19,
+            "damage": 25,
+            "onHit": "+17",
+            "onBlock": "-9",
+            "hitLevel": "mid",
+            "GoodFor": "",
+            "Feature": "Wall Break",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Roundhouse > Triple Spin Kick",
+            "input": "uf,4,4,4",
+            "startup": 25,
+            "damage": 45,
+            "onHit": "+12",
+            "onBlock": "-23",
+            "hitLevel": "mid,low,low,mid",
+            "GoodFor": "",
+            "Feature": "Wall Break",
+            "Character": "Kazuya"
         }
     ],
     "punishmentMoves": [
@@ -1085,7 +1109,138 @@
             "hitLevel": "mid,mid",
             "Feature": "Frame Trap: AF ➔ 9f",
             "Character": "Kazuya"
+        },
+        {
+            "name": "Nejiri Uraken Counterhit (6h)",
+            "input": "d,1+2 ➔ ws,1+2 ➔ b,2,2 ➔ df,1,df,2 ➔ Ender",
+            "startup": 20,
+            "damage": 47,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "low",
+            "Feature": "Combo",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "ws,1,2 (8h)",
+            "input": "ws,1,2 ➔ d,1+2,B (to cancel) ➔ ws,1+2 ➔ b,2,2 ➔ b,2,2,1+2",
+            "startup": 13,
+            "damage": 64,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "mid",
+            "Feature": "Combo",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "LSK (6h)",
+            "input": "f,f,3 ➔ ssr,3 ➔ df,1,df,2 ➔ Ender",
+            "startup": 20,
+            "damage": 0,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "mid",
+            "Feature": "Combo",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "RSK to Devil's Steel Petal",
+            "input": "f,4 ➔ f,f,4",
+            "startup": 0,
+            "damage": 0,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "mid",
+            "Feature": "Combo Ender",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "RSK to Spinning Demon to Left Hook",
+            "input": "f,4 ➔ f,df,4,1",
+            "startup": 0,
+            "damage": 0,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "mid",
+            "Feature": "Combo Ender",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Danzui Raizanba",
+            "input": "b,2,2,1+2",
+            "startup": 0,
+            "damage": 46,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "mid,mid,high",
+            "Feature": "Combo Ender",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Slaughter High Kick",
+            "input": "df,1,4",
+            "startup": 0,
+            "damage": 31,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "mid,high",
+            "Feature": "Combo Ender, Wall Ender",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Impaling Knee Twin Skewer",
+            "input": "df,3,2,1",
+            "startup": 0,
+            "damage": 47,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "mid,mid,mid",
+            "Feature": "Combo Ender, Wall Ender",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "Kyogeki Goutsuiken",
+            "input": "df,3+4,1,2",
+            "startup": 0,
+            "damage": 70,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "mid,high,mid,mid,mid",
+            "Feature": "Combo Ender, Wall Ender",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "HB to Slaughter Hook",
+            "input": "HB ➔ df,1,2,F",
+            "startup": 0,
+            "damage": 31,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "mid,high",
+            "Feature": "Combo Ender, Heat Burst Ender",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "HB to Searing Edge",
+            "input": "HB ➔ uf,3",
+            "startup": 0,
+            "damage": 25,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "mid",
+            "Feature": "Combo Ender, Heat Burst Ender",
+            "Character": "Kazuya"
+        },
+        {
+            "name": "HB to Roundhouse > Triple Spin Kick",
+            "input": "HB ➔ uf,4,4,4",
+            "startup": 0,
+            "damage": 45,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "mid,low,low,mid",
+            "Feature": "Combo Ender, Heat Burst Ender",
+            "Character": "Kazuya"
         }
-
     ]
 }
