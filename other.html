@@ -67,13 +67,12 @@
 
     <script src="script.js"></script>
     <script>
-        // Load and display regular moves
         document.addEventListener("DOMContentLoaded", function () {
             fetch("otherCharsMoves.json")
                 .then(response => response.json())
                 .then(data => {
-                    window.otherCharsMoves = data.otherCharsMoves; // Store regular moves globally
-                    displayMoves(data.otherCharsMoves, "otherCharsMoves-body");
+                    const columnMap = ["name", "movelist", "startup", "onBlock", "hitLevel", "visual", "counter", "character"];
+                    displayMoves(data.otherCharsMoves, "otherCharsMoves-body", columnMap);
                 });
         });
     </script>

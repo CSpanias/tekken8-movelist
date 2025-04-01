@@ -1,5 +1,5 @@
 // Display Moves in Table
-function displayMoves(moves, tableBodyId) {
+function displayMoves(moves, tableBodyId, columnMap) {
     let tbody = document.getElementById(tableBodyId);
     if (!tbody) {
         console.error("Table body not found:", tableBodyId);
@@ -8,18 +8,13 @@ function displayMoves(moves, tableBodyId) {
     tbody.innerHTML = ""; // Clear table before inserting
 
     moves.forEach(move => {
-        // Use default empty string if any data is missing
-        let row = `<tr>
-            <td>${move.name || ''}</td>
-            <td>${move.input || ''}</td>
-            <td>${move.damage || ''}</td>
-            <td>${move.startup || ''}</td>
-            <td>${move.hitLevel || ''}</td>
-            <td>${move.onBlock || ''}</td>
-            <td>${move.onHit || ''}</td>
-            <td>${move.Feature || ''}</td>
-            <td>${move.Character || ''}</td> <!-- Display Character -->
-        </tr>`;
+        let row = "<tr>";
+
+        columnMap.forEach(col => {
+            row += `<td>${move[col] || ''}</td>`; // Use dynamic column mapping
+        });
+
+        row += "</tr>";
         tbody.innerHTML += row;
     });
 }
