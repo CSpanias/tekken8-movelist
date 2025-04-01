@@ -71,6 +71,7 @@
             .then(response => response.json())
             .then(data => {
                 const columnMap = ["name", "input", "damage", "startup", "hitLevel", "onBlock", "onHit", "Feature", "Character"];
+                window.tricks = data.combos; // Store regular moves globally
                 displayMoves(data.combos, "combos-body", columnMap);
             });
     });
