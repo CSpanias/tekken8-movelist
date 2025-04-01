@@ -71,6 +71,7 @@
                 .then(response => response.json())
                 .then(data => {
                     const columnMap = ["name", "input", "damage", "startup", "hitLevel", "onBlock", "onHit", "Feature", "Character"];
+                    window.punishments = data.punishmentMoves; // Store regular moves globally
                     displayMoves(data.punishmentMoves, "punishments-body", columnMap);
                 });
         });
