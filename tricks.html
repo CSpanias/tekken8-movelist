@@ -66,13 +66,12 @@
 <script src="script.js"></script>
 
 <script>
-    // Load and display mental frame trap moves
     document.addEventListener("DOMContentLoaded", function () {
         fetch("data.json")
             .then(response => response.json())
             .then(data => {
-                window.combos = data.combos; // Store moves globally
-                displayMoves(data.combos, "combos-body");
+                const columnMap = ["name", "input", "damage", "startup", "hitLevel", "onBlock", "onHit", "Feature", "Character"];
+                displayMoves(data.regularMoves, "movelist-body", columnMap);
             });
     });
 </script>
