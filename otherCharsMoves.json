@@ -8,7 +8,7 @@
             "hitLevel": "MH",
             "visual": "Ducks for the first hit",
             "counter": "Duck H & punish with Twin Pistons+",
-            "Character": "Asuka"
+            "character": "Asuka"
         },
         {
             "name": "Demon Slayer",
@@ -18,7 +18,7 @@
             "hitLevel": "M",
             "visual": "Lunges forward & elbows",
             "counter": "Punish with WGS",
-            "Character": "Asuka"
+            "character": "Asuka"
         },
         {
             "name": "Sashiro",
@@ -28,7 +28,7 @@
             "hitLevel": "L",
             "visual": "Kneels down & punches the floor",
             "counter": "Block & punish with Abolishing Fist",
-            "Character": "Asuka"
+            "character": "Asuka"
         },
         {
             "name": "Aero Press Pegar",
@@ -38,7 +38,7 @@
             "hitLevel": "H",
             "visual": "Devil Fist animation",
             "counter": "Duck & punish with Abolishing Fist",
-            "Character": "Azucena"
+            "character": "Azucena"
         },
         {
             "name": "Tacon Plunger",
@@ -48,7 +48,7 @@
             "hitLevel": "M",
             "visual": "One leg front flip kick",
             "counter": "Block!",
-            "Character": "Azucena"
+            "character": "Azucena"
         },
         {
             "name": "Tacones Drip",
@@ -58,7 +58,7 @@
             "hitLevel": "M",
             "visual": "Front flip",
             "counter": "Block!",
-            "Character": "Azucena"
+            "character": "Azucena"
         },
         {
             "name": "Cannonball Straight",
@@ -68,7 +68,7 @@
             "hitLevel": "H",
             "visual": "Devil Fist animation",
             "counter": "Duck & punish with Twin Pistons+",
-            "Character": "Bryan"
+            "character": "Bryan"
         },
         {
             "name": "Lair's Dance",
@@ -78,7 +78,7 @@
             "hitLevel": "HHHHH",
             "visual": "Jab, kick, 2 x backfists, jab",
             "counter": "Duck third hit & punish with Twin Pistons+",
-            "Character": "Bryan"
+            "character": "Bryan"
         }
     ]
 }
