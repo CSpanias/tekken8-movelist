@@ -57,7 +57,7 @@
                 <th onclick="sortTable(8)">Character</th>
             </tr>
         </thead>
-        <tbody id="otherCharsMovelist-body">
+        <tbody id="otherCharsMoves-body">
             <!-- Data will be inserted here -->
         </tbody>
     </table>
@@ -70,11 +70,11 @@
     <script>
         // Load and display regular moves
         document.addEventListener("DOMContentLoaded", function () {
-            fetch("data.json")
+            fetch("otherCharsMoves.json")
                 .then(response => response.json())
                 .then(data => {
-                    window.otherCharsMovelist = data.otherCharsMovelist; // Store regular moves globally
-                    displayMoves(data.otherCharsMovelist, "otherCharsMovelist-body");
+                    window.otherCharsMoves = data.otherCharsMoves; // Store regular moves globally
+                    displayMoves(data.otherCharsMoves, "otherCharsMoves-body");
                 });
         });
     </script>

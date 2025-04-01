@@ -1,0 +1,84 @@
+{
+    "otherCharMoves": [
+        {
+            "name": "Swallow Vortex",
+            "movelist": 5,
+            "startup": 14,
+            "onBlock": "-9",
+            "hitLevel": "MH",
+            "visual": "Ducks for the first hit",
+            "counter": "Duck H & punish with Twin Pistons+",
+            "Character": "Asuka"
+        },
+        {
+            "name": "Demon Slayer",
+            "movelist": 28,
+            "startup": 17,
+            "onBlock": "-18",
+            "hitLevel": "M",
+            "visual": "Lunges forward & elbows",
+            "counter": "Punish with WGS",
+            "Character": "Asuka"
+        },
+        {
+            "name": "Sashiro",
+            "movelist": 42,
+            "startup": 20,
+            "onBlock": "-18",
+            "hitLevel": "L",
+            "visual": "Kneels down & punches the floor",
+            "counter": "Block & punish with Abolishing Fist",
+            "Character": "Asuka"
+        },
+        {
+            "name": "Aero Press Pegar",
+            "movelist": 35,
+            "startup": 16,
+            "onBlock": "-9",
+            "hitLevel": "H",
+            "visual": "Devil Fist animation",
+            "counter": "Duck & punish with Abolishing Fist",
+            "Character": "Azucena"
+        },
+        {
+            "name": "Tacon Plunger",
+            "movelist": 53,
+            "startup": 22,
+            "onBlock": "+4",
+            "hitLevel": "M",
+            "visual": "One leg front flip kick",
+            "counter": "Block!",
+            "Character": "Azucena"
+        },
+        {
+            "name": "Tacones Drip",
+            "movelist": 59,
+            "startup": 24,
+            "onBlock": "-8",
+            "hitLevel": "M",
+            "visual": "Front flip",
+            "counter": "Block!",
+            "Character": "Azucena"
+        },
+        {
+            "name": "Cannonball Straight",
+            "movelist": 99,
+            "startup": 13,
+            "onBlock": "+5",
+            "hitLevel": "H",
+            "visual": "Devil Fist animation",
+            "counter": "Duck & punish with Twin Pistons+",
+            "Character": "Bryan"
+        },
+        {
+            "name": "Lair's Dance",
+            "movelist": 17,
+            "startup": 10,
+            "onBlock": "-9",
+            "hitLevel": "HHHHH",
+            "visual": "Jab, kick, 2 x backfists, jab",
+            "counter": "Duck third hit & punish with Twin Pistons+",
+            "Character": "Bryan"
+        }
+    ]
+}
