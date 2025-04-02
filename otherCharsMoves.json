@@ -99,6 +99,16 @@
             "visual": "Snake edge",
             "counter": "Block & punish with Abolishing Fist",
             "character": "Bryan"
+        },
+        {
+            "name": "Windup",
+            "movelist": 0,
+            "startup": 24,
+            "onBlock": "-14",
+            "hitLevel": "M",
+            "visual": "Wolf throw",
+            "counter": "Block & punish with Goutsuiken",
+            "character": "Clive"
         }
     ]
 }
