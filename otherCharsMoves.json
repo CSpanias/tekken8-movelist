@@ -141,6 +141,36 @@
             "character": "Eddy"
         },
         {
+            "name": "Firecrakcer",
+            "movelist": 42,
+            "startup": 19,
+            "onBlock": "-13",
+            "hitLevel": "LH",
+            "visual": "Two single leg kicks",
+            "counter": "Block low, duck high & punish with Demon God Fist",
+            "character": "Howarang"
+        },
+        {
+            "name": "Scourge",
+            "movelist": 46,
+            "startup": 22,
+            "onBlock": "-14",
+            "hitLevel": "L",
+            "visual": "Snake edge",
+            "counter": "Block & punish with Twin Pistons",
+            "character": "Jin"
+        },
+        {
+            "name": "Kariashi",
+            "movelist": 55,
+            "startup": 22,
+            "onBlock": "-7",
+            "hitLevel": "LLL",
+            "visual": "Three rotating lows",
+            "counter": "If hit by the first, low parry the second",
+            "character": "Jun"
+        },
+        {
             "name": "Edelweiss",
             "movelist": 44,
             "startup": 30,
