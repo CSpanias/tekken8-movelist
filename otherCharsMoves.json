@@ -79,6 +79,16 @@
             "visual": "Jab, kick, 2 x backfists, jab",
             "counter": "Duck third hit & punish with Twin Pistons+",
             "character": "Bryan"
+        },
+        {
+            "name": "Snake Edge",
+            "movelist": 40,
+            "startup": 29,
+            "onBlock": "-26",
+            "hitLevel": "L",
+            "visual": "Snake edge",
+            "counter": "Block & punish with Abolishing Fist",
+            "character": "Bryan"
         }
     ]
 }
