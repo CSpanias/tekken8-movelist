@@ -62,12 +62,22 @@
         },
         {
             "name": "Cannonball Straight",
-            "movelist": 99,
+            "movelist": 103,
             "startup": 13,
             "onBlock": "+5",
             "hitLevel": "H",
             "visual": "Devil Fist animation",
             "counter": "Duck & punish with Twin Pistons+",
+            "character": "Bryan"
+        },
+        {
+            "name": "Chopping Elbow",
+            "movelist": 52,
+            "startup": 20,
+            "onBlock": "+4",
+            "hitLevel": "M",
+            "visual": "Lifts left arm high & elbows",
+            "counter": "Keep blocking",
             "character": "Bryan"
         },
         {
