@@ -7,7 +7,7 @@
             "onBlock": "-9",
             "hitLevel": "MH",
             "visual": "Ducks for the first hit",
-            "counter": "Duck H & punish with Twin Pistons+",
+            "counter": "Duck H & punish with Twin Pistons",
             "character": "Asuka"
         },
         {
@@ -27,7 +27,7 @@
             "onBlock": "-18",
             "hitLevel": "L",
             "visual": "Kneels down & punches the floor",
-            "counter": "Block & punish with Abolishing Fist",
+            "counter": "Block & punish with Demon God Fist",
             "character": "Asuka"
         },
         {
@@ -37,7 +37,7 @@
             "onBlock": "-26",
             "hitLevel": "L",
             "visual": "Snake edge",
-            "counter": "Block & punish with Abolishing Fist",
+            "counter": "Block & punish with Demon God Fist",
             "character": "Asuka"
         },
         {
@@ -47,7 +47,7 @@
             "onBlock": "-9",
             "hitLevel": "H",
             "visual": "Devil Fist animation",
-            "counter": "Duck & punish with Abolishing Fist",
+            "counter": "Duck & punish with Demon God Fist",
             "character": "Azucena"
         },
         {
@@ -77,7 +77,7 @@
             "onBlock": "+5",
             "hitLevel": "H",
             "visual": "Devil Fist animation",
-            "counter": "Duck & punish with Twin Pistons+",
+            "counter": "Duck & punish with Twin Pistons",
             "character": "Bryan"
         },
         {
@@ -97,7 +97,7 @@
             "onBlock": "-9",
             "hitLevel": "HHHHH",
             "visual": "Jab, kick, 2 x backfists, jab",
-            "counter": "Duck third hit & punish with Twin Pistons+",
+            "counter": "Duck third hit & punish with Twin Pistons",
             "character": "Bryan"
         },
         {
@@ -107,7 +107,7 @@
             "onBlock": "-26",
             "hitLevel": "L",
             "visual": "Snake edge",
-            "counter": "Block & punish with Abolishing Fist",
+            "counter": "Block & punish with Demon God Fist",
             "character": "Bryan"
         },
         {
@@ -119,6 +119,36 @@
             "visual": "Wolf throw",
             "counter": "Block & punish with Goutsuiken",
             "character": "Clive"
+        },
+        {
+            "name": "?",
+            "movelist": 0,
+            "startup": 23,
+            "onBlock": "-24",
+            "hitLevel": "ML",
+            "visual": "Handstand to low trip",
+            "counter": "Block & punish with Demon God Fist",
+            "character": "Eddy"
+        },
+        {
+            "name": "?",
+            "movelist": 0,
+            "startup": 23,
+            "onBlock": "-14",
+            "hitLevel": "L",
+            "visual": "Quick low kick",
+            "counter": "Block & punish with Twin Pistons",
+            "character": "Eddy"
+        },
+        {
+            "name": "Edelweiss",
+            "movelist": 44,
+            "startup": 30,
+            "onBlock": "-24",
+            "hitLevel": "L",
+            "visual": "Snake edge",
+            "counter": "Block & punish with Demon God Fist",
+            "character": "Lili"
         }
     ]
 }
