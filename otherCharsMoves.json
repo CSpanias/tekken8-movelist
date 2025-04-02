@@ -31,6 +31,16 @@
             "character": "Asuka"
         },
         {
+            "name": "Sacred Blade",
+            "movelist": 40,
+            "startup": 28,
+            "onBlock": "-26",
+            "hitLevel": "L",
+            "visual": "Snake edge",
+            "counter": "Block & punish with Abolishing Fist",
+            "character": "Asuka"
+        },
+        {
             "name": "Aero Press Pegar",
             "movelist": 35,
             "startup": 16,
