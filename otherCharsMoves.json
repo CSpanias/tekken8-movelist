@@ -179,6 +179,126 @@
             "visual": "Snake edge",
             "counter": "Block & punish with Demon God Fist",
             "character": "Lili"
+        },
+        {
+            "name": "Outfox",
+            "movelist": 60,
+            "startup": 0,
+            "onBlock": "0",
+            "hitLevel": "N/A",
+            "visual": "Steps back, 'Over here' audio cue",
+            "counter": "Counter with Soul Thrust",
+            "character": "Steve"
+        },
+        {
+            "name": "Knee Clipper",
+            "movelist": 47,
+            "startup": 26,
+            "onBlock": "-12",
+            "hitLevel": "L",
+            "visual": "Snake edge",
+            "counter": "Block & punish with Tsumaki Kick",
+            "character": "Steve"
+        },
+        {
+            "name": "Sonic Fang",
+            "movelist": 31,
+            "startup": 14,
+            "onBlock": "-12",
+            "hitLevel": "MM",
+            "visual": "Fast double uppercut",
+            "counter": "Block & punish with Sokushitsu Goda",
+            "character": "Steve"
+        },
+        {
+            "name": "Gatling Gun",
+            "movelist": 103,
+            "startup": 16,
+            "onBlock": "-12",
+            "hitLevel": "MH",
+            "visual": "Fast stomatch punches which end with an uppercut",
+            "counter": "Block & punish with Sokushitsu Goda before his hand drops",
+            "character": "Steve"
+        },
+        {
+            "name": "British Edge Combo",
+            "movelist": 25,
+            "startup": 10,
+            "onBlock": "-10",
+            "hitLevel": "HHHHM",
+            "visual": "'1,2,3,4' audio cue",
+            "counter": "Block & punish with jabs",
+            "character": "Steve"
+        },
+        {
+            "name": "British Edge Combo 2",
+            "movelist": 26,
+            "startup": 10,
+            "onBlock": "-12",
+            "hitLevel": "HHHL",
+            "visual": "'1,2,3,4' audio cue",
+            "counter": "Block & punish with Tsumaki Kick",
+            "character": "Steve"
+        },
+        {
+            "name": "Caliburnus",
+            "movelist": 55,
+            "startup": 31,
+            "onBlock": "-20",
+            "hitLevel": "M",
+            "visual": "'Excursion' audio cue",
+            "counter": "Block & punish with Demon God Fist",
+            "character": "Victor"
+        },
+        {
+            "name": "Crybaby Sophia",
+            "movelist": 23,
+            "startup": 12,
+            "onBlock": "-3",
+            "hitLevel": "HMH",
+            "visual": "Lunges forward, swining his knife twice, ends with a gunshot",
+            "counter": "Duck second H and punish with Demon God Fist",
+            "character": "Victor"
+        },
+        {
+            "name": "Crybaby Sophia Extension",
+            "movelist": 0,
+            "startup": 12,
+            "onBlock": "-9",
+            "hitLevel": "HMHM",
+            "visual": "Lunges forward, swining his knife twice, shoots once, ends with a sword slash",
+            "counter": "Duck second H and punish with Demon God Fist",
+            "character": "Victor"
+        },
+        {
+            "name": "Phoenix Tail",
+            "movelist": 34,
+            "startup": 29,
+            "onBlock": "-23",
+            "hitLevel": "L",
+            "visual": "Snake edge",
+            "counter": "Block & punish with Demon God Fist",
+            "character": "Xiaoyu"
+        },
+        {
+            "name": "Cyclone Left",
+            "movelist": 92,
+            "startup": 12,
+            "onBlock": "-11",
+            "hitLevel": "M",
+            "visual": "Backflip launch",
+            "counter": "Block & punish with jabs when the flip ends",
+            "character": "Xiaoyu"
+        },
+        {
+            "name": "Oma Kugiuchi",
+            "movelist": 63,
+            "startup": 14,
+            "onBlock": "-9",
+            "hitLevel": "MH",
+            "visual": "Hits with the sword's handle and pierces with its tip",
+            "counter": "Duck & punish with Demon God Fist",
+            "character": "Yoshimitsu"
         }
     ]
 }
