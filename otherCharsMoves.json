@@ -196,8 +196,18 @@
             "startup": 16,
             "onBlock": "-3",
             "hitLevel": "LH",
-            "visual": "",
+            "visual": "Fast stomp and jab",
             "counter": "Duck & punish with Demon God Fist",
+            "character": "Leroy"
+        },
+        {
+            "name": "Reverse Cross Kick",
+            "movelist": 74,
+            "startup": 15,
+            "onBlock": "-13",
+            "hitLevel": "LM",
+            "visual": "Rotating fast snake edge, ends with a launcher",
+            "counter": "Low parry or block both & punish with Goutsuiken",
             "character": "Leroy"
         },
         {
