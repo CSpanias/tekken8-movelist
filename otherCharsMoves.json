@@ -181,6 +181,16 @@
             "character": "Lili"
         },
         {
+            "name": "Elsaimon",
+            "movelist": 55,
+            "startup": 20,
+            "onBlock": "-16",
+            "hitLevel": "LL",
+            "visual": "Two fast low hists",
+            "counter": "Block & punish with Demon God Fist",
+            "character": "Reina"
+        },
+        {
             "name": "Outfox",
             "movelist": 60,
             "startup": 0,
