@@ -1,6 +1,26 @@
 {
     "otherCharsMoves": [
         {
+            "name": "Grilled with Love",
+            "movelist": 78,
+            "startup": 16,
+            "onBlock": "-16?",
+            "hitLevel": "LsL",
+            "visual": "Slides down and shots with the bazooka",
+            "counter": "Block & punish with Slaughter Hook",
+            "character": "Anna"
+        },
+        {
+            "name": "Roasted with Love",
+            "movelist": 21,
+            "startup": 10,
+            "onBlock": "-14?",
+            "hitLevel": "HHHM",
+            "visual": "Three jabs, ends with bazooka shot",
+            "counter": "Block & punish with Goutsuiken",
+            "character": "Anna"
+        },
+        {
             "name": "Swallow Vortex",
             "movelist": 5,
             "startup": 14,
@@ -169,6 +189,16 @@
             "visual": "Three rotating lows",
             "counter": "If hit by the first, low parry the second",
             "character": "Jun"
+        },
+        {
+            "name": "Twin Snake Strike",
+            "movelist": 39,
+            "startup": 16,
+            "onBlock": "-3",
+            "hitLevel": "LH",
+            "visual": "",
+            "counter": "Duck & punish with Demon God Fist",
+            "character": "Leroy"
         },
         {
             "name": "Edelweiss",
