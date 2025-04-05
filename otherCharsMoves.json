@@ -226,7 +226,7 @@
             "startup": 20,
             "onBlock": "-16",
             "hitLevel": "LL",
-            "visual": "Two fast low hists",
+            "visual": "Two fast low hits",
             "counter": "Block & punish with Demon God Fist",
             "character": "Reina"
         },

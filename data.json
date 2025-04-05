@@ -4,7 +4,7 @@
             "name": "Flash Punch",
             "input": "1,1,2",
             "startup": 10,
-            "damage": 23,
+            "damage": 25,
             "onHit": "+20",
             "onBlock": "-17",
             "hitLevel": "high",
