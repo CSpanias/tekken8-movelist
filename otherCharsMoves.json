@@ -41,6 +41,16 @@
             "character": "Anna"
         },
         {
+            "name": "Mudslide",
+            "movelist": 55,
+            "startup": 30,
+            "onBlock": "-26",
+            "hitLevel": "L",
+            "visual": "Snake edge",
+            "counter": "Block & punish with Demon God Fist",
+            "character": "Anna"
+        },
+        {
             "name": "Swallow Vortex",
             "movelist": 5,
             "startup": 14,
