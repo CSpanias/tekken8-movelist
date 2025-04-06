@@ -813,6 +813,17 @@
             "Character": "Kazuya"
         },
         {
+            "name": "T8S2 with Heat ➔ 13 hits",
+            "input": "ss,2 + ss,1+2,df,n,f + df,3,2,1 + ss,4,1 + f,f,2,f + ss,4,1 + dash + b,2,2,1+2",
+            "startup": 13,
+            "damage": 89,
+            "onHit": "N/A",
+            "onBlock": "N/A",
+            "hitLevel": "N/A",
+            "Feature": "Combo",
+            "Character": "Kazuya"
+        },
+        {
             "name": "Right Splits Kick to Abolishing Fist",
             "input": "f,4 ➔ df,2",
             "startup": 19,
