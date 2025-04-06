@@ -1,6 +1,26 @@
 {
     "otherCharsMoves": [
         {
+            "name": "Inbound Kick",
+            "movelist": 64,
+            "startup": 15,
+            "onBlock": "-13",
+            "hitLevel": "MM",
+            "visual": "Hopkicks and then hits with the dorsum during landing",
+            "counter": "Block & punish with Tsumaki Kick",
+            "character": "Alisa"
+        },
+        {
+            "name": "Eject Slider",
+            "movelist": 127,
+            "startup": 16,
+            "onBlock": "-14",
+            "hitLevel": "L",
+            "visual": "Gets wings and slides down",
+            "counter": "Block & punish with Twin Pistons",
+            "character": "Alisa"
+        },
+        {
             "name": "Grilled with Love",
             "movelist": 78,
             "startup": 16,
