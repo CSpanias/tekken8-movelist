@@ -152,7 +152,7 @@
         },
         {
             "name": "Snake Edge",
-            "movelist": 40,
+            "movelist": 41,
             "startup": 29,
             "onBlock": "-26",
             "hitLevel": "L",
