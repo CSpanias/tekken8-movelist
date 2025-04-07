@@ -161,6 +161,46 @@
             "character": "Bryan"
         },
         {
+            "name": "One Two Body Blow",
+            "movelist": 14,
+            "startup": 10,
+            "onBlock": "-6",
+            "hitLevel": "HHM",
+            "visual": "",
+            "counter": "Block & punish with ",
+            "character": "Bryan"
+        },
+        {
+            "name": "One Two Low Kick",
+            "movelist": 15,
+            "startup": 10,
+            "onBlock": "-12",
+            "hitLevel": "HHL",
+            "visual": "Jab, jab, low",
+            "counter": "Block & punish with Tsumaki Kick",
+            "character": "Bryan"
+        },
+        {
+            "name": "Hatchet Kick",
+            "movelist": 105,
+            "startup": 19,
+            "onBlock": "-13",
+            "hitLevel": "L",
+            "visual": "",
+            "counter": "Block & punish with Twin Pistons",
+            "character": "Bryan"
+        },
+        {
+            "name": "Boa Crusher",
+            "movelist": 35,
+            "startup": 18,
+            "onBlock": "-13 (forces crouch)",
+            "hitLevel": "MM",
+            "visual": "",
+            "counter": "Block & punish with Twin Pistons",
+            "character": "Bryan"
+        },
+        {
             "name": "Windup",
             "movelist": 0,
             "startup": 24,
