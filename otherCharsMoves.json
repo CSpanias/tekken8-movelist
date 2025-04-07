@@ -211,6 +211,36 @@
             "character": "Clive"
         },
         {
+            "name": "Russian Sickle",
+            "movelist": 69,
+            "startup": 15,
+            "onBlock": "-12",
+            "hitLevel": "M",
+            "visual": "Elbows with the right arm",
+            "counter": "Block & punish with Sokushitsu Goda",
+            "character": "Dragunov"
+        },
+        {
+            "name": "Russian Hook Special",
+            "movelist": 73,
+            "startup": 15,
+            "onBlock": "+4",
+            "hitLevel": "M",
+            "visual": "Runs and elbows with the right arm",
+            "counter": "Block & keep blocking",
+            "character": "Dragunov"
+        },
+        {
+            "name": "Clipping Sweep",
+            "movelist": 50,
+            "startup": 27,
+            "onBlock": "-26",
+            "hitLevel": "L",
+            "visual": "Snake edge",
+            "counter": "Block & punish with Demon God Fist",
+            "character": "Dragunov"
+        },
+        {
             "name": "?",
             "movelist": 0,
             "startup": 23,
