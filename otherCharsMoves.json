@@ -34,7 +34,7 @@
             "name": "Roasted with Love",
             "movelist": 21,
             "startup": 10,
-            "onBlock": "-14?",
+            "onBlock": "-14",
             "hitLevel": "HHHM",
             "visual": "Three jabs, ends with bazooka shot",
             "counter": "Block & punish with Goutsuiken",
@@ -418,6 +418,26 @@
             "hitLevel": "HMHM",
             "visual": "Lunges forward, swining his knife twice, shoots once, ends with a sword slash",
             "counter": "Duck second H and punish with Demon God Fist",
+            "character": "Victor"
+        },
+        {
+            "name": "Welcome Sweep",
+            "movelist": 47,
+            "startup": 20,
+            "onBlock": "-26",
+            "hitLevel": "L",
+            "visual": "Fast snake edge",
+            "counter": "Block & punish with Demon God Fist",
+            "character": "Victor"
+        },
+        {
+            "name": "Carnwennan",
+            "movelist": 61,
+            "startup": 18,
+            "onBlock": "-16",
+            "hitLevel": "M",
+            "visual": "Ducks and shouts 'Saihi!'",
+            "counter": "Block & punish with Slaughter Hook",
             "character": "Victor"
         },
         {
