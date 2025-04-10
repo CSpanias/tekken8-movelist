@@ -241,6 +241,16 @@
             "character": "Dragunov"
         },
         {
+            "name": "Frozen Heel Hook",
+            "movelist": 107,
+            "startup": 18,
+            "onBlock": "-26",
+            "hitLevel": "L",
+            "visual": "Rolls sideways and grabs the leg with its leg",
+            "counter": "Block & punish with Demon God Fist",
+            "character": "Dragunov"
+        },
+        {
             "name": "?",
             "movelist": 0,
             "startup": 23,
