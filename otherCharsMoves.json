@@ -411,16 +411,6 @@
             "character": "Victor"
         },
         {
-            "name": "Crybaby Sophia Extension",
-            "movelist": 0,
-            "startup": 12,
-            "onBlock": "-9",
-            "hitLevel": "HMHM",
-            "visual": "Lunges forward, swining his knife twice, shoots once, ends with a sword slash",
-            "counter": "Duck second H and punish with Demon God Fist",
-            "character": "Victor"
-        },
-        {
             "name": "Welcome Sweep",
             "movelist": 47,
             "startup": 20,
