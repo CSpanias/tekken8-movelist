@@ -51,6 +51,16 @@
             "character": "Anna"
         },
         {
+            "name": "Right Hand Sweep",
+            "movelist": 88,
+            "startup": 20,
+            "onBlock": "-21",
+            "hitLevel": "L",
+            "visual": "Tackles with her arm",
+            "counter": "Block & punish with",
+            "character": "Anna"
+        },
+        {
             "name": "Swallow Vortex",
             "movelist": 5,
             "startup": 14,
