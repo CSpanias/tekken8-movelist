@@ -311,6 +311,36 @@
             "character": "Jun"
         },
         {
+            "name": "Spinning Demon to Left Hook",
+            "movelist": 68,
+            "startup": 16,
+            "onBlock": "-23",
+            "hitLevel": "L",
+            "visual": "Low hooking sweep from crouch",
+            "counter": "Block & punish with Demon God Fist",
+            "character": "Kazuya"
+        },
+        {
+            "name": "Goutsuiken",
+            "movelist": 38,
+            "startup": 13,
+            "onBlock": "-19",
+            "hitLevel": "M,M",
+            "visual": "Straight stomach punch to hammerfist",
+            "counter": "Block & punish with Oni Front Kick",
+            "character": "Kazuya"
+        },
+        {
+            "name": "Abolishing Fist",
+            "movelist": 31,
+            "startup": 14,
+            "onBlock": "-12",
+            "hitLevel": "M",
+            "visual": "Straight mid punch with step-in",
+            "counter": "Block & punish with Sokushitsu Goda",
+            "character": "Kazuya"
+        },
+        {
             "name": "Twin Snake Strike",
             "movelist": 39,
             "startup": 16,
