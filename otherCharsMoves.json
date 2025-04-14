@@ -371,6 +371,16 @@
             "character": "Kazuya"
         },
         {
+            "name": "Stampede Crush",
+            "movelist": 25,
+            "startup": 15,
+            "onBlock": "-13",
+            "hitLevel": "HMM",
+            "visual": "High kick, elbow, big elbow",
+            "counter": "Block & punish with Sokushitsu Goda",
+            "character": "King"
+        },
+        {
             "name": "Twin Snake Strike",
             "movelist": 39,
             "startup": 16,
