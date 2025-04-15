@@ -381,6 +381,36 @@
             "character": "King"
         },
         {
+            "name": "Silver Low",
+            "movelist": 47,
+            "startup": 16,
+            "onBlock": "-15",
+            "hitLevel": "L",
+            "visual": "Snake edge",
+            "counter": "Block & punish with Twin Pistons",
+            "character": "Lee"
+        },
+        {
+            "name": "Acid Storm",
+            "movelist": 36,
+            "startup": 15,
+            "onBlock": "-9",
+            "hitLevel": "MMHHHH",
+            "visual": "Five fast kicks, ends with a rotating launch",
+            "counter": "Duck & punish with Demon God Fist",
+            "character": "Lee"
+        },
+        {
+            "name": "Deadly Revolution",
+            "movelist": 38,
+            "startup": 11,
+            "onBlock": "+5",
+            "hitLevel": "HH",
+            "visual": "High knee to rotating punch",
+            "counter": "Duck & punish with Demon God Fist",
+            "character": "Lee"
+        },
+        {
             "name": "Twin Snake Strike",
             "movelist": 39,
             "startup": 16,
