@@ -311,6 +311,16 @@
             "character": "Eddy"
         },
         {
+            "name": "Eishomon",
+            "movelist": 54,
+            "startup": 23,
+            "onBlock": "-18",
+            "hitLevel": "L",
+            "visual": "Similar to Nejiri Uraken",
+            "counter": "Block & punish with Demon God Fist",
+            "character": "Heihachi"
+        },
+        {
             "name": "Firecrakcer",
             "movelist": 42,
             "startup": 19,
